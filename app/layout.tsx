@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Systems Integration | Strategy-Led Technology Consulting",
   description:
     "Enterprise AI, cloud migration, cybersecurity, and system integration consulting. Strategy is the algorithm they forgot to write.",
-  generator: "v0.app",
+  generator: "Next.js",
   metadataBase: new URL("https://systemsintegration.co"),
   keywords: [
     "AI consulting",
