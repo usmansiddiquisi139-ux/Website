@@ -9,9 +9,9 @@ import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services-data";
 import { getTool } from "@/lib/tools-data";
 
-export default function ServiceDetailPage({ params }) {
+export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   // ✅ Unwrap params Promise (React 19 / Next.js 16)
-  const { slug } = use(params);
+  const { slug } = use(params) as { slug: string }
 
   const service = services.find((s) => s.slug === slug);
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -85,7 +85,7 @@ export default function ServiceDetailPage({ params }) {
       className="min-h-screen bg-background bg-cover bg-center text-white"
       style={{ backgroundImage: "url(/images/services-bg.jpg)" }} // ✅ Local background
     >
-      <div className="backdrop-blur-sm bg-Transparent/70 text-white">
+  <div className="backdrop-blur-sm bg-transparent/70 text-white">
         <Header />
 
         {/* Hero Section */}
@@ -104,7 +104,7 @@ export default function ServiceDetailPage({ params }) {
                 </p>
               </div>
             </div>
-            <p className="text-lg text-white leading-relaxed max-w-3xl mx-18">
+            <p className="text-lg text-white leading-relaxed max-w-3xl mx-auto">
               {service.overview}
             </p>
           </div>
@@ -173,14 +173,14 @@ export default function ServiceDetailPage({ params }) {
                                 title={tool.name}
                               >
                                 <img
-                                  src={tool.logo || "/placeholder.svg"}
-                                  alt={tool.name}
-                                  className="w-5 h-5 object-contain"
-                                  onError={(e) => {
-                                    e.currentTarget.src =
-                                      "/placeholder.svg?height=20&width=20";
-                                  }}
-                                />
+                                      src={(tool as any).logo || "/placeholder.svg"}
+                                      alt={tool.name}
+                                      className="w-5 h-5 object-contain"
+                                      onError={(e) => {
+                                        e.currentTarget.src =
+                                          "/placeholder.svg?height=20&width=20";
+                                      }}
+                                    />
                                 <span className="text-xs whitespace-nowrap text-white">
                                   {tool.name}
                                 </span>

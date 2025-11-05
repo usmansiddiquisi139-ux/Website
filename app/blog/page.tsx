@@ -1,123 +1,258 @@
+// app/blog/[slug]/page.tsx
+
+import { notFound } from "next/navigation"
+import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import Link from "next/link"
 
-export const metadata = {
-  title: "Blog | Systems Integration",
-  description: "Insights, best practices, and thought leadership on AI, cloud, security, and enterprise technology.",
+// 🧠 Blog Data (Self-contained)
+const blogData = [
+  {
+    slug: "zero-downtime-migrations",
+    title: "The Art of Zero-Downtime Cloud Migrations",
+    description:
+      "Learn how to migrate mission-critical enterprise workloads to the cloud without disrupting operations. Discover the strategies, architecture patterns, and tools for zero-downtime migration.",
+    category: "Cloud Strategy",
+    publishedDate: "2024-10-15",
+    readTime: "8 min read",
+    content: `
+### Introduction
+Migrating enterprise systems to the cloud can unlock agility and scalability — but downtime can cost millions. Zero-downtime migrations ensure business continuity while transitioning critical workloads.
+
+### Key Strategies
+1. **Blue-Green Deployments:** Maintain two environments and route traffic seamlessly.
+2. **Database Replication:** Use continuous sync between on-prem and cloud databases.
+3. **Load Balancer Cutovers:** Gradually shift traffic to the new environment.
+4. **Rollback Plans:** Always prepare a fallback to previous infrastructure.
+
+### Best Practices
+- Monitor latency and replication lag.
+- Use canary testing for user validation.
+- Automate deployment orchestration with CI/CD tools.
+
+### Conclusion
+Zero-downtime migration isn’t just a technical goal — it’s a business imperative. With proper automation and planning, enterprises can modernize without disruption.
+    `,
+  },
+  {
+    slug: "ai-fraud-detection",
+    title: "Real-Time Fraud Detection with Machine Learning",
+    description:
+      "How AI-driven fraud detection systems reduce financial losses by identifying anomalies in real time. Learn ML techniques and deployment approaches for enterprise-grade fraud prevention.",
+    category: "AI & ML",
+    publishedDate: "2024-10-01",
+    readTime: "10 min read",
+    content: `
+### Introduction
+Fraud detection is evolving from reactive to proactive with AI. By analyzing millions of transactions in real-time, machine learning models can spot fraudulent patterns that humans can’t.
+
+### Techniques Used
+- **Supervised Learning:** Models trained on labeled fraud data.
+- **Anomaly Detection:** Identifying unusual behaviors in massive datasets.
+- **Graph Networks:** Detecting connected fraud rings.
+
+### Architecture
+A robust fraud detection pipeline includes:
+- Data ingestion (Kafka, Flink)
+- Feature engineering
+- Model training and serving
+- Continuous model monitoring
+
+### Conclusion
+With machine learning, enterprises can reduce losses by up to 85% — while improving customer trust through smarter, faster fraud prevention.
+    `,
+  },
+  {
+    slug: "devops-transformation",
+    title: "From DevOps Chaos to CI/CD Excellence",
+    description:
+      "Transforming your DevOps process into a scalable CI/CD ecosystem. Learn how to achieve faster deployments and higher reliability with automation and culture change.",
+    category: "DevOps",
+    publishedDate: "2024-09-20",
+    readTime: "9 min read",
+    content: `
+### Introduction
+DevOps isn’t just a toolchain — it’s a mindset. Many teams struggle with fragmented automation, leading to chaos instead of continuous delivery.
+
+### Steps to CI/CD Excellence
+1. **Pipeline Standardization:** Every team follows the same deployment structure.
+2. **Automated Testing:** Ensure quality gates at every stage.
+3. **Infrastructure as Code:** Consistency across environments.
+4. **Observability:** Integrated monitoring and alerting systems.
+
+### Culture Shift
+DevOps maturity requires collaboration between development, QA, and operations. Blameless retrospectives and shared KPIs drive success.
+
+### Conclusion
+From chaos to excellence — building CI/CD pipelines enables organizations to deliver value continuously and confidently.
+    `,
+  },
+  {
+    slug: "data-governance-framework",
+    title: "Enterprise Data Governance: Building a Scalable Framework",
+    description:
+      "Establish a robust data governance framework that balances compliance, quality, and business agility. Learn key principles for managing data as a strategic asset.",
+    category: "Data Strategy",
+    publishedDate: "2024-09-05",
+    readTime: "12 min read",
+    content: `
+### Introduction
+In the era of data-driven decision-making, governance ensures that data is accurate, secure, and compliant.
+
+### Framework Pillars
+- **Data Ownership:** Define clear accountability.
+- **Data Catalogs:** Enable discovery and lineage.
+- **Access Control:** Protect sensitive information.
+- **Compliance Automation:** Simplify audit readiness.
+
+### Implementation Roadmap
+Start small with critical domains, iterate, and scale with governance automation tools.
+
+### Conclusion
+A scalable data governance framework bridges business value and regulatory confidence — essential for modern enterprises.
+    `,
+  },
+  {
+    slug: "cybersecurity-essentials",
+    title: "Cybersecurity Essentials for Enterprise Leadership",
+    description:
+      "Understand the critical cybersecurity practices that every executive must know to safeguard enterprise assets in a digital-first world.",
+    category: "Security",
+    publishedDate: "2024-08-25",
+    readTime: "7 min read",
+    content: `
+### Introduction
+Cybersecurity is no longer a technical issue — it’s a boardroom priority. Executives must lead the charge to safeguard digital assets.
+
+### Core Principles
+1. **Zero Trust Architecture:** Assume breach; verify continuously.
+2. **Incident Response Plans:** Define, test, and update regularly.
+3. **Employee Awareness:** Human error is the top attack vector.
+
+### Leadership Imperatives
+- Align security investments with business outcomes.
+- Ensure vendor compliance and data privacy.
+- Foster a security-first culture.
+
+### Conclusion
+Cybersecurity leadership isn’t optional — it’s fundamental to maintaining trust and resilience in the digital economy.
+    `,
+  },
+  {
+    slug: "api-first-architecture",
+    title: "Building APIs That Scale: Design Patterns for Enterprise",
+    description:
+      "Explore modern API-first architecture patterns for building scalable, secure, and maintainable enterprise systems.",
+    category: "Architecture",
+    publishedDate: "2024-08-10",
+    readTime: "11 min read",
+    content: `
+### Introduction
+API-first architecture ensures systems communicate seamlessly. It promotes modularity and scalability across services.
+
+### Design Patterns
+- **Gateway Routing:** Manage traffic efficiently.
+- **Schema Versioning:** Prevent integration failures.
+- **Security Layers:** Use OAuth 2.0, rate limiting, and encryption.
+
+### Benefits
+- Faster time to market
+- Improved developer experience
+- Reduced integration complexity
+
+### Conclusion
+API-first design is the backbone of modern system integration, enabling agility and innovation at enterprise scale.
+    `,
+  },
+]
+
+// 🧩 Generate static params for each slug
+export async function generateStaticParams() {
+  return blogData.map((post) => ({ slug: post.slug }))
 }
 
-export default function BlogPage() {
-  const posts = [
-    {
-      slug: "zero-downtime-migrations",
-      title: "The Art of Zero-Downtime Cloud Migrations",
-      excerpt: "How to migrate mission-critical systems without disrupting business operations.",
-      publishedDate: "2024-10-15",
-      readTime: "8 min read",
-      category: "Cloud Strategy",
+// 🧠 SEO metadata per post
+export async function generateMetadata({ params }: { params: { slug?: string } }): Promise<Metadata> {
+  const post = blogData.find((p) => p.slug === params?.slug)
+  if (!post) return { title: "Blog Not Found | Systems Integration" }
+
+  return {
+    title: `${post.title} | Systems Integration`,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.publishedDate,
+      url: `https://www.systemsintegration.co/blog/${post.slug}`,
     },
-    {
-      slug: "ai-fraud-detection",
-      title: "Real-Time Fraud Detection with Machine Learning",
-      excerpt: "Implementing ML models to detect fraudulent transactions with 85% reduction in losses.",
-      publishedDate: "2024-10-01",
-      readTime: "10 min read",
-      category: "AI & ML",
+    alternates: {
+      canonical: `https://www.systemsintegration.co/blog/${post.slug}`,
     },
-    {
-      slug: "devops-transformation",
-      title: "From DevOps Chaos to CI/CD Excellence",
-      excerpt: "Building deployment pipelines that enable faster releases and higher reliability.",
-      publishedDate: "2024-09-20",
-      readTime: "9 min read",
-      category: "DevOps",
+  }
+}
+
+// 📰 Blog Page Component
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = blogData.find((p) => p.slug === params.slug)
+  if (!post) return notFound()
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedDate,
+    author: {
+      "@type": "Organization",
+      name: "Systems Integration (SMC-PVT) Limited",
     },
-    {
-      slug: "data-governance-framework",
-      title: "Enterprise Data Governance: Building a Scalable Framework",
-      excerpt: "How to implement data governance that balances compliance with business agility.",
-      publishedDate: "2024-09-05",
-      readTime: "12 min read",
-      category: "Data Strategy",
+    publisher: {
+      "@type": "Organization",
+      name: "Systems Integration (SMC-PVT) Limited",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.systemsintegration.co/logo.png",
+      },
     },
-    {
-      slug: "cybersecurity-essentials",
-      title: "Cybersecurity Essentials for Enterprise Leadership",
-      excerpt: "Critical security practices every executive should understand.",
-      publishedDate: "2024-08-25",
-      readTime: "7 min read",
-      category: "Security",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.systemsintegration.co/blog/${post.slug}`,
     },
-    {
-      slug: "api-first-architecture",
-      title: "Building APIs That Scale: Design Patterns for Enterprise",
-      excerpt: "Modern API design principles for system integration at scale.",
-      publishedDate: "2024-08-10",
-      readTime: "11 min read",
-      category: "Architecture",
-    },
-  ]
+  }
 
   return (
-    <main className="min-h-screen bg-transparent">
+    <main className="min-h-screen bg-transparent text-white">
       <Header />
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Blog & Insights</h1>
-          <p className="text-xl text-white max-w-2xl">
-            Thought leadership on AI, cloud strategy, security, and enterprise transformation.
+      <article className="max-w-4xl mx-auto px-6 pt-32 pb-20">
+        <header className="mb-10">
+          <p className="text-sm text-orange-300">{post.category}</p>
+          <h1 className="text-5xl font-bold mb-4">{post.title}</h1>
+          <div className="flex items-center justify-between text-sm text-gray-300">
+            <time>{new Date(post.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+            <span>{post.readTime}</span>
+          </div>
+        </header>
+
+        <section
+          className="prose prose-invert prose-orange max-w-none"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        <hr className="my-12 border-orange-500/30" />
+
+        <footer>
+          <p className="text-center text-orange-400">
+            © {new Date().getFullYear()} Systems Integration (SMC-PVT) Limited
           </p>
-        </div>
-      </section>
+        </footer>
+      </article>
 
-      {/* Blog Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <article className="h-full p-6 rounded-lg border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/20 transition cursor-pointer group">
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-xs font-semibold text-orange-300 bg-orange-500/20 px-3 py-1 rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-xs text-white">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-white mb-4 line-clamp-2">{post.excerpt}</p>
-                  <p className="text-sm text-white">
-                    {new Date(post.publishedDate).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <Link href="/services">
-              <div className="p-8 rounded-lg border border-orange-500/30 bg-Transparent backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/20 transition cursor-pointer group text-center">
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:bg-clip-text group-hover:bg-Transparent group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
-                  Explore Our Services
-                </h3>
-                <p className="text-white">
-                  Transform these insights into action with our comprehensive service offerings.
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <Footer />
     </main>

@@ -63,7 +63,7 @@ export default function ServicesPage() {
       className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
       style={{ backgroundImage: "url('/images/services-bg.jpg')" }}
     >
-      <div className="bg-Transparent min-h-screen text-white">
+  <div className="bg-transparent min-h-screen text-white">
         <Header />
 
         {/* Hero Section */}
@@ -90,7 +90,7 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-Transparent backdrop-blur-md`}
+                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-transparent backdrop-blur-md`} 
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">

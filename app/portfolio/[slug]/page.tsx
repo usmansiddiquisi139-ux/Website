@@ -3,169 +3,9 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
-const caseStudyData = {
-  "fintech-ai-fraud": {
-    title: "AI-Powered Fraud Detection for FinTech",
-    client: "Global Payment Processor",
-    industry: "fintech",
-    services: ["ai-ml", "data"],
-    overview:
-      "A leading global payment processor was losing millions annually to fraudulent transactions. They needed a real-time system to detect and prevent fraud without impacting legitimate transactions.",
-    challenge:
-      "The client was operating with rule-based fraud detection yielding only 60% accuracy and high false positive rates blocking legitimate transactions. Their legacy system couldn't scale to billions of daily transactions.",
-    solution: [
-      "Conducted comprehensive audit of transaction data and fraud patterns",
-      "Built ensemble machine learning model combining gradient boosting and neural networks",
-      "Implemented real-time inference pipeline processing 100k+ transactions/second",
-      "Created feedback loop automatically retraining models weekly",
-      "Deployed on Kubernetes with 99.99% uptime SLA",
-    ],
-    outcomes: [
-      "85% reduction in fraud losses ($12M annual savings)",
-      "0.1% false positive rate (previously 15%)",
-      "Processed 50B+ transactions with < 100ms latency",
-      "40% increase in legitimate transaction approval",
-    ],
-    technologies: ["TensorFlow", "XGBoost", "Python", "Kubernetes", "PostgreSQL"],
-    results:
-      "The AI-powered system immediately reduced fraud loss by 85%, enabling the client to expand to new markets with confidence. The system continues learning and improving, now handling billions of transactions annually.",
-  },
-  "healthcare-migration": {
-    title: "Zero-Downtime EHR Migration to Cloud",
-    client: "Healthcare Network",
-    industry: "healthcare",
-    services: ["integration", "devops", "security"],
-    overview:
-      "A major healthcare network with 50 hospitals needed to migrate from legacy on-premises EHR to cloud without affecting patient care or losing a single record.",
-    challenge:
-      "The system was processing 500M+ patient records, 50k+ daily transactions, and had zero tolerance for downtime. HIPAA compliance was critical.",
-    solution: [
-      "Designed parallel system architecture with real-time synchronization",
-      "Implemented staged migration of 50 hospitals over 6 months",
-      "Created dual-write pattern maintaining data consistency",
-      "Built comprehensive disaster recovery and rollback procedures",
-      "Automated testing with 10k+ test cases ensuring data integrity",
-    ],
-    outcomes: [
-      "100% uptime during entire migration",
-      "Zero data loss or corruption",
-      "40% reduction in operational costs",
-      "HIPAA compliance maintained throughout",
-      "2x improvement in system performance",
-    ],
-    technologies: ["AWS", "Terraform", "PostgreSQL", "Kafka", "Java"],
-    results:
-      "The healthcare network maintained perfect uptime during the migration, reducing operational costs by 40% while improving system performance and reliability.",
-  },
-  "manufacturing-predictive": {
-    title: "Predictive Maintenance Platform",
-    client: "Industrial Manufacturer",
-    industry: "manufacturing",
-    services: ["ai-ml", "data", "devops"],
-    overview:
-      "A global manufacturer with 200+ production facilities needed to reduce equipment downtime and maintenance costs through predictive maintenance.",
-    challenge:
-      "Equipment failures were unpredictable, causing $50k+ losses per hour of downtime. Maintenance was reactive, not proactive.",
-    solution: [
-      "Deployed 10k+ IoT sensors across all facilities",
-      "Built real-time data pipeline collecting 100M+ sensor readings daily",
-      "Developed LSTM neural network predicting failures 5-14 days in advance",
-      "Implemented predictive maintenance scheduling system",
-      "Created mobile alert system for maintenance teams",
-    ],
-    outcomes: [
-      "35% reduction in equipment downtime ($8M annual savings)",
-      "92% accuracy in failure prediction",
-      "50% reduction in maintenance costs",
-      "20% increase in overall equipment effectiveness (OEE)",
-      "45-day ROI on IoT deployment",
-    ],
-    technologies: ["Python", "TensorFlow", "Kafka", "InfluxDB", "Kubernetes"],
-    results:
-      "The predictive maintenance platform delivered 35% reduction in downtime, equivalent to $8M annual savings, with ROI achieved in just 45 days.",
-  },
-  "aerospace-security": {
-    title: "Enterprise Security Operations Center",
-    client: "Aerospace Contractor",
-    industry: "aerospace",
-    services: ["security", "devops"],
-    overview:
-      "An aerospace contractor needed to consolidate security operations and achieve CMMC Level 3 compliance for Department of Defense contracts.",
-    challenge:
-      "Security was fragmented across departments with no centralized monitoring. CMMC Level 3 compliance was mandatory but unclear.",
-    solution: [
-      "Designed centralized SOC architecture",
-      "Deployed SIEM (Splunk) with real-time threat intelligence",
-      "Implemented continuous vulnerability scanning",
-      "Established incident response procedures",
-      "Automated compliance reporting for CMMC",
-    ],
-    outcomes: [
-      "60% reduction in MTTR (mean time to respond)",
-      "CMMC Level 3 compliance achieved and maintained",
-      "Zero security incidents post-implementation",
-      "24/7 security monitoring across all assets",
-      "Successful DoD security audits",
-    ],
-    technologies: ["Splunk", "Elastic Stack", "Terraform", "Kubernetes"],
-    results:
-      "The SOC achieved CMMC Level 3 compliance on first audit and reduced incident response time by 60%, enabling the contractor to compete for higher-value DoD contracts.",
-  },
-  "oil-gas-analytics": {
-    title: "Seismic Data Analytics Platform",
-    client: "Oil & Gas Exploration",
-    industry: "oil-gas",
-    services: ["data", "devops", "ai-ml"],
-    overview:
-      "An oil and gas exploration company was drowning in 50TB+ of seismic data but lacked the infrastructure to process it in real-time.",
-    challenge: "Processing seismic data took weeks, delaying exploration decisions. No real-time analytics capability.",
-    solution: [
-      "Built distributed data lake with 50TB+ capacity",
-      "Implemented GPU-accelerated processing clusters",
-      "Developed machine learning pipeline for automated interpretation",
-      "Created real-time analytics dashboard for geologists",
-      "Deployed on cloud with auto-scaling",
-    ],
-    outcomes: [
-      "25% improvement in exploration success rate",
-      "Real-time seismic data processing (from weeks to hours)",
-      "3x cost reduction vs traditional processing",
-      "Accelerated time-to-decision by 90%",
-      "$50M+ value from improved exploration success",
-    ],
-    technologies: ["AWS HPC", "CUDA", "PySpark", "Elasticsearch", "Kubernetes"],
-    results:
-      "Real-time seismic processing capabilities improved exploration success by 25%, generating $50M+ in additional value from improved drilling site selection.",
-  },
-  "education-platform": {
-    title: "Learning Management System Migration",
-    client: "University System",
-    industry: "education",
-    services: ["integration", "devops", "security"],
-    overview:
-      "A 10-campus university system needed to consolidate and modernize its learning management platform serving 100k+ students.",
-    challenge: "Each campus ran separate LMS instances with no data sharing. Students had fragmented experience.",
-    solution: [
-      "Designed unified cloud-based LMS architecture",
-      "Migrated 100k+ student records across platforms",
-      "Implemented single sign-on for seamless access",
-      "Built analytics dashboard for student success",
-      "Enhanced security with encryption and access controls",
-    ],
-    outcomes: [
-      "Unified platform serving 100k+ students",
-      "99.9% uptime across all campuses",
-      "40% improvement in student engagement",
-      "35% reduction in IT operational costs",
-      "Real-time insights for student success interventions",
-    ],
-    technologies: ["Moodle", "AWS", "Kubernetes", "PostgreSQL"],
-    results:
-      "The unified LMS improved student engagement by 40% while reducing operational costs by 35%, enabling data-driven interventions for student success.",
-  },
-}
+import caseStudyData, { CaseStudy, CaseStudyMap } from "@/lib/case-studies"
 
-const serviceNames = {
+const serviceNames: Record<string, string> = {
   "ai-ml": "AI & ML",
   data: "Data Solutions",
   integration: "Integration & Migration",
@@ -200,43 +40,49 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     name: serviceNames[slug],
   }))
 
+  // Map short service keys used in caseStudyData to canonical service page slugs
+  const serviceSlugMap: Record<string, string> = {
+    "ai-ml": "ai-ml-learning-automation",
+    data: "data-solutions-governance",
+    integration: "integration-migration-services",
+    devops: "devops-cloud",
+    security: "ethical-hacking-as-a-service",
+  }
+
   return (
     <main className="min-h-screen text-white relative">
-      {/* Background image (public/images/services-bg.jpg) */}
+      {/* Background image only, no overlay, no shadow */}
       <div className="fixed inset-0 -z-20">
         <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
       </div>
 
-      {/* Dark overlay to improve contrast */}
-      <div className="fixed inset-0 bg-Transparent " />
-
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-20 pb-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl ml-6 sm:ml-8 lg:ml-12">
           <Link href="/portfolio" className="text-white/90 hover:text-white mb-4 inline-block">
             ← Back to Portfolio
           </Link>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">{study.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white whitespace-nowrap">{study.title}</h1>
           <p className="text-xl text-white/90 mb-4">{study.client}</p>
         </div>
       </section>
 
       {/* Overview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-White leading-relaxed">{study.overview}</p>
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl ml-6 sm:ml-8 lg:ml-12">
+          <p className="text-lg text-white leading-relaxed">{study.overview}</p>
         </div>
       </section>
 
       {/* Challenge, Solution, Outcomes */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-Transparent">
-        <div className="max-w-4xl mx-auto space-y-16">
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-transparent">
+        <div className="max-w-3xl ml-6 sm:ml-8 lg:ml-12 space-y-8">
           {/* Challenge */}
           <div>
             <h2 className="text-3xl font-bold mb-6">The Challenge</h2>
-            <p className="text-White leading-relaxed">{study.challenge}</p>
+            <p className="text-white leading-relaxed">{study.challenge}</p>
           </div>
 
           {/* Solution */}
@@ -246,7 +92,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               {study.solution.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
                   <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span className="text-White">{item}</span>
+                  <span className="text-white">{item}</span>
                 </li>
               ))}
             </ul>
@@ -254,12 +100,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
           {/* Outcomes */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">Key Outcomes</h2>
+            <h2 className="text-3xl font-bold mb-4">Key Outcomes</h2>
             <ul className="space-y-3">
               {study.outcomes.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
                   <span className="text-primary font-bold flex-shrink-0">✓</span>
-                  <span className="text-White">{item}</span>
+                  <span className="text-white">{item}</span>
                 </li>
               ))}
             </ul>
@@ -268,8 +114,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Technologies */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl ml-6 sm:ml-8 lg:ml-12">
           <h2 className="text-3xl font-bold mb-6">Technologies Used</h2>
           <div className="flex flex-wrap gap-3">
             {study.technologies.map((tech) => (
@@ -282,36 +128,69 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Results */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-transparent text-primary-foreground">
+        <div className="max-w-3xl ml-6 sm:ml-8 lg:ml-12">
           <h2 className="text-3xl font-bold mb-6">Results</h2>
           <p className="text-lg leading-relaxed opacity-90">{study.results}</p>
         </div>
       </section>
 
-      {/* Related Services */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      {/* Related Services (updated to match Our Solutions UI) */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Related Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedServices.map((svc) => (
-              <Link key={svc.slug} href={`/services/${svc.slug}`}>
-                <div className="p-6 rounded-lg border border-border bg-Transparent hover:border-primary/50 transition cursor-pointer group">
-                  <h3 className="font-bold text-lg group-hover:text-primary transition">{svc.name}</h3>
-                </div>
-              </Link>
-            ))}
+          <h2 className="text-3xl font-bold mb-8 text-white">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {study.services.map((slug) => {
+              // Find the full service object from lib/services-data
+              const allServices = require('@/lib/services-data').services;
+              const service = allServices.find((s: any) => s.slug === serviceSlugMap[slug] || s.slug === slug);
+              if (!service) return null;
+              const color = typeof service.color === 'string' ? service.color.replace(/^from-/, "") : "blue-500";
+              const colorMap: Record<string, { text: string; bg: string; border: string }> = {
+                "red-500": { text: "text-red-500", bg: "bg-red-500/10", border: "border-red-500/30" },
+                "green-500": { text: "text-green-500", bg: "bg-green-500/10", border: "border-green-500/30" },
+                "purple-500": { text: "text-purple-500", bg: "bg-purple-500/10", border: "border-purple-500/30" },
+                "blue-500": { text: "text-blue-500", bg: "bg-blue-500/10", border: "border-blue-500/30" },
+                "yellow-500": { text: "text-yellow-500", bg: "bg-yellow-500/10", border: "border-yellow-500/30" },
+                "cyan-500": { text: "text-cyan-500", bg: "bg-cyan-500/10", border: "border-cyan-500/30" },
+                "indigo-500": { text: "text-indigo-500", bg: "bg-indigo-500/10", border: "border-indigo-500/30" },
+              };
+              const colorClasses = colorMap[color] || colorMap["blue-500"];
+              const IconComponent = service.icon;
+              return (
+                <Link key={service.slug} href={`/services/${service.slug}`}>
+                  <div className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent transition cursor-pointer group relative overflow-hidden`}>
+                    <div className="flex items-start space-x-4">
+                      {IconComponent && (
+                        <div className={`${colorClasses.text} p-2 rounded-lg ${colorClasses.bg}`}>
+                          <IconComponent className="w-6 h-6" />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <h3 className="font-bold text-lg text-white transition group-hover:text-opacity-90">{service.title}</h3>
+                        {service.headline && (
+                          <p className="mt-2 text-sm text-white/80 group-hover:text-white/90">{service.headline}</p>
+                        )}
+                        {service.overview && (
+                          <p className="mt-3 text-sm text-white/70">{service.overview}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-Transparent">
+      {/* CTA (updated for industry-style UI) */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready for Your Next Project?</h2>
+          <h2 className="text-3xl font-bold mb-4 text-white">Ready for Your Next Project?</h2>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block px-8 py-4 bg-orange-500 text-white rounded-lg font-semibold hover:scale-105 transition-all duration-300"
           >
             Let's Discuss Your Goals
           </Link>

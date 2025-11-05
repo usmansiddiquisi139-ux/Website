@@ -54,7 +54,7 @@ export function Header() {
           <Link href="/portfolio" className="transition text-white/80 hover:text-white">
             Portfolio
           </Link>
-          <Link href="/insights" className="transition text-white/80 hover:text-white">
+          <Link href="/blog" className="transition text-white/80 hover:text-white">
             Insights
           </Link>
         </nav>
@@ -83,7 +83,7 @@ export function Header() {
               <Link href="/portfolio" className="block text-foreground/80 hover:text-primary">
                 Portfolio
               </Link>
-              <Link href="/insights" className="block text-foreground/80 hover:text-primary">
+              <Link href="/blog" className="block text-foreground/80 hover:text-primary">
                 Insights
               </Link>
               <Button className="w-full">Let's Talk</Button>

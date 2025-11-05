@@ -62,13 +62,13 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
         <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
       </div>
 
-      {/* Dark overlay */}
-      <div className="fixed inset-0 bg-Transparent -z-10" />
+  {/* Dark overlay (non-blocking) */}
+  <div className="fixed inset-0 -z-10 bg-black/50 pointer-events-none" />
 
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-Transparent">
+  <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">{industry.name}</h1>
           <p className="text-xl text-white/90">{industry.description}</p>
@@ -91,7 +91,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       </section>
 
       {/* Solutions */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-Transparent">
+  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-white">Our Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -149,13 +149,13 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary">
+  <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">Transform Your {industry.name} Operations</h2>
           <p className="text-lg mb-8 text-white/90">Let's discuss how we can address your industry-specific challenges.</p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition"
           >
             Schedule Consultation
           </Link>
