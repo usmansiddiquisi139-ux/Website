@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import IndustryClientPage from "./IndustryClientPage"
+import { notFound } from "next/navigation"
 
 const industryData = {
   healthcare: {
@@ -11,7 +12,7 @@ const industryData = {
       "Real-time data analytics for patient outcomes",
       "Cybersecurity threats and data breaches",
     ],
-    solutions: ["data", "ai-ml", "integration", "security"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "integration-migration-services", "ethical-hacking-as-a-service"],
     caseStudies: [],
   },
   fintech: {
@@ -23,7 +24,7 @@ const industryData = {
       "Fraud detection and prevention",
       "Zero-downtime system migrations",
     ],
-    solutions: ["data", "ai-ml", "security", "devops"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "ethical-hacking-as-a-service", "devops-cloud"],
     caseStudies: [],
   },
   manufacturing: {
@@ -35,7 +36,7 @@ const industryData = {
       "Supply chain visibility and optimization",
       "Legacy OT/IT system integration",
     ],
-    solutions: ["data", "ai-ml", "integration", "devops"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "integration-migration-services", "devops-cloud"],
     caseStudies: [],
   },
   "oil-gas": {
@@ -47,7 +48,7 @@ const industryData = {
       "Safety and environmental compliance",
       "Cost optimization in volatile markets",
     ],
-    solutions: ["data", "ai-ml", "integration", "devops"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "integration-migration-services", "devops-cloud"],
     caseStudies: [],
   },
   aerospace: {
@@ -59,7 +60,7 @@ const industryData = {
       "Complex supply chain and supplier management",
       "Legacy system modernization",
     ],
-    solutions: ["security", "devops", "integration", "data"],
+    solutions: ["ethical-hacking-as-a-service", "devops-cloud", "integration-migration-services", "data-solutions-governance"],
     caseStudies: [],
   },
   education: {
@@ -71,7 +72,7 @@ const industryData = {
       "Analytics for student success and retention",
       "Integration of third-party educational tools",
     ],
-    solutions: ["data", "ai-ml", "integration", "security"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "integration-migration-services", "ethical-hacking-as-a-service"],
     caseStudies: [],
   },
   transport: {
@@ -83,7 +84,7 @@ const industryData = {
       "Supply chain and route optimization",
       "IoT integration across distributed assets",
     ],
-    solutions: ["data", "ai-ml", "devops", "integration"],
+    solutions: ["data-solutions-governance", "ai-ml-learning-automation", "devops-cloud", "integration-migration-services"],
     caseStudies: [],
   },
   "real-estate": {
@@ -95,7 +96,7 @@ const industryData = {
       "IoT sensors and smart building systems",
       "Cloud migration of legacy platforms",
     ],
-    solutions: ["data", "integration", "devops", "ai-ml"],
+    solutions: ["data-solutions-governance", "integration-migration-services", "devops-cloud", "ai-ml-learning-automation"],
     caseStudies: [],
   },
 }
@@ -106,7 +107,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const industry = industryData[slug as keyof typeof industryData]
+  const industry = industryData[slug as keyof typeof industryData];
   if (!industry) return {}
   return {
     title: `${industry.name} Solutions | Systems Integration`,
@@ -116,6 +117,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
+  if (!slug) {
+    notFound()
+  }
+
   const industry = industryData[slug as keyof typeof industryData]
+  
+  if (!industry) {
+    notFound()
+  }
+  
   return <IndustryClientPage industry={industry} params={{ slug }} />
 }

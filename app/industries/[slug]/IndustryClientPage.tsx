@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { useEffect } from "react"
+import { ArrowRight } from "lucide-react"
 import { services as allServices } from "@/lib/services-data"
 
 // Helper to map color key to useful tailwind class fragments
@@ -23,7 +24,15 @@ const getColorClasses = (colorKey: string) => {
 
 
 
-export default function IndustryClientPage({ params, industry }: { params: any; industry: any }) {
+interface Industry {
+  name: string;
+  description: string;
+  challenges: string[];
+  solutions: string[];
+  caseStudies: any[];
+}
+
+export default function IndustryClientPage({ params, industry }: { params: { slug: string }; industry: Industry }) {
   if (!industry) {
     notFound()
   }
@@ -32,10 +41,19 @@ export default function IndustryClientPage({ params, industry }: { params: any; 
     window.scrollTo(0, 0)
   }, [params.slug])
 
+  console.log('Industry Data:', industry);
+  console.log('All Services:', allServices);
+
   // Map industry.solutions to the actual service objects
   const relatedServices = industry.solutions
-    .map((slug: string) => allServices.find((s) => s.slug === slug))
+    .map((slug: string) => {
+      const service = allServices.find((s) => s.slug === slug);
+      console.log(`Looking for service with slug "${slug}"`, service ? 'Found' : 'Not found');
+      return service;
+    })
     .filter(Boolean);
+  
+  console.log('Related Services:', relatedServices);
 
   return (
     <main className="min-h-screen text-white relative">
@@ -80,13 +98,48 @@ export default function IndustryClientPage({ params, industry }: { params: any; 
             {relatedServices.map((service: any) => {
               const color = service?.color ? service.color.replace(/^from-/, "") : "blue-500";
               const colorClasses = getColorClasses(color);
+              
+              // Extract the icon component
+              const IconComponent = service.icon;
+              
               return (
                 <Link key={service.slug} href={`/services/${service.slug}`}>
-                  <div className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent hover:${colorClasses.bg} transition cursor-pointer group`}>
-                    <h3 className="font-bold text-lg text-white transition">{service.title}</h3>
-                    {service.headline && (
-                      <p className="mt-2 text-sm text-white/80">{service.headline}</p>
+                  <div className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}>
+                    <div className="flex items-start space-x-4">
+                      {IconComponent && (
+                        <div className={`${colorClasses.text} p-2 rounded-lg ${colorClasses.bg}`}>
+                          <IconComponent className="w-6 h-6" />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <h3 className="font-bold text-lg text-white transition group-hover:text-opacity-90">{service.title}</h3>
+                        {service.headline && (
+                          <p className="mt-2 text-sm text-white/80 group-hover:text-white/90">{service.headline}</p>
+                        )}
+                        {service.overview && (
+                          <p className="mt-3 text-sm text-white/70">{service.overview}</p>
+                        )}
+                      </div>
+                    </div>
+                    {/* Features Preview */}
+                    {service.features && service.features.length > 0 && (
+                      <div className="mt-4 space-y-2">
+                        <div className="flex flex-wrap gap-2">
+                          {service.features.slice(0, 3).map((feature: string, idx: number) => (
+                            <span key={idx} className={`text-xs ${colorClasses.text} ${colorClasses.bg} px-2 py-1 rounded-full`}>
+                              {feature}
+                            </span>
+                          ))}
+                          {service.features.length > 3 && (
+                            <span className="text-xs text-white/60">+{service.features.length - 3} more</span>
+                          )}
+                        </div>
+                      </div>
                     )}
+                    {/* Subtle arrow indicator */}
+                    <div className={`absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity ${colorClasses.text}`}>
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
                   </div>
                 </Link>
               );
