@@ -177,8 +177,9 @@ export async function generateStaticParams() {
   return Object.keys(caseStudyData).map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }) {
-  const study = caseStudyData[params.slug]
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const study = caseStudyData[slug as keyof typeof caseStudyData]
   if (!study) return {}
   return {
     title: `${study.title} | Portfolio | Systems Integration`,
@@ -186,8 +187,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function CaseStudyPage({ params }) {
-  const study = caseStudyData[params.slug]
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const study = caseStudyData[slug]
 
   if (!study) {
     notFound()
@@ -199,34 +201,42 @@ export default function CaseStudyPage({ params }) {
   }))
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen text-white relative">
+      {/* Background image (public/images/services-bg.jpg) */}
+      <div className="fixed inset-0 -z-20">
+        <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
+      </div>
+
+      {/* Dark overlay to improve contrast */}
+      <div className="fixed inset-0 bg-Transparent " />
+
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-background">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Link href="/portfolio" className="text-primary hover:text-primary/80 mb-4 inline-block">
+          <Link href="/portfolio" className="text-white/90 hover:text-white mb-4 inline-block">
             ← Back to Portfolio
           </Link>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">{study.title}</h1>
-          <p className="text-xl text-foreground/70 mb-4">{study.client}</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">{study.title}</h1>
+          <p className="text-xl text-white/90 mb-4">{study.client}</p>
         </div>
       </section>
 
       {/* Overview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-foreground/80 leading-relaxed">{study.overview}</p>
+          <p className="text-lg text-White leading-relaxed">{study.overview}</p>
         </div>
       </section>
 
       {/* Challenge, Solution, Outcomes */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-Transparent">
         <div className="max-w-4xl mx-auto space-y-16">
           {/* Challenge */}
           <div>
             <h2 className="text-3xl font-bold mb-6">The Challenge</h2>
-            <p className="text-foreground/80 leading-relaxed">{study.challenge}</p>
+            <p className="text-White leading-relaxed">{study.challenge}</p>
           </div>
 
           {/* Solution */}
@@ -236,7 +246,7 @@ export default function CaseStudyPage({ params }) {
               {study.solution.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
                   <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span className="text-foreground/80">{item}</span>
+                  <span className="text-White">{item}</span>
                 </li>
               ))}
             </ul>
@@ -249,7 +259,7 @@ export default function CaseStudyPage({ params }) {
               {study.outcomes.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
                   <span className="text-primary font-bold flex-shrink-0">✓</span>
-                  <span className="text-foreground/80">{item}</span>
+                  <span className="text-White">{item}</span>
                 </li>
               ))}
             </ul>
@@ -286,7 +296,7 @@ export default function CaseStudyPage({ params }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((svc) => (
               <Link key={svc.slug} href={`/services/${svc.slug}`}>
-                <div className="p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition cursor-pointer group">
+                <div className="p-6 rounded-lg border border-border bg-Transparent hover:border-primary/50 transition cursor-pointer group">
                   <h3 className="font-bold text-lg group-hover:text-primary transition">{svc.name}</h3>
                 </div>
               </Link>
@@ -296,7 +306,7 @@ export default function CaseStudyPage({ params }) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-Transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Your Next Project?</h2>
           <Link

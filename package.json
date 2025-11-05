@@ -2,12 +2,13 @@
   "name": "systems-integration",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "zip": "powershell -Command \"$date = Get-Date -Format 'yyyy-MM-dd'; $zipName = \\\"my-nextjs-project-$date.zip\\\"; Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch '\\\\node_modules\\\\' -and $_.FullName -notmatch '\\\\.next\\\\' -and $_.FullName -notmatch '\\\\.git\\\\' -and $_.Name -notmatch '\\\\.env' -and $_.Name -notmatch '\\\\.log$' } | Compress-Archive -DestinationPath (Join-Path .. $zipName) -Force\""
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "zip": "powershell -Command \"$date = Get-Date -Format 'yyyy-MM-dd'; $zipName = \\\"my-nextjs-project-$date.zip\\\"; Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch '\\\\node_modules\\\\' -and $_.FullName -notmatch '\\\\.next\\\\' -and $_.FullName -notmatch '\\\\.git\\\\' -and $_.Name -notmatch '\\\\.env' -and $_.Name -notmatch '\\\\.log$' } | Compress-Archive -DestinationPath (Join-Path .. $zipName) -Force\"",
+    "prepare": "husky install"
+  },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.10.0",
@@ -66,11 +67,16 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "commitizen": "^4.3.1",
     "cross-zip": "^4.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",

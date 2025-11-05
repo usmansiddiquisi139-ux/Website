@@ -621,8 +621,9 @@ export async function generateStaticParams() {
   return Object.keys(blogData).map((slug) => ({ slug }))
 }
 
-export function generateMetadata({ params }) {
-  const post = blogData[params.slug]
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = blogData[slug as keyof typeof blogData]
   if (!post) return {}
   return {
     title: `${post.title} | Blog | Systems Integration`,
@@ -630,15 +631,16 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function BlogPostPage({ params }) {
-  const post = blogData[params.slug]
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = blogData[slug as keyof typeof blogData]
 
   if (!post) {
     notFound()
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-Transparent">
       <Header />
 
       {/* Hero */}
@@ -648,7 +650,7 @@ export default function BlogPostPage({ params }) {
             ← Back to Blog
           </Link>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">{post.title}</h1>
-          <div className="flex items-center gap-6 text-foreground/60 text-sm">
+          <div className="flex items-center gap-6 text-White text-sm">
             <span>{post.author}</span>
             <span>
               {new Date(post.publishedDate).toLocaleDateString("en-US", {
@@ -657,7 +659,7 @@ export default function BlogPostPage({ params }) {
                 day: "numeric",
               })}
             </span>
-            <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
+            <span className="text-xs font-semibold text-primary bg-White px-3 py-1 rounded-full">
               {post.category}
             </span>
           </div>
@@ -667,7 +669,7 @@ export default function BlogPostPage({ params }) {
       {/* Content */}
       <article className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto prose prose-invert max-w-none">
-          <div className="text-foreground/80 leading-relaxed whitespace-pre-wrap">{post.content}</div>
+          <div className="text-White leading-relaxed whitespace-pre-wrap">{post.content}</div>
         </div>
       </article>
 

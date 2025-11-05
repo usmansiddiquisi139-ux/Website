@@ -106,8 +106,8 @@ export default function BlogPage() {
         <div className="mt-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <Link href="/services">
-              <div className="p-8 rounded-lg border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/20 transition cursor-pointer group text-center">
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
+              <div className="p-8 rounded-lg border border-orange-500/30 bg-Transparent backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/20 transition cursor-pointer group text-center">
+                <h3 className="text-2xl font-bold mb-2 text-white group-hover:bg-clip-text group-hover:bg-Transparent group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
                   Explore Our Services
                 </h3>
                 <p className="text-white">
