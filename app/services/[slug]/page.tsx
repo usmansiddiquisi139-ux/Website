@@ -2,31 +2,27 @@
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { use, useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services-data";
 import { getTool } from "@/lib/tools-data";
 
 export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   // ✅ Unwrap params Promise (React 19 / Next.js 16)
-  const { slug } = use(params) as { slug: string }
+  const { slug } = use(params) as { slug: string };
 
   const service = services.find((s) => s.slug === slug);
   const [activeTab, setActiveTab] = useState<number>(0);
 
-  if (!service) {
-    notFound();
-  }
+  if (!service) notFound();
 
   const tabs = service.capabilities.map((cap, idx) => ({
     id: `cap-${idx}`,
     label: cap.title,
-    type: "capability" as const,
     data: cap,
   }));
 
+  // 🎨 Color handling
   const getColorClasses = (colorKey: string) => {
     const colorMap: Record<
       string,
@@ -81,38 +77,45 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
   const colorClasses = getColorClasses(service.color.replace(/^from-/, ""));
 
   return (
-    <main
-      className="min-h-screen bg-background bg-cover bg-center text-white"
-      style={{ backgroundImage: "url(/images/services-bg.jpg)" }} // ✅ Local background
-    >
-  <div className="backdrop-blur-sm bg-transparent/70 text-white">
+    <main className="min-h-screen bg-center text-white">
+      <div className="backdrop-Transparent text-white">
         <Header />
 
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-start gap-6 mb-8">
+        {/* 🔹 HERO SECTION — Centered inline icon + title with accent color */}
+        <section className="relative pt-40 pb-8 px-8 sm:px-16 lg:px-10 bg-transparent">
+          <div className="max-w-7xl mx-auto flex flex-col gap-8">
+
+            {/* ✅ Centered Inline Icon + Title */}
+            <div className="w-full flex justify-left items-left gap-4 text-center">
               {service.icon && (
-                <service.icon className={`w-12 h-12 text-white flex-shrink-0`} />
+                <service.icon
+                  className={`w-14 h-14 ${colorClasses.text} drop-shadow-lg`}
+                />
               )}
-              <div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
-                  {service.title}
-                </h1>
-                <p className="text-xl text-white">
-                  {service.description || service.headline}
+              <h1
+                className={`text-3xl md:text-5xl font-bold leading-tight`}
+              >
+                {service.title}
+              </h1>
+            </div>
+
+            {/* 🔸 Full-width Highlight Box (Description) */}
+            <div className="relative bg-gradient-to-r from-[#ff4500]/10 to-transparent border-l-4 border-[#ff4500] p-8 rounded-lg backdrop-blur-sm w-full">
+              <div className="max-w-7xl mx-auto">
+                <p className="text-lg text-gray-100 leading-relaxed">
+                  {(service.description && service.overview)
+                    ? `${service.description} ${service.overview}`
+                    : service.description || service.overview}
                 </p>
               </div>
             </div>
-            <p className="text-lg text-white leading-relaxed max-w-3xl mx-auto">
-              {service.overview}
-            </p>
           </div>
         </section>
 
+        {/* 🔹 CAPABILITIES SECTION */}
         <section className="py-4 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {/* Top-Level Tabs Navigation */}
+            {/* Tabs */}
             <div
               className={`flex flex-wrap gap-2 pb-6 border-b ${colorClasses.border} overflow-x-auto`}
             >
@@ -136,68 +139,58 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               <div
                 className={`${colorClasses.bg} border ${colorClasses.border} p-8 rounded-lg space-y-8`}
               >
-                <div>
-                  <h3 className="text-2xl font-bold mb-6 text-white">
-                    {tabs[activeTab].label}
-                  </h3>
+                {/* ✅ Bullets Section — Responsive 2-column */}
+                {tabs[activeTab].data.bullets?.length > 0 && (
+                  <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
+                    {tabs[activeTab].data.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className={`${colorClasses.text} mt-1 text-lg font-bold`}>
+                          ✓
+                        </span>
+                        <span className="text-white">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
-                  {/* Capabilities */}
-                  <div className="space-y-4 mb-8">
-                    <h4 className="font-semibold text-lg text-white">
-                      Key Points
-                    </h4>
-                    <ul className="space-y-3">
-                      {tabs[activeTab].data.bullets.map((bullet, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <span className={`text-white flex-shrink-0 mt-1`}>✓</span>
-                          <span className="text-white">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Tools */}
-                  {tabs[activeTab].data.tools &&
-                    tabs[activeTab].data.tools.length > 0 && (
-                      <div className="space-y-4">
-                        <h4 className="font-semibold text-lg text-foreground">
-                          Tools & Technologies
-                        </h4>
-                        <div className="flex flex-wrap gap-3">
-                          {tabs[activeTab].data.tools.map((toolName, idx) => {
-                            const tool = getTool(toolName);
-                            return (
-                              <div
-                                key={idx}
-                                className={`flex items-center gap-2 ${colorClasses.bg} text-white ${colorClasses.border} border px-3 py-2 rounded-lg hover:shadow-lg transition`}
-                                title={tool.name}
-                              >
-                                <img
-                                      src={(tool as any).logo || "/placeholder.svg"}
-                                      alt={tool.name}
-                                      className="w-5 h-5 object-contain"
-                                      onError={(e) => {
-                                        e.currentTarget.src =
-                                          "/placeholder.svg?height=20&width=20";
-                                      }}
-                                    />
-                                <span className="text-xs whitespace-nowrap text-white">
-                                  {tool.name}
-                                </span>
-                              </div>
-                            );
-                          })}
-                        </div>
+                {/* Tools */}
+                {tabs[activeTab].data.tools &&
+                  tabs[activeTab].data.tools.length > 0 && (
+                    <div className="space-y-4">
+                      <h4 className="font-semibold text-lg text-white">
+                        Tools & Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {tabs[activeTab].data.tools.map((toolName, idx) => {
+                          const tool = getTool(toolName);
+                          return (
+                            <div
+                              key={idx}
+                              className={`flex items-center gap-2 ${colorClasses.bg} text-white ${colorClasses.border} border px-3 py-2 rounded-lg hover:shadow-lg transition`}
+                              title={tool.name}
+                            >
+                              <img
+                                src={(tool as any).logo || "/placeholder.svg"}
+                                alt={tool.name}
+                                className="w-5 h-5 object-contain"
+                                onError={(e) => {
+                                  e.currentTarget.src =
+                                    "/placeholder.svg?height=20&width=20";
+                                }}
+                              />
+                              <span className="text-xs whitespace-nowrap text-white">
+                                {tool.name}
+                              </span>
+                            </div>
+                          );
+                        })}
                       </div>
-                    )}
-                </div>
+                    </div>
+                  )}
               </div>
             </div>
           </div>
         </section>
-
-        {/* Keep all remaining sections as-is */}
-        {/* (Benefits, Why Choose Us, Use Cases, Outcomes, Related Services, Explore More, Footer) */}
 
         <Footer />
       </div>

@@ -63,23 +63,23 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       </div>
 
   {/* Dark overlay (non-blocking) */}
-  <div className="fixed inset-0 -z-10 bg-black/50 pointer-events-none" />
+  <div className="fixed inset-0 -z-10 bg-Transparent pointer-events-none" />
 
       <Header />
 
       {/* Hero */}
-  <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+  <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-transparent">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">{industry.name}</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-2 text-white">{industry.name}</h1>
           <p className="text-xl text-white/90">{industry.description}</p>
         </div>
       </section>
 
       {/* Challenges */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-0 sm:px-3 lg:px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-white">Industry Challenges</h2>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {industry.challenges.map((challenge: string, idx: number) => (
               <li key={idx} className="flex gap-4">
                 <span className="text-white font-bold flex-shrink-0">•</span>
@@ -91,7 +91,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       </section>
 
       {/* Solutions */}
-  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+  <section className="py-0 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-white">Our Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

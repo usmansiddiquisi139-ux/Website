@@ -71,27 +71,29 @@ export default function GlossaryPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-transparent text-white">
       <Header />
 
       {/* Hero */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Technical Glossary</h1>
-          <p className="text-xl text-foreground/70">
+        <div className="max-w-4xl mx-auto text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Technical Glossary
+          </h1>
+          <p className="text-xl text-white">
             Definitions of key technical terms used in modern enterprise technology.
           </p>
         </div>
       </section>
 
       {/* Terms */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
             {terms.map((item, idx) => (
-              <div key={idx} className="border-b border-border pb-8 last:border-0">
-                <h3 className="text-2xl font-bold text-primary mb-3">{item.term}</h3>
-                <p className="text-foreground/80 leading-relaxed">{item.definition}</p>
+              <div key={idx} className="border-b border-white/20 pb-8 last:border-0">
+                <h3 className="text-2xl font-bold text-orange-500 mb-3">{item.term}</h3>
+                <p className="text-white leading-relaxed">{item.definition}</p>
               </div>
             ))}
           </div>

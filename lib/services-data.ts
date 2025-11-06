@@ -36,7 +36,7 @@ export const services: Service[] = [
   {
     slug: "integration-migration-services",
     icon: Link2,
-    title: "Integration & Migration Services",
+    title: "Integration & Migration",
     headline: "Seamlessly Connect. Effortlessly Upgrade. Future-Proof Your Business.",
     overview:
       "In today's fast-moving digital world, disconnected systems are costly. We eliminate manual workflows, unify scattered data, and modernize tech stacks with end-to-end Integration & Migration solutions.",

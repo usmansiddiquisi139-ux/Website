@@ -1,11 +1,17 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata = {
   title: "FAQ | Systems Integration",
-  description: "Frequently asked questions about our services, process, and technology expertise.",
-}
+  description:
+    "Frequently asked questions about our services, process, and technology expertise.",
+};
 
 export default function FAQPage() {
   const faqs = [
@@ -69,18 +75,21 @@ export default function FAQPage() {
       answer:
         "Success metrics depend on the project: cost savings, uptime improvements, revenue increases, faster time-to-market, compliance achievements, or security risk reduction. We establish KPIs upfront and track them rigorously throughout engagement.",
     },
-  ]
+  ];
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-transparent text-white">
       <Header />
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-foreground/70">
-            Find answers to common questions about our services, process, and expertise.
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-xl text-white">
+            Find answers to common questions about our services, process, and
+            expertise.
           </p>
         </div>
       </section>
@@ -91,8 +100,10 @@ export default function FAQPage() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`}>
-                <AccordionTrigger className="text-lg font-semibold">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-foreground/80 text-base leading-relaxed">
+                <AccordionTrigger className="text-lg font-semibold text-white">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-white leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -101,16 +112,18 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/50">
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Didn't find your answer?</h2>
-          <p className="text-foreground/70 mb-8">
+          <h2 className="text-3xl font-bold mb-4 text-white">
+            Didn't find your answer?
+          </h2>
+          <p className="text-white mb-6">
             Reach out directly to discuss your specific questions and challenges.
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition"
           >
             Contact Us
           </a>
@@ -119,5 +132,5 @@ export default function FAQPage() {
 
       <Footer />
     </main>
-  )
+  );
 }
