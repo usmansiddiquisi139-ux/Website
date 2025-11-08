@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { services, type Service } from "@/lib/services-data"
 import { ServicePanelTabbed } from "./service-panel-tabbed"
 import { ToolsSlider } from "./tools-slider"
+import { getLucideIcon } from "@/lib/get-lucide-icon"
 
 const colorClassMap: Record<string, any> = {
   "red-500": {
@@ -46,7 +47,7 @@ const colorClassMap: Record<string, any> = {
 }
 
 const ServiceCard: React.FC<{ service: Service; onOpen: () => void }> = ({ service, onOpen }) => {
-  const Icon = service.icon
+  const Icon = getLucideIcon(service.icon)
   const colorKey = service.color?.replace(/^from-/, "") || "orange-500"
   const classes = colorClassMap[colorKey] || colorClassMap["orange-500"]
 
@@ -58,7 +59,7 @@ const ServiceCard: React.FC<{ service: Service; onOpen: () => void }> = ({ servi
       className="group relative cursor-pointer flex flex-col items-center justify-center gap-3 rounded-2xl bg-white/10 backdrop-blur-md p-6 transition-all hover:border-orange-500/40 hover:shadow-lg border border-white/20"
     >
       <div className={`rounded-lg p-3 ${classes.glow}`}>
-        <Icon className={`${classes.text} w-8 h-8`} />
+        {Icon && <Icon className={`${classes.text} w-8 h-8`} />}
       </div>
       <h3 className="text-center text-base font-semibold text-white group-hover:text-orange-400 transition-colors">
         {service.title}
@@ -66,6 +67,7 @@ const ServiceCard: React.FC<{ service: Service; onOpen: () => void }> = ({ servi
     </motion.div>
   )
 }
+
 
 export function ServicesGridEnhanced() {
   const [selectedService, setSelectedService] = useState<Service | null>(null)

@@ -85,13 +85,21 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseStudies.map((study) => (
               <Link key={study.slug} href={`/portfolio/${study.slug}`}>
-                <div className="h-full p-8 rounded-lg border border-orange-500/30 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:bg-transparent transition cursor-pointer group">
-                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:bg-clip-text group-hover:bg-transparent group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
+                <div className="h-full p-8 rounded-lg border border-orange-500/30 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/5 transition cursor-pointer group">
+                  
+                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-orange-400 transition-all duration-300">
                     {study.title}
                   </h3>
-                  <p className="text-white text-sm mb-4">{study.client}</p>
-                  <p className="text-white mb-6">{study.description}</p>
-                  <p className="text-orange-400 font-semibold group-hover:bg-clip-text group-hover:bg-transparent group-hover:from-orange-500 group-hover:to-red-500 group-hover:text-transparent transition-all duration-300">
+
+                  <p className="text-white text-sm mb-4 group-hover:text-white/90 transition-colors duration-300">
+                    {study.client}
+                  </p>
+
+                  <p className="text-white mb-6 group-hover:text-white transition-colors duration-300">
+                    {study.description}
+                  </p>
+
+                  <p className="text-orange-400 font-semibold group-hover:text-orange-300 transition-colors duration-300">
                     {study.outcome}
                   </p>
                 </div>

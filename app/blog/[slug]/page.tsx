@@ -6,6 +6,9 @@ import Link from "next/link";
 import { services } from "@/lib/services-data";
 import { getAllPosts, getPost } from "@/lib/blog-data";
 
+// 🧠 Import SEO helper
+import { buildMetadata } from "@/lib/seo";
+
 // 🧩 Find service slug automatically based on category
 const findServiceSlug = (category: string) => {
   const match = services.find((s) =>
@@ -20,7 +23,7 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-// 🧠 SEO Metadata
+// 🧠 SEO Metadata (with structured data and OG/Twitter)
 export async function generateMetadata({
   params,
 }: {
@@ -28,12 +31,51 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  if (!post) return { title: "Blog Not Found | Systems Integration" };
+  if (!post)
+    return { title: "Blog Not Found | Systems Integration", description: "The requested blog post could not be found." };
 
-  return {
+  return buildMetadata({
     title: `${post.title} | Systems Integration`,
     description: post.excerpt,
-  };
+    url: `https://www.systemsintegration.co/blog/${slug}`,
+    image: post.image || "/images/og-default.jpg",
+    type: "article",
+    keywords: [
+      post.category,
+      "AI Consultancy",
+      "Digital Transformation",
+      "Enterprise Integration",
+      "Systems Integration",
+      "AI Solutions",
+      "Technology Consultancy",
+    ],
+    // 🧩 Structured Data for BlogPost
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      image: post.image || "https://www.systemsintegration.co/images/og-default.jpg",
+      author: {
+        "@type": "Person",
+        name: post.author || "Systems Integration Team",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Systems Integration",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.systemsintegration.co/images/logo.png",
+        },
+      },
+      datePublished: post.publishedDate,
+      dateModified: post.updatedDate || post.publishedDate,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.systemsintegration.co/blog/${slug}`,
+      },
+    },
+  });
 }
 
 // 🧰 Markdown Formatting — includes ##, ###, and bullet styling
@@ -56,7 +98,7 @@ function renderFormattedContent(raw: string) {
     // 🟣 Paragraphs
     .replace(/\n{2,}/gim, "</p><p>")
     .replace(/^<p><\/p>/, "")
-    // 🟢 Proper list wrapping — improved bullet alignment (pl-14)
+    // 🟢 Proper list wrapping
     .replace(
       /(<li>.*?<\/li>)/gims,
       "<ul class='list-disc list-outside pl-14 space-y-2 mb-6 marker:text-orange-400'>$1</ul>"
@@ -117,6 +159,7 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: `<p>${formattedHTML}</p>` }}
         ></section>
       </article>
+
       <Footer />
     </main>
   );

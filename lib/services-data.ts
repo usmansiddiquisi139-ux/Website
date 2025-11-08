@@ -8,10 +8,10 @@ export interface ServiceCapability {
 
 export interface Service {
   slug: string
-  icon: any
+  icon?: any
   title: string
   headline?: string
-  overview: string
+  overview?: string
   description?: string
   features?: string[]
   capabilities: ServiceCapability[]
@@ -25,7 +25,8 @@ export interface Service {
   outcomes?: string[]
   tagline?: string
   color: string
-  glow: string
+  glow?: string
+  hideCTA?: boolean
 }
 
 export const getFeatures = (capabilities: ServiceCapability[]): string[] => {
@@ -35,7 +36,7 @@ export const getFeatures = (capabilities: ServiceCapability[]): string[] => {
 export const services: Service[] = [
   {
     slug: "integration-migration-services",
-    icon: Link2,
+    icon: "Link2",
     title: "Integration & Migration",
     headline: "Seamlessly Connect. Effortlessly Upgrade. Future-Proof Your Business.",
     overview:
@@ -130,7 +131,7 @@ export const services: Service[] = [
   },
   {
     slug: "langchain-ai-seo-automation",
-    icon: Search,
+    icon: "Search",
     title: "LangChain-Powered AI-SEO Automation",
     headline: "AI-first SEO for search engines and LLM ecosystems",
     overview:
@@ -188,7 +189,7 @@ export const services: Service[] = [
   },
   {
     slug: "ai-ml-learning-automation",
-    icon: Brain,
+    icon: "Brain",
     title: "AI/ML Learning & Automation",
     headline: "Embed intelligence into your operations",
     overview:
@@ -250,7 +251,7 @@ export const services: Service[] = [
   },
   {
     slug: "data-solutions-governance",
-    icon: Database,
+    icon: "Database",
     title: "Data Solutions & Governance",
     headline: "Turning raw data into trusted intelligence",
     overview:
@@ -317,7 +318,7 @@ export const services: Service[] = [
   },
   {
     slug: "web-mobile-app-development",
-    icon: Smartphone,
+    icon: "Smartphone",
     title: "Web & Mobile App Development",
     headline: "Building fast, intelligent, and impactful digital products.",
     overview:
@@ -374,7 +375,7 @@ export const services: Service[] = [
   },
   {
     slug: "devops-cloud",
-    icon: Cloud,
+    icon: "Cloud",
     title: "DevOps & Cloud",
     headline: "Deploy faster. Scale smarter. Operate securely.",
     overview:
@@ -432,7 +433,7 @@ export const services: Service[] = [
   // 🛡️ New Cybersecurity Service
   {
     slug: "ethical-hacking-as-a-service",
-    icon: Shield,
+    icon: "Shield",
     title: "Cybersecurity & Ethical Hacking",
     headline: "Adaptive Security Testing for an Evolving Threat Landscape",
     overview:

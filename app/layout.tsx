@@ -1,12 +1,14 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
-import { ScrollToTop } from "@/components/scroll-to-top"
-import { Header } from "@/components/header"
+import type React from "react";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { Header } from "@/components/header";
+import StructuredData from "@/app/components/structured-data";
+import { jsonLdOrganization } from "@/lib/seo"; // ✅ import global schema
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Systems Integration | Strategy-Led Technology Consulting",
@@ -24,7 +26,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Systems Integration | Strategy-Led Technology Consulting",
-    description: "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
+    description:
+      "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
     url: "https://systemsintegration.co",
     type: "website",
     siteName: "Systems Integration",
@@ -32,47 +35,31 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Systems Integration",
-    description: "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
+    description:
+      "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Systems Integration",
-              url: "https://systemsintegration.co",
-              logo: "/images/design-mode/logo-removebg-preview.png",
-              description:
-                "Enterprise-grade AI, cloud migration, and cybersecurity consulting for strategy-driven organizations.",
-              sameAs: ["https://linkedin.com/company/systemsintegration", "https://twitter.com/systemsintegration"],
-              contact: {
-                "@type": "ContactPoint",
-                contactType: "Sales",
-                email: "Contact@systemsintegration.co",
-              },
-            }),
-          }}
-        />
+        {/* ✅ Global JSON-LD for SEO — auto-injected on all pages */}
+        <StructuredData data={jsonLdOrganization} />
       </head>
+
       <body
-        className={`font-sans antialiased min-h-screen`}
+        className="font-sans antialiased min-h-screen"
         style={{
           backgroundImage: 'url("/images/services-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="min-h-screen bg-black/50">
@@ -82,5 +69,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  )
+  );
 }

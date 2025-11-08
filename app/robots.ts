@@ -1,4 +1,5 @@
-import type { MetadataRoute } from "next"
+// app/robots.ts
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/"],
       disallow: ["/admin", "/private"],
     },
-    sitemap: "https://systems-integration.com/sitemap.xml",
-  }
+    sitemap: "https://www.systemsintegration.co/sitemap.xml",
+    host: "https://www.systemsintegration.co",
+  };
 }

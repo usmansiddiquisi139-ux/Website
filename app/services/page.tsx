@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { services } from "@/lib/services-data";
+import { getLucideIcon } from "@/lib/get-lucide-icon"; // ✅ Import your helper
 
 export default function ServicesPage() {
   const getColorClasses = (colorKey: string) => {
@@ -59,10 +60,8 @@ export default function ServicesPage() {
   };
 
   return (
-    <main
-      className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
-    >
-  <div className="bg-transparent min-h-screen text-white">
+    <main className="min-h-screen bg-cover bg-center bg-no-repeat text-white">
+      <div className="bg-transparent min-h-screen text-white">
         <Header />
 
         {/* Hero Section */}
@@ -79,24 +78,28 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <section className="pb-24 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => {
               const colorClasses = getColorClasses(
                 service.color.replace(/^from-/, "")
               );
 
+              // ✅ Dynamically load the Lucide icon
+              const IconComponent = getLucideIcon(service.icon);
+
               return (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-transparent backdrop-Transparent`} 
+                  prefetch={false}
+                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-transparent backdrop-Transparent`}
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      {service.icon && (
-                        <service.icon className={`w-8 h-8 ${colorClasses.text}`} />
+                      {IconComponent && (
+                        <IconComponent className={`w-8 h-8 ${colorClasses.text}`} />
                       )}
-                      <h3 className={`text-2xl font-bold text-white transition-all duration-300`}>
+                      <h3 className="text-2xl font-bold text-white transition-all duration-300">
                         {service.title}
                       </h3>
                     </div>
@@ -104,7 +107,9 @@ export default function ServicesPage() {
                       {service.headline || service.description}
                     </p>
                   </div>
-                  <ChevronRight className={`w-6 h-6 ${colorClasses.text} group-hover:translate-x-1 transition-transform duration-300`} />
+                  <ChevronRight
+                    className={`w-6 h-6 ${colorClasses.text} group-hover:translate-x-1 transition-transform duration-300`}
+                  />
                 </Link>
               );
             })}
