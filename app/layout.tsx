@@ -6,6 +6,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { Header } from "@/components/header";
 import StructuredData from "@/app/components/structured-data";
 import { jsonLdOrganization } from "@/lib/seo"; // ✅ import global schema
+import CookieConsent from "@/app/components/CookieConsent"; // ✅ Cookie banner
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -66,6 +67,9 @@ export default function RootLayout({
           <Header />
           <ScrollToTop />
           {children}
+
+          {/* ✅ Add Cookie Consent Banner here */}
+          <CookieConsent />
         </div>
       </body>
     </html>
