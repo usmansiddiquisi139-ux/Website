@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+
 // 🌐 Base site constants
 const baseUrl = "https://www.systemsintegration.co";
 

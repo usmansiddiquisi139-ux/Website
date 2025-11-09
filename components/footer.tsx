@@ -1,95 +1,166 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Linkedin, Twitter } from "lucide-react";
+import { services } from "@/lib/services-data";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
 
   return (
-    <footer className="border-t border-orange-500/20 bg-transparent">
-      <div className="section-container py-6 md:py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10 mb-8">
-          {/* 🏢 Company Info - Now Wider */}
-          <div className="lg:col-span-2 pr-6">
-            <div className="flex items-center gap-2 mb-4">
-              <img
+    <footer className="border-t border-orange-500/20 bg-transparent text-white">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+        {/* --- Top Section: Custom Grid Layout --- */}
+        <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-5 items-start">
+          {/* 1️⃣ Logo + Subtitle */}
+          <div className="space-y-4">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
                 src="/images/design-mode/logo-removebg-preview.png"
-                alt="Systems Integration"
-                className="h-8 w-8"
+                alt="Systems Integration Logo"
+                width={48}
+                height={48}
+                className="object-contain"
               />
-              <h3 className="font-bold text-lg text-white">
+              <span className="font-semibold text-lg text-white leading-tight">
                 Systems Integration
-              </h3>
-            </div>
-            <p className="text-white/80 text-sm leading-relaxed max-w-md">
-              Strategy-led technology consultancy commanding algorithms, not
+              </span>
+            </Link>
+            <p className="text-base text-white/80 leading-snug max-w-md">
+              Strategy-led technology consultancy commanding algorithms not
               worshipping them.
             </p>
           </div>
 
-          {/* ⚙️ Services */}
-          <div className="pl-4">
-            <h4 className="font-semibold mb-4 text-white">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/services/ai-ml"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  AI & ML
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/data"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Data Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/integration"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Integration & Migration
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/devops"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  DevOps & Cloud
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/security"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Cybersecurity
-                </Link>
-              </li>
-            </ul>
+          {/* 2️⃣ About Us + Contact */}
+          <div className="flex flex-col justify-center space-y-5">
+            <div>
+              <h4 className="font-semibold mb-2 text-white">About Us</h4>
+              <p className="text-sm text-white/80 mb-3">
+                Learn more about our team, mission, and expertise in shaping the
+                future of enterprise technology.
+              </p>
+              <Link
+                href="/about"
+                className="text-orange-400 hover:underline text-sm font-medium"
+              >
+                About Systems Integration →
+              </Link>
+            </div>
+
+            {/* Contact Below About Us */}
+            <div className="mt-4">
+              <Link
+                href="/contact"
+                className="inline-block bg-orange-500 text-white font-semibold px-6 py-2 rounded-md text-sm hover:bg-orange-700 transition-colors shadow-md"
+              >
+                VIP Access Only !
+              </Link>
+            </div>
           </div>
 
-          {/* 📘 Resources */}
-          <div className="px-2">
-            <h4 className="font-semibold mb-4 text-white">Resources</h4>
+          {/* 3️⃣ Legal + Connect With Us */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold mb-3 text-white">Legal</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="text-white/80 hover:text-orange-400 transition"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-and-conditions"
+                    className="text-white/80 hover:text-orange-400 transition"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Connect With Us */}
+            <div>
+              <h4 className="font-semibold mb-3 text-white">Connect With Us</h4>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert(`Thank you for connecting with us: ${email}`);
+                  setEmail("");
+                }}
+                className="flex space-x-2 mb-4"
+              >
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 rounded-md px-3 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+                <button
+                  type="submit"
+                  className="rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 transition"
+                >
+                  Send
+                </button>
+              </form>
+
+              {/* Social Icons */}
+              <div className="flex items-center space-x-4">
+                <Link
+                  href="https://www.linkedin.com/company/systems-integration"
+                  target="_blank"
+                  className="text-white/70 hover:text-orange-400 transition"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </Link>
+                <Link
+                  href="https://x.com/systems_integration"
+                  target="_blank"
+                  className="text-white/70 hover:text-orange-400 transition"
+                  aria-label="X (Twitter)"
+                >
+                  <Twitter size={20} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* 4️⃣ Discover */}
+          <div className="pl-6">
+            <h4 className="font-semibold mb-3 text-white">Discover</h4>
             <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/services"
+                  className="text-white/80 hover:text-orange-400 transition"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/industries"
+                  className="text-white/80 hover:text-orange-400 transition"
+                >
+                  Industries
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/blog"
                   className="text-white/80 hover:text-orange-400 transition"
                 >
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/glossary"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Glossary
                 </Link>
               </li>
               <li>
@@ -108,74 +179,20 @@ export function Footer() {
                   Case Studies
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* ⚖️ Legal */}
-          <div className="px-1">
-            <h4 className="font-semibold mb-4 text-white">Legal</h4>
-            <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/glossary"
                   className="text-white/80 hover:text-orange-400 transition"
                 >
-                  Privacy
+                  Glossary
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Terms
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* 🌐 Social */}
-          <div className="pl-2">
-            <h4 className="font-semibold mb-4 text-white">Social</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/80 hover:text-orange-400 transition"
-                >
-                  GitHub
-                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-orange-500/20 pt-4 text-center">
+       {/* --- Copyright --- */}
+        <div className="border-t border-orange-500/20 mt-2 pt-8 text-center">
           <p className="text-white/70 text-sm">
             © {currentYear} Systems Integration. All rights reserved.
           </p>
@@ -184,3 +201,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;
