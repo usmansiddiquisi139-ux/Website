@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+
 import Link from "next/link";
 import { services } from "@/lib/services-data";
 import { getAllPosts, getPost } from "@/lib/blog-data";
@@ -160,7 +160,7 @@ export default async function BlogPostPage({
         ></section>
       </article>
 
-      <Footer />
+
     </main>
   );
 }

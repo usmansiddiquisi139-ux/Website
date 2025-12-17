@@ -1,5 +1,5 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 
 export const metadata = {
   title: "Glossary | Systems Integration",
@@ -100,7 +100,7 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   )
 }

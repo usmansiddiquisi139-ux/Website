@@ -1,0 +1,9 @@
+# AI Crawler Access File for Systems Integration
+User-Agent: *
+Allow: /
+
+Sitemap: https://systemsintegration.co/sitemap.xml
+LLM-Sitemap: https://systemsintegration.co/ai-sitemap.json
+
+# Rate limits to protect server
+Crawl-Delay: 1

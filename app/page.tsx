@@ -1,4 +1,4 @@
-import { Footer } from "@/components/footer"
+
 import { HeroSlider } from "@/components/hero-slider"
 import { ServicesGridEnhanced } from "@/components/services-grid-enhanced"
 import Link from "next/link"
@@ -197,7 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

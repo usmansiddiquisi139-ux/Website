@@ -1,7 +1,7 @@
 "use client"
 
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { useEffect } from "react"
@@ -185,7 +185,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
         </div>
       </section>
 
-      <Footer />
+
     </main>
   )
 }

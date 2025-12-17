@@ -3,10 +3,12 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import { Breadcrumbs } from "../../components/Breadcrumbs"
 import { Service } from "@/lib/services-data"
 import { getLucideIcon } from "@/lib/get-lucide-icon"
+
+
 
 export default function ServiceContent({ service }: { service: Service }) {
   const [activeCapIndex, setActiveCapIndex] = useState(0)
@@ -119,11 +121,10 @@ export default function ServiceContent({ service }: { service: Service }) {
               <button
                 key={index}
                 onClick={() => setActiveCapIndex(index)}
-                className={`px-4 py-4 rounded-xl text-sm font-medium transition-all border ${colorClasses.border} ${
-                  activeCapIndex === index
+                className={`px-4 py-4 rounded-xl text-sm font-medium transition-all border ${colorClasses.border} ${activeCapIndex === index
                     ? `${colorClasses.bg} ${colorClasses.text} shadow-md`
                     : `text-white/70 ${colorClasses.hover}`
-                }`}
+                  }`}
               >
                 {cap.title}
               </button>
@@ -192,29 +193,29 @@ export default function ServiceContent({ service }: { service: Service }) {
       )}
 
       {/* 💡 Use Cases (aliased from typicalUseCases) */}
-{Array.isArray(service.typicalUseCases) && service.typicalUseCases.length > 0 && (
-  <section className="py-8 px-4">
-    <h2 className="text-5xl font-semibold text-center text-white mb-12">
-      Use Cases
-    </h2>
+      {Array.isArray(service.typicalUseCases) && service.typicalUseCases.length > 0 && (
+        <section className="py-8 px-4">
+          <h2 className="text-5xl font-semibold text-center text-white mb-12">
+            Use Cases
+          </h2>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      {service.typicalUseCases.map((useCase: string, index: number) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-          className="rounded-4xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-white/10 transition-all p-6 min-h-[60px] flex items-center justify-Left text-left"
-        >
-          <p className="text-white text-base sm:text-l  leading-relaxed ">
-            {useCase}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </section>
-)}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {service.typicalUseCases.map((useCase: string, index: number) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="rounded-4xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-white/10 transition-all p-6 min-h-[60px] flex items-center justify-Left text-left"
+              >
+                <p className="text-white text-base sm:text-l  leading-relaxed ">
+                  {useCase}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
 
 
       {/* 🎯 Outcomes (hybrid) */}

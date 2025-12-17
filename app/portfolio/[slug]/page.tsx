@@ -1,5 +1,5 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import caseStudyData from "@/lib/case-studies"
@@ -202,7 +202,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      <Footer />
+
     </main>
   )
 }

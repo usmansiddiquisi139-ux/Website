@@ -4,7 +4,7 @@ import { getTool } from "@/lib/tools-data";
 import { buildMetadata } from "@/lib/seo";
 import ServiceContent from "./service-content";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+
 import Link from "next/link";
 
 // ✅ Generate static paths
@@ -111,11 +111,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <Link
                     key={index}
                     href={cta.href || "/contact"}
-                    className={`inline-block px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 ${
-                      index === 0
+                    className={`inline-block px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 ${index === 0
                         ? `text-white bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]`
                         : `text-white border ${borderColor} border-2 hover:bg-gradient-to-r ${gradientClass} hover:text-white hover:scale-105`
-                    }`}
+                      }`}
                   >
                     {cta.label}
                   </Link>
@@ -134,7 +133,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </div>
 
       <div className="relative z-10">
-        <Footer />
+
       </div>
     </main>
   );

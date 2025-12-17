@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/lib/blog-data";
 import Link from "next/link";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -38,7 +38,7 @@ export default function BlogPage() {
         </div>
       </div>
 
-      <Footer />
+
     </main>
   );
 }

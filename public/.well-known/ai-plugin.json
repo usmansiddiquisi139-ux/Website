@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Systems Integration Website Data API",
+  "name_for_model": "systems_integration_api",
+  "description_for_human": "Provides structured access to pages, blog posts, services, case studies, and glossary.",
+  "description_for_model": "You can use this API to fetch structured JSON data for any Systems Integration content including pages, blog posts, services, case studies, and glossary terms.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "openapi",
+    "url": "https://systemsintegration.co/openapi.yaml"
+  },
+  "logo_url": "https://systemsintegration.co/logo.png",
+  "contact_email": "support@systemsintegration.co",
+  "legal_info_url": "https://systemsintegration.co/privacy-policy"
+}

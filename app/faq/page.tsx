@@ -1,5 +1,5 @@
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+
 import {
   Accordion,
   AccordionContent,
@@ -130,7 +130,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

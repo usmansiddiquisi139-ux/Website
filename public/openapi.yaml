@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Systems Integration Content API
+  version: "1.0.0"
+paths:
+  /api/content:
+    get:
+      summary: List all content (blogs, services, case studies, glossary)
+      responses:
+        "200":
+          description: OK
+  /api/content/{slug}:
+    get:
+      summary: Get content details by slug
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK

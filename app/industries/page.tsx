@@ -1,5 +1,5 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 
 export const metadata = {
@@ -58,7 +58,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   )
 }

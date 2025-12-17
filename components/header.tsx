@@ -79,7 +79,7 @@ export function Header() {
             Portfolio
           </Link>
           <Link href="/blog" className="transition text-white/80 hover:text-white">
-            Insights
+            Case Studies
           </Link>
         </nav>
 
@@ -126,7 +126,7 @@ export function Header() {
                 Portfolio
               </Link>
               <Link href="/blog" className="block text-foreground/80 hover:text-primary">
-                Insights
+                Case Studies
               </Link>
               <Button
                 onClick={handleLetsTalk}

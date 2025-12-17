@@ -1,3 +1,4 @@
+// app/components/footer.tsx
 "use client";
 
 import Link from "next/link";
@@ -11,7 +12,6 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [showBanner, setShowBanner] = useState(false);
 
-  // ✅ Show cookie banner only if not previously accepted
   useEffect(() => {
     const consent = localStorage.getItem("cookieConsent");
     if (!consent) setShowBanner(true);
@@ -24,7 +24,7 @@ export function Footer() {
 
   return (
     <>
-      {/* ✅ Cookie Consent Banner */}
+      {/* Cookie Banner */}
       {showBanner && (
         <div className="fixed bottom-0 left-0 right-0 bg-black/90 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between gap-3 z-50 border-t border-orange-400/30">
           <p className="text-center md:text-left max-w-3xl">
@@ -48,12 +48,12 @@ export function Footer() {
         </div>
       )}
 
-      {/* ✅ Main Footer */}
+      {/* Main Footer */}
       <footer className="border-t border-orange-500/20 bg-transparent text-white relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-6 md:py-12">
-          {/* --- Top Section --- */}
           <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-8 items-start">
-            {/* 1️⃣ Logo + Subtitle */}
+
+            {/* Logo + Subtitle */}
             <div className="space-y-4">
               <Link href="/" className="flex items-center gap-2">
                 <Image
@@ -73,7 +73,7 @@ export function Footer() {
               </p>
             </div>
 
-            {/* 2️⃣ About + Contact */}
+            {/* About + Contact */}
             <div className="flex flex-col justify-center space-y-5">
               <div>
                 <h4 className="font-semibold mb-2 text-white">About Us</h4>
@@ -85,7 +85,7 @@ export function Footer() {
                   href="/about"
                   className="text-orange-400 hover:underline text-sm font-medium"
                 >
-                  About Systems Integration 
+                  About Systems Integration
                 </Link>
               </div>
 
@@ -99,7 +99,7 @@ export function Footer() {
               </div>
             </div>
 
-            {/* 3️⃣ Legal + Connect */}
+            {/* Legal + Connect */}
             <div className="space-y-6">
               <div>
                 <h4 className="font-semibold mb-3 text-white">Legal</h4>
@@ -128,13 +128,21 @@ export function Footer() {
                       Terms & Conditions
                     </Link>
                   </li>
+
+                  {/* ✅ Added Sitemap Link */}
+                  <li>
+                    <Link
+                      href="/site-map"
+                      className="text-white/80 hover:text-orange-400 transition"
+                    >
+                      Sitemap
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3 text-white">
-                  Connect With Us
-                </h4>
+                <h4 className="font-semibold mb-3 text-white">Connect With Us</h4>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -149,7 +157,7 @@ export function Footer() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 rounded-md px-3 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-White"
+                    className="flex-1 rounded-md px-3 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
                   />
                   <button
                     type="submit"
@@ -164,7 +172,6 @@ export function Footer() {
                     href="https://www.linkedin.com/company/systems-integration"
                     target="_blank"
                     className="text-white/70 hover:text-orange-400 transition"
-                    aria-label="LinkedIn"
                   >
                     <Linkedin size={20} />
                   </Link>
@@ -172,7 +179,6 @@ export function Footer() {
                     href="https://x.com/systems_integration"
                     target="_blank"
                     className="text-white/70 hover:text-orange-400 transition"
-                    aria-label="X (Twitter)"
                   >
                     <Twitter size={20} />
                   </Link>
@@ -180,63 +186,22 @@ export function Footer() {
               </div>
             </div>
 
-            {/* 4️⃣ Discover */}
+            {/* Discover */}
             <div className="pl-0 md:pl-6">
               <h4 className="font-semibold mb-3 text-white">Discover</h4>
               <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industries"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    Industries
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/faq"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/portfolio"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    Case Studies
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/glossary"
-                    className="text-white/80 hover:text-orange-400 transition"
-                  >
-                    Glossary
-                  </Link>
-                </li>
+                <li><Link href="/services" className="text-white/80 hover:text-orange-400 transition">Services</Link></li>
+                <li><Link href="/industries" className="text-white/80 hover:text-orange-400 transition">Industries</Link></li>
+
+                <li><Link href="/faq" className="text-white/80 hover:text-orange-400 transition">FAQ</Link></li>
+                <li><Link href="/portfolio" className="text-white/80 hover:text-orange-400 transition">Portfolio</Link></li>
+                <li><Link href="/blog" className="text-white/80 hover:text-orange-400 transition">Case Studies</Link></li>
+                <li><Link href="/glossary" className="text-white/80 hover:text-orange-400 transition">Glossary</Link></li>
               </ul>
             </div>
           </div>
 
-          {/* --- Copyright --- */}
+          {/* Copyright */}
           <div className="border-t border-orange-500/20 mt-8 pt-6 text-center">
             <p className="text-white/70 text-sm">
               © {currentYear} Systems Integration. All rights reserved.

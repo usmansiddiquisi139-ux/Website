@@ -1,5 +1,5 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 
 export const metadata = {
@@ -86,7 +86,7 @@ export default function PortfolioPage() {
             {caseStudies.map((study) => (
               <Link key={study.slug} href={`/portfolio/${study.slug}`}>
                 <div className="h-full p-8 rounded-lg border border-orange-500/30 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/5 transition cursor-pointer group">
-                  
+
                   <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-orange-400 transition-all duration-300">
                     {study.title}
                   </h3>
@@ -123,7 +123,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   )
 }

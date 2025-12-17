@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { services } from "@/lib/services-data";
@@ -116,7 +116,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <Footer />
+
       </div>
     </main>
   );
