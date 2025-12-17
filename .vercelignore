@@ -1,0 +1,21 @@
+# Vercel Ignore File
+# Exclude large files and unnecessary directories from deployment
+
+node_modules
+.next
+.git
+*.log
+.env.local
+.DS_Store
+*.tsbuildinfo
+.vercel
+out
+build
+coverage
+.cache
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+public/videos/*
