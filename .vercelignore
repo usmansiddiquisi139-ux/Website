@@ -1,21 +1,65 @@
-# Vercel Ignore File
-# Exclude large files and unnecessary directories from deployment
+# Vercel Ignore - Exclude from deployment upload
 
-node_modules
-.next
-.git
+# Dependencies (Vercel installs these)
+node_modules/
+.pnp/
+.pnp.js
+
+# Build artifacts (Vercel builds fresh)
+.next/
+out/
+build/
+dist/
+
+# Git
+.git/
+.gitignore
+
+# Environment files (set in Vercel dashboard)
+.env*
+!.env.example
+
+# Logs
 *.log
-.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# TypeScript
 *.tsbuildinfo
-.vercel
-out
-build
-coverage
-.cache
+
+# Misc
+.vercel/
+.cache/
+
+# Large media files (if any)
 *.mp4
 *.mov
 *.avi
-*.webm
 *.mkv
-public/videos/*
+*.webm
+*.flv
+
+# Documentation (not needed for deployment)
+*.md
+!README.md
+
+# Config files not needed in production
+.eslintrc*
+.prettierrc*
+tsconfig.tsbuildinfo
