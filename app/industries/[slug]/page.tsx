@@ -168,6 +168,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${industry.name} Solutions | Systems Integration`,
     description: industry.description,
+    alternates: {
+      canonical: `https://www.systemsintegration.co/industries/${slug}`,
+    },
   }
 }
 
@@ -178,10 +181,10 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   }
 
   const industry = industryData[slug as keyof typeof industryData]
-  
+
   if (!industry) {
     notFound()
   }
-  
+
   return <IndustryClientPage industry={industry} params={{ slug }} />
 }

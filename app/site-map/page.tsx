@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: "Site Map | Systems Integration",
     description:
         "Complete sitemap of Systems Integration - Navigate our services, industries, resources, and legal pages. Optimized for AI crawlers and LLM indexing.",
+    alternates: {
+        canonical: "https://www.systemsintegration.co/site-map",
+    },
     openGraph: {
         title: "Site Map | Systems Integration",
         description: "Complete navigation structure for Systems Integration consulting services.",

@@ -5,6 +5,9 @@ import Link from "next/link"
 export const metadata = {
   title: "Industries | Systems Integration",
   description: "Industry expertise across healthcare, finance, manufacturing, aerospace, and more.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/industries",
+  },
 }
 
 export default function IndustriesPage() {

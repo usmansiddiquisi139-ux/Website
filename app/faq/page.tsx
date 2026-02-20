@@ -11,6 +11,9 @@ export const metadata = {
   title: "FAQ | Systems Integration",
   description:
     "Frequently asked questions about our services, process, and technology expertise.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/faq",
+  },
 };
 
 export default function FAQPage() {

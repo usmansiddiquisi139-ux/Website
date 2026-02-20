@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { services } from "@/lib/services-data";
 import { getLucideIcon } from "@/lib/get-lucide-icon"; // ✅ Import your helper
+
+export const metadata: Metadata = {
+  title: "Our Services | Systems Integration",
+  description:
+    "Explore our specialized technology consulting services: AI/ML automation, DevOps & Cloud, data governance, cybersecurity, integration & migration, and more.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/services",
+  },
+};
+
 
 export default function ServicesPage() {
   const getColorClasses = (colorKey: string) => {

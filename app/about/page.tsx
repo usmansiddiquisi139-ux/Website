@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "About Us | Systems Integration",
   description:
     "Strategy-led AI consultancy delivering intelligent systems, automation, and digital transformation for enterprises worldwide.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/about",
+  },
   openGraph: {
     title: "About Systems Integration | AI Consultancy & Digital Transformation Experts",
     description:

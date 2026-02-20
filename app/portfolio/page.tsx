@@ -5,6 +5,9 @@ import Link from "next/link"
 export const metadata = {
   title: "Portfolio | Systems Integration",
   description: "Case studies and projects showcasing measurable outcomes across industries.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/portfolio",
+  },
 }
 
 export default function PortfolioPage() {

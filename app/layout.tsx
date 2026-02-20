@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   description:
     "Enterprise AI, cloud migration, cybersecurity, and system integration consulting. Strategy is the algorithm they forgot to write.",
   metadataBase: new URL("https://www.systemsintegration.co"),
-  alternates: {
-    canonical: "/", // ✅ Canonical applied site-wide
-  },
   generator: "Next.js",
   keywords: [
     "AI consulting",

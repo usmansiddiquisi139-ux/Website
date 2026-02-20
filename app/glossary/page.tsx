@@ -4,6 +4,9 @@ import { Header } from "@/components/header"
 export const metadata = {
   title: "Glossary | Systems Integration",
   description: "Technical glossary of terms used in AI, cloud, security, and enterprise technology.",
+  alternates: {
+    canonical: "https://www.systemsintegration.co/glossary",
+  },
 }
 
 export default function GlossaryPage() {
