@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { Header } from "@/components/header";
 import StructuredData from "@/app/components/structured-data";
 import { jsonLdOrganization } from "@/lib/seo";
+import CookieConsent from "@/app/components/CookieConsent";
 
 import Footer from "@/components/footer"; // ✅ Add footer
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: "Systems Integration | Strategy-Led Technology Consulting",
   description:
     "Enterprise AI, cloud migration, cybersecurity, and system integration consulting. Strategy is the algorithm they forgot to write.",
-  metadataBase: new URL("https://systemsintegration.co"),
+  metadataBase: new URL("https://www.systemsintegration.co"),
   alternates: {
     canonical: "/", // ✅ Canonical applied site-wide
   },
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: "Systems Integration | Strategy-Led Technology Consulting",
     description:
       "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
-    url: "https://systemsintegration.co",
+    url: "https://www.systemsintegration.co",
     type: "website",
     siteName: "Systems Integration",
   },
@@ -55,6 +56,33 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${_geist.className}`} suppressHydrationWarning>
       <head>
+        {/* Google Consent Mode v2 Default States */}
+        <Script id="google-consent-mode" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            
+            // Check for existing consent
+            const consent = localStorage.getItem('cookieConsent');
+            const defaultConsent = consent === 'accepted' ? 'granted' : 'denied';
+
+            gtag('consent', 'default', {
+              'ad_storage': defaultConsent,
+              'analytics_storage': defaultConsent,
+              'ad_user_data': defaultConsent,
+              'ad_personalization': defaultConsent,
+              'wait_for_update': 500
+            });
+            gtag('set', 'ads_data_redaction', true);
+            
+            // Signal consent initialization for Tag Assistant
+            window.dataLayer.push({
+              event: 'gtm.init_consent',
+              consent_state: defaultConsent
+            });
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -89,6 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div className="min-h-screen bg-black/50">
           <Header />
           <ScrollToTop />
+          <CookieConsent />
           {children}
 
           {/* Footer with sitemap link */}

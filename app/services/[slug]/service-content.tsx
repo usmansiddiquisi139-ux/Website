@@ -122,8 +122,8 @@ export default function ServiceContent({ service }: { service: Service }) {
                 key={index}
                 onClick={() => setActiveCapIndex(index)}
                 className={`px-4 py-4 rounded-xl text-sm font-medium transition-all border ${colorClasses.border} ${activeCapIndex === index
-                    ? `${colorClasses.bg} ${colorClasses.text} shadow-md`
-                    : `text-white/70 ${colorClasses.hover}`
+                  ? `${colorClasses.bg} ${colorClasses.text} shadow-md`
+                  : `text-white/70 ${colorClasses.hover}`
                   }`}
               >
                 {cap.title}
@@ -241,6 +241,26 @@ export default function ServiceContent({ service }: { service: Service }) {
             ))}
           </div>
         </section>
+      )}
+      {/* 🔍 SEO: Static capability content for crawlers (visually hidden, screen-reader accessible) */}
+      {Array.isArray(service.capabilities) && service.capabilities.length > 0 && (
+        <div className="sr-only" aria-hidden="false">
+          {service.capabilities.map((cap, index) => (
+            <div key={index}>
+              <h3>{cap.title}</h3>
+              {cap.bullets && cap.bullets.length > 0 && (
+                <ul>
+                  {cap.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              )}
+              {cap.tools && cap.tools.length > 0 && (
+                <p>{cap.tools.join(", ")}</p>
+              )}
+            </div>
+          ))}
+        </div>
       )}
     </main>
   )

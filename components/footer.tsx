@@ -10,44 +10,10 @@ import { services } from "@/lib/services-data";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
-  const [showBanner, setShowBanner] = useState(false);
 
-  useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) setShowBanner(true);
-  }, []);
-
-  const handleAcceptCookies = () => {
-    localStorage.setItem("cookieConsent", "accepted");
-    setShowBanner(false);
-  };
 
   return (
     <>
-      {/* Cookie Banner */}
-      {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 bg-black/90 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between gap-3 z-50 border-t border-orange-400/30">
-          <p className="text-center md:text-left max-w-3xl">
-            We use cookies to improve your browsing experience, analyze site
-            traffic, and personalize content. By clicking "Accept All," you
-            consent to our use of cookies in accordance with our{" "}
-            <Link
-              href="/cookie-policy"
-              className="underline text-orange-400 hover:text-orange-500"
-            >
-              Cookie Policy
-            </Link>
-            .
-          </p>
-          <button
-            onClick={handleAcceptCookies}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-5 py-2 rounded-md transition"
-          >
-            Accept All
-          </button>
-        </div>
-      )}
-
       {/* Main Footer */}
       <footer className="border-t border-orange-500/20 bg-transparent text-white relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-6 md:py-12">

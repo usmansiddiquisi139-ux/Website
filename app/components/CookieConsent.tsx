@@ -31,12 +31,36 @@ export default function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem("cookieConsent", "accepted");
     localStorage.setItem("cookieConsentTimestamp", Date.now().toString());
+
+    // Update GTM Consent Mode
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+      });
+      window.dataLayer.push({ event: "gtm.consent_update" });
+    }
+
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookieConsent", "declined");
     localStorage.setItem("cookieConsentTimestamp", Date.now().toString());
+
+    // Update GTM Consent Mode
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      window.dataLayer.push({ event: "gtm.consent_denied" });
+    }
+
     setIsVisible(false);
   };
 

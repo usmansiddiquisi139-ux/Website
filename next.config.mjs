@@ -12,16 +12,23 @@ const nextConfig = {
   // ✅ Add redirects
   async redirects() {
     return [
+      // 🌐 Canonical www redirect — must be first
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'systemsintegration.co' }],
+        destination: 'https://www.systemsintegration.co/:path*',
+        permanent: true,
+      },
       {
         source: '/terms',
         destination: '/terms-and-conditions',
         permanent: true,
       },
       {
-  source: '/privacy',
-  destination: '/privacy-policy',
-  permanent: true,
-},
+        source: '/privacy',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
     ];
   },
 };

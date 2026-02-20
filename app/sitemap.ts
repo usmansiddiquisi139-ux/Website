@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://systemsintegration.co";
+  const baseUrl = "https://www.systemsintegration.co";
 
   // Main pages with high priority
   const mainPages = [
