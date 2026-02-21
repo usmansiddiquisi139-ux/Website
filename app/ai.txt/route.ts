@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
     try {
-        const filePath = path.join(process.cwd(), 'public', 'ai.txt');
+        const filePath = path.join(process.cwd(), 'public', 'ai.txt.bak');
         const fileContent = fs.readFileSync(filePath, 'utf8');
 
         return new NextResponse(fileContent, {
