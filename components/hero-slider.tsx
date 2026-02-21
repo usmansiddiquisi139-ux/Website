@@ -26,7 +26,7 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-16">
         <div className="animate-slide-in-left">
           <img
-            src="/images/design-mode/logo-removebg-preview.png"
+            src="/images/design-mode/s-logo.png"
             alt="Systems Integration Logo"
             className="w-32 sm:w-36 md:w-44 lg:w-52 h-auto object-contain"
           />

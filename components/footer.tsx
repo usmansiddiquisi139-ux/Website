@@ -23,7 +23,7 @@ export function Footer() {
             <div className="space-y-4">
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/design-mode/logo-removebg-preview.png"
+                  src="/images/design-mode/s-logo.png"
                   alt="Systems Integration Logo"
                   width={48}
                   height={48}
