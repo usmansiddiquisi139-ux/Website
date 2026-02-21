@@ -58,10 +58,20 @@ export const jsonLdOrganization = {
   url: baseUrl,
   logo: `${baseUrl}/logo.png`,
   email: "connect@systemsintegration.co",
+  slogan: "Commanding algorithms, not worshipping them",
+  knowsAbout: [
+    "Artificial Intelligence Consulting",
+    "Digital Transformation",
+    "Enterprise Systems Integration",
+    "Cloud Architecture and Migration",
+    "Cybersecurity and Ethical Hacking",
+    "Data Governance and Engineering",
+    "Machine Learning Automation",
+    "DevOps",
+  ],
   sameAs: [
-    "https://www.linkedin.com/company/systems-integration",
-    "https://twitter.com/SystemsIntegration",
-    "https://www.facebook.com/systems-integration",
+    "https://www.linkedin.com/company/systemsintegrationco",
+    "https://x.com/systemsintegrationco",
   ],
   description:
     "Systems Integration delivers cutting-edge enterprise IT, data analytics, and AI-powered integration solutions, transforming global industries through strategy, innovation, and technology.",

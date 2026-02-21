@@ -2,8 +2,9 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://systemsintegration.co/sitemap.xml
-LLM-Sitemap: https://systemsintegration.co/ai-sitemap.json
+Sitemap: https://www.systemsintegration.co/sitemap.xml
+LLM-Sitemap: https://www.systemsintegration.co/ai-sitemap.json
+LLMs-txt: https://www.systemsintegration.co/llms.txt
 
 # Rate limits to protect server
 Crawl-Delay: 1

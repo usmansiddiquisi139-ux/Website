@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
       </h1>
 
       <p className="mb-6 leading-relaxed text-white/90">
-        This Privacy Policy describes how <strong>Systems Integration (SMC-PVT) Limited</strong>{" "}
+        This Privacy Policy describes how <strong>Systems Integration Private Limited</strong>{" "}
         ("we", "us", or "our") collects, uses, and protects your personal
         information when you interact with our website, products, and services.
         We are committed to transparency and compliance with the{" "}

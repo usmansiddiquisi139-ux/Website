@@ -26,7 +26,7 @@ export default function CookiePolicyPage() {
       </h1>
 
       <p className="mb-6 leading-relaxed text-white/90">
-        This Cookie Policy explains how <strong>Systems Integration (SMC-PVT) Limited</strong>{" "}
+        This Cookie Policy explains how <strong>Systems Integration Private Limited</strong>{" "}
         uses cookies and similar technologies to improve your browsing
         experience, analyze traffic, and personalize content. This policy should
         be read together with our{" "}
