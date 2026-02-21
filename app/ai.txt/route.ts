@@ -3,8 +3,15 @@ import fs from 'fs';
 import path from 'path';
 
 export async function GET() {
+    const filePath = path.join(process.cwd(), 'public', 'ai.txt.bak');
+    console.log('[DEBUG] Serving ai.txt from:', filePath);
+
     try {
-        const filePath = path.join(process.cwd(), 'public', 'ai.txt.bak');
+        if (!fs.existsSync(filePath)) {
+            console.error('[DEBUG] File NOT found at:', filePath);
+            return new NextResponse('File not found in system', { status: 404 });
+        }
+
         const fileContent = fs.readFileSync(filePath, 'utf8');
 
         return new NextResponse(fileContent, {
@@ -13,8 +20,8 @@ export async function GET() {
                 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=59',
             },
         });
-    } catch (error) {
-        console.error('Error serving ai.txt:', error);
-        return new NextResponse('Error loading ai.txt', { status: 500 });
+    } catch (error: any) {
+        console.error('[DEBUG] Error serving ai.txt:', error.message);
+        return new NextResponse(`Error loading ai.txt: ${error.message}`, { status: 500 });
     }
 }
