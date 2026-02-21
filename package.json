@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "zip": "powershell -Command \"$date = Get-Date -Format 'yyyy-MM-dd'; $zipName = \\\"my-nextjs-project-$date.zip\\\"; Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch '\\\\node_modules\\\\' -and $_.FullName -notmatch '\\\\.next\\\\' -and $_.FullName -notmatch '\\\\.git\\\\' -and $_.Name -notmatch '\\\\.env' -and $_.Name -notmatch '\\\\.log$' } | Compress-Archive -DestinationPath (Join-Path .. $zipName) -Force\"",
-    "prepare": "husky install"
+    "zip": "powershell -Command \"$date = Get-Date -Format 'yyyy-MM-dd'; $zipName = \\\"my-nextjs-project-$date.zip\\\"; Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch '\\\\node_modules\\\\' -and $_.FullName -notmatch '\\\\.next\\\\' -and $_.FullName -notmatch '\\\\.git\\\\' -and $_.Name -notmatch '\\\\.env' -and $_.Name -notmatch '\\\\.log$' } | Compress-Archive -DestinationPath (Join-Path .. $zipName) -Force\""
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
