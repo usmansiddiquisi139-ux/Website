@@ -45,6 +45,8 @@ export const defaultMetadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  authors: [{ name: "Usman Siddiqui", url: "https://www.linkedin.com/in/usman-siddiqui-data-engineer" }],
+  publisher: "Systems Integration",
   icons: {
     icon: "/favicon.ico",
   },
@@ -95,6 +97,30 @@ export const jsonLdOrganization = {
   ],
 };
 
+// 👨‍💻 Founder Persona Schema
+export const jsonLdPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Usman Siddiqui",
+  "url": "https://www.linkedin.com/in/usman-siddiqui-data-engineer",
+  "jobTitle": "Founder & Principal Consultant",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Systems Integration"
+  },
+  "knowsAbout": [
+    "Data Engineering",
+    "Artificial Intelligence",
+    "Intelligent Automation",
+    "Digital Transformation",
+    "Large Scale Data Warehousing"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/usman-siddiqui-data-engineer",
+    "https://www.systemsintegration.co/about"
+  ]
+};
+
 // 🔧 Utility: Merge multiple JSON-LD objects safely
 function mergeJsonLd(...schemas: any[]) {
   return schemas.flat().filter(Boolean);
@@ -134,7 +160,7 @@ export function buildMetadata({
     },
   };
 
-  const mergedJsonLd = mergeJsonLd(jsonLdOrganization, jsonLdData || schema);
+  const mergedJsonLd = mergeJsonLd(jsonLdOrganization, jsonLdPerson, jsonLdData || schema);
 
   return { metadata, jsonLd: mergedJsonLd };
 }
