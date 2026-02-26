@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "data solutions",
   ],
   openGraph: {
-    title: "Systems Integration | Strategy-Led Technology Consulting",
+    title: "Systems Integration",
     description:
       "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
     url: "https://www.systemsintegration.co",
