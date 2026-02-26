@@ -8,7 +8,7 @@ export const ASSET_CONFIG = {
 
   // Logo settings
   logo: {
-    path: "/images/design-mode/logo-removebg-preview.png",
+    path: "/images/design-mode/s-logo.png",
     width: 32,
     height: 32,
   },

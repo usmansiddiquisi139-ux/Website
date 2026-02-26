@@ -3,7 +3,7 @@
 export const ASSETS = {
   // Logo
   logo: {
-    company: "/images/design-mode/logo-removebg-preview.png",
+    company: "/images/design-mode/s-logo.png",
     width: 32,
     height: 32,
     alt: "Systems Integration Logo",
