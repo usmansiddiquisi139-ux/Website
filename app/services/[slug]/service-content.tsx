@@ -76,7 +76,7 @@ export default function ServiceContent({ service }: { service: Service }) {
     <main className="min-h-screen text-white bg-transparent">
 
       {/* 🧭 Breadcrumbs */}
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-6">
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-4">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -86,288 +86,172 @@ export default function ServiceContent({ service }: { service: Service }) {
         />
       </div>
 
-      {/* 🌟 Hero Section (hybrid) */}
-      {(service.title || service.headline || service.overview || service.description) && (
-        <section className="pt-5 pb-12 text-center px-8">
-          <div className="max-w-5xl mx-auto">
-            {(IconComponent || service.title) && (
-              <div className="flex items-center justify-center gap-3 mb-8">
-                {IconComponent && <IconComponent className={`w-12 h-12 ${colorClasses.text}`} />}
-                {service.title && <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">{service.title}</h1>}
-              </div>
-            )}
+      {/* 🌟 Focused Hero (Compact Side-by-Side) */}
+      <section className="pt-4 pb-12 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+          <div className="flex-1 space-y-6 text-left">
+            <div className="flex items-center gap-3">
+              {IconComponent && <IconComponent className={`w-8 h-8 ${colorClasses.text}`} />}
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">{service.title}</h1>
+            </div>
+            {service.headline && <p className={`text-xl font-medium ${colorClasses.text}`}>{service.headline}</p>}
+            <div className="space-y-4 text-white/80 leading-relaxed text-base italic">
+              {service.overview && <p>{service.overview}</p>}
+              {service.description && <p>{service.description}</p>}
+            </div>
 
-            {/* Service Image */}
-            {service.image && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="mb-16 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl h-[400px] md:h-[500px] relative group"
-              >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-              </motion.div>
-            )}
-
-            {service.headline && <p className={`text-2xl font-medium mb-8 ${colorClasses.text}`}>{service.headline}</p>}
-
-            {(service.overview || service.description) && (
-              <div className="text-white/90 text-left text-justify leading-relaxed max-w-5xl mx-auto px-6 md:px-4 mt-8 mb-5">
-                {service.overview && <p className="text-lg">{service.overview}</p>}
-                {service.description && (
-                  <p className="mt-4 text-white/80">{service.description}</p>
-                )}
-              </div>
-            )}
+            {/* CTA Inline */}
+            <div className="pt-4">
+              <a href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block`}>
+                Start Project Analysis
+              </a>
+            </div>
           </div>
-        </section>
-      )}
 
-      {/* ⚙️ Capabilities */}
-      {Array.isArray(service.capabilities) && service.capabilities.length > 0 && (
-        <section className="py-12 px-8">
-          <h2 className={`text-4xl font-bold text-center mb-12 ${colorClasses.text}`}>Core Capabilities</h2>
-          <div className="max-w-5xl mx-auto px-2 mb-12">
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {service.capabilities.map((cap, index) => (
+          {/* Service Image (Visual Authority) */}
+          {service.image && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex-1 w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-[300px] md:h-[400px] relative group"
+            >
+              <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      {/* 🚀 Metrics & Capabilities Row (High Density) */}
+      <section className="py-12 px-6 border-y border-white/5 bg-white/[0.02]">
+        <div className="max-w-6xl mx-auto flex flex-col xl:flex-row gap-12">
+
+          {/* Metrics Column */}
+          <div className="xl:w-1/3">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">/// Impact Benchmarks</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {service.metrics?.map((m, i) => (
+                <div key={i} className="p-4 bg-white/5 rounded-xl border border-white/5">
+                  <div className={`text-2xl font-bold ${colorClasses.text}`}>{m.value}</div>
+                  <div className="text-[10px] uppercase font-bold text-white/40 tracking-tighter">{m.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Capabilities Column (Horizontal Scroll on Mobile) */}
+          <div className="xl:flex-1">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">/// Core Capabilities</h3>
+            <div className="flex flex-wrap gap-2">
+              {service.capabilities.map((cap, i) => (
                 <button
-                  key={index}
-                  onClick={() => setActiveCapIndex(index)}
-                  className={`px-4 py-4 rounded-xl text-sm font-medium transition-all border ${colorClasses.border} ${activeCapIndex === index
-                    ? `${colorClasses.bg} ${colorClasses.text} shadow-md`
-                    : `text-white/70 ${colorClasses.hover}`
-                    }`}
+                  key={i}
+                  onClick={() => setActiveCapIndex(i)}
+                  className={`px-4 py-2 rounded-lg text-xs font-semibold border transition-all ${activeCapIndex === i ? `${colorClasses.bg} ${colorClasses.text} border-orange-500/50` : 'border-white/10 hover:border-white/20'}`}
                 >
                   {cap.title}
                 </button>
               ))}
             </div>
 
-            {activeCap && (
-              <motion.div
-                key={activeCapIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="leading-relaxed text-left bg-white/5 p-8 rounded-[2rem] border border-white/5"
-              >
-                {activeCap?.bullets?.length > 0 && (
-                  <ul className="list-disc pl-6 space-y-3 text-white/80 mb-6">
-                    {activeCap.bullets.map((b, i) => (
-                      <li key={i}>{b}</li>
-                    ))}
-                  </ul>
-                )}
-
-                {activeCap?.tools && activeCap.tools.length > 0 && (
-                  <div className="mt-8">
-                    <h3 className={`text-xl font-semibold mb-3 ${colorClasses.text}`}>
-                      Tools & Technologies
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {activeCap.tools.map((tool, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm text-white/80"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* 🚀 Impact Metrics & Technical Frameworks */}
-      <section className="py-16 px-8 bg-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Metrics */}
-            <div>
-              <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
-                <div className={`w-8 h-8 rounded-lg ${colorClasses.bg} flex items-center justify-center`}>
-                  <div className={`w-3 h-3 rounded-full ${colorClasses.bg.replace('/10', '')}`} />
-                </div>
-                Impact Metrics
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {service.metrics?.map((metric, idx) => (
-                  <div key={idx} className="p-6 bg-transparent border border-white/10 rounded-2xl">
-                    <div className={`text-3xl font-bold mb-1 ${colorClasses.text}`}>{metric.value}</div>
-                    <div className="text-sm font-bold text-white mb-2 uppercase tracking-widest">{metric.label}</div>
-                    <div className="text-xs text-white/60">{metric.description}</div>
-                  </div>
+            {/* Capability Content (Compact) */}
+            <div className="mt-6 p-6 bg-white/5 rounded-2xl border border-white/5 min-h-[120px]">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/70">
+                {activeCap?.bullets.map((b, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-orange-500">•</span> {b}
+                  </li>
                 ))}
-              </div>
-            </div>
-
-            {/* Frameworks */}
-            <div>
-              <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
-                <div className={`w-8 h-8 rounded-lg ${colorClasses.bg} flex items-center justify-center`}>
-                  <div className={`w-3 h-3 rounded-full ${colorClasses.bg.replace('/10', '')}`} />
-                </div>
-                Delivery Frameworks
-              </h2>
-              <div className="space-y-4">
-                {service.frameworks?.map((framework, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl hover:border-white/10 transition-colors">
-                    <div className={`w-10 h-10 rounded-full ${colorClasses.bg} flex items-center justify-center font-bold ${colorClasses.text}`}>
-                      {idx + 1}
-                    </div>
-                    <span className="text-lg font-medium text-white/90">{framework}</span>
-                  </div>
-                ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 🛠️ Delivery Workflow (Timeline) */}
+      {/* 🛠️ Compact Workflow Grid */}
       {service.workflow && (
-        <section className="py-24 px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 text-white">How We Deliver</h2>
-            <div className="relative space-y-12">
-              {/* Vertical Line */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 hidden md:block" />
-
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-10 text-white flex items-center gap-3">
+              <div className={`w-8 h-px bg-white/20`} /> Delivery Pipeline
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {service.workflow.map((step, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className={`flex flex-col md:flex-row gap-8 items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                >
-                  <div className="flex-1 w-full">
-                    <div className={`p-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md hover:border-orange-500/50 transition-colors group`}>
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${colorClasses.bg} ${colorClasses.text}`}>
-                          Phase 0{idx + 1}
-                        </span>
-                      </div>
-                      <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">{step.title}</h3>
-                      <p className="text-white/70 mb-6 leading-relaxed">{step.description}</p>
-                      {step.deliverable && (
-                        <div className="pt-4 border-t border-white/5 flex items-center gap-3">
-                          <span className="text-[10px] text-white/40 uppercase tracking-tighter">Deliverable:</span>
-                          <span className="text-xs font-semibold text-orange-400">{step.deliverable}</span>
-                        </div>
-                      )}
+                <div key={idx} className="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-orange-500/30 transition-all group h-full flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-black/40 ${colorClasses.text}`}>Phase 0{idx + 1}</span>
+                    <span className="text-white/10 text-3xl font-black italic">{idx + 1}</span>
+                  </div>
+                  <h4 className="font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">{step.title}</h4>
+                  <p className="text-xs text-white/50 leading-relaxed mb-4 flex-1">{step.description}</p>
+                  {step.deliverable && (
+                    <div className="pt-3 border-t border-white/5 text-[10px]">
+                      <span className="text-white/30 block mb-1 uppercase tracking-tighter">Deliverable</span>
+                      <span className="text-orange-400 font-bold">{step.deliverable}</span>
                     </div>
-                  </div>
-
-                  {/* Circle */}
-                  <div className={`relative z-10 w-12 h-12 rounded-full border-4 border-black bg-white flex items-center justify-center font-bold text-black text-xl shadow-[0_0_20px_rgba(255,255,255,0.2)]`}>
-                    {idx + 1}
-                  </div>
-
-                  <div className="flex-1 hidden md:block" />
-                </motion.div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* 💼 Why Choose Us */}
-      {Array.isArray(service.whyChooseUs) && service.whyChooseUs.length > 0 && (
-        <section className="py-20 px-8 bg-white/5 rounded-[4rem] mx-4 sm:mx-8">
-          <h2 className="text-5xl font-semibold text-center text-white mb-12">
-            Why Choose Us
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {service.whyChooseUs.map((item: string, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="rounded-4xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-white/10 transition-all p-6"
-              >
-                <p className="text-white text-l leading-relaxed">{item}</p>
-              </motion.div>
-            ))}
+      {/* 💼 Integrated Value Layer (Why, Use, Outcomes) */}
+      <section className="py-16 px-6 bg-white/[0.03] rounded-[3rem] mx-4 mb-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Section 1: Outcomes */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
+              <div className="w-1.5 h-6 bg-orange-500 rounded-full" /> Expected Outcomes
+            </h3>
+            <ul className="space-y-4">
+              {service.outcomes?.map((o, i) => (
+                <li key={i} className="flex gap-3 text-sm text-white/70">
+                  <span className="text-orange-500 font-bold">✓</span> {o}
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
-      )}
 
-      {/* 💡 Use Cases (aliased from typicalUseCases) */}
-      {Array.isArray(service.typicalUseCases) && service.typicalUseCases.length > 0 && (
-        <section className="py-8 px-4">
-          <h2 className="text-5xl font-semibold text-center text-white mb-12">
-            Use Cases
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {service.typicalUseCases.map((useCase: string, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="rounded-4xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-white/10 transition-all p-6 min-h-[60px] flex items-center justify-Left text-left"
-              >
-                <p className="text-white text-base sm:text-l  leading-relaxed ">
-                  {useCase}
-                </p>
-              </motion.div>
-            ))}
+          {/* Section 2: Use Cases */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
+              <div className="w-1.5 h-6 bg-orange-500 rounded-full" /> Deployment Focus
+            </h3>
+            <div className="space-y-3">
+              {service.typicalUseCases?.map((u, i) => (
+                <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-white/80">
+                  {u}
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-      )}
 
-
-      {/* 🎯 Outcomes (hybrid) */}
-      {Array.isArray(service.outcomes) && service.outcomes.length > 0 && (
-        <section className="py-4 px-2">
-          <h2 className="text-5xl font-semibold text-center text-white mb-12">
-            Outcomes
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 text-left max-w-5xl mx-auto">
-            {service.outcomes.map((outcome: string, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="rounded-4xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-white/10 transition-all p-6"
-              >
-                <p className="text-white text-l leading-relaxed">
-                  {outcome}
-                </p>
-              </motion.div>
-            ))}
+          {/* Section 3: Why Choose Us */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
+              <div className="w-1.5 h-6 bg-orange-500 rounded-full" /> Strategic Advantage
+            </h3>
+            <ul className="space-y-4">
+              {service.whyChooseUs?.map((w, i) => (
+                <li key={i} className="text-sm text-white/70 leading-relaxed pl-4 border-l border-white/10 hover:border-orange-500 transition-colors">
+                  {w}
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
-      )}
-      {/* 🔍 SEO: Static capability content for crawlers (visually hidden, screen-reader accessible) */}
+        </div>
+      </section>
+
+      {/* 🔍 SEO Static Area */}
       {Array.isArray(service.capabilities) && service.capabilities.length > 0 && (
         <div className="sr-only" aria-hidden="false">
           {service.capabilities.map((cap, index) => (
             <div key={index}>
               <h3>{cap.title}</h3>
               {cap.bullets && cap.bullets.length > 0 && (
-                <ul>
-                  {cap.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              )}
-              {cap.tools && cap.tools.length > 0 && (
-                <p>{cap.tools.join(", ")}</p>
+                <ul>{cap.bullets.map((b, i) => <li key={i}>{b}</li>)}</ul>
               )}
             </div>
           ))}
