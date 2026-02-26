@@ -141,7 +141,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Oil & Gas Exploration",
     industry: "oil-gas",
     services: ["data", "devops", "ai-ml"],
-    image: "/images/portfolio/oil-gas.png",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
     overview:
       "An oil and gas exploration company was drowning in 50TB+ of seismic data but lacked the infrastructure to process it in real-time.",
     challenge: "Processing seismic data took weeks, delaying exploration decisions. No real-time analytics capability.",
