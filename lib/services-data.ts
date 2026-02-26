@@ -234,7 +234,7 @@ export const services: Service[] = [
       "Reduced manual SEO efforts through automation",
       "Higher organic visibility and brand authority",
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1460925895317-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
     tagline: "AI-first SEO",
     color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
@@ -525,7 +525,7 @@ export const services: Service[] = [
       "Enhanced visibility through monitoring and observability",
       "Optimized cloud cost and resource utilization",
     ],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1200",
     color: "from-cyan-500",
     glow: "group-hover:shadow-cyan-500/50",
     workflow: [

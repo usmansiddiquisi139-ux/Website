@@ -22,7 +22,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Global Payment Processor",
     industry: "fintech",
     services: ["ai-ml", "data"],
-    image: "/images/portfolio/fintech.png",
+    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c02?auto=format&fit=crop&q=80&w=1200",
     overview:
       "A leading global payment processor was losing millions annually to fraudulent transactions. They needed a real-time system to detect and prevent fraud without impacting legitimate transactions.",
     challenge:
@@ -51,7 +51,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Healthcare Network",
     industry: "healthcare",
     services: ["integration", "devops", "security"],
-    image: "/images/portfolio/healthcare.png",
+    image: "https://images.unsplash.com/photo-1504813184591-01552a9d7cd5?auto=format&fit=crop&q=80&w=1200",
     overview:
       "A major healthcare network with 50 hospitals needed to migrate from legacy on-premises EHR to cloud without affecting patient care or losing a single record.",
     challenge:
@@ -81,7 +81,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Industrial Manufacturer",
     industry: "manufacturing",
     services: ["ai-ml", "data", "devops"],
-    image: "/images/portfolio/industrial.png",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
     overview:
       "A global manufacturer with 200+ production facilities needed to reduce equipment downtime and maintenance costs through predictive maintenance.",
     challenge:
@@ -111,7 +111,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Aerospace Contractor",
     industry: "aerospace",
     services: ["security", "devops"],
-    image: "/images/portfolio/cybersecurity.png",
+    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=1200",
     overview:
       "An aerospace contractor needed to consolidate security operations and achieve CMMC Level 3 compliance for Department of Defense contracts.",
     challenge:
@@ -141,7 +141,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Oil & Gas Exploration",
     industry: "oil-gas",
     services: ["data", "devops", "ai-ml"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=1200",
     overview:
       "An oil and gas exploration company was drowning in 50TB+ of seismic data but lacked the infrastructure to process it in real-time.",
     challenge: "Processing seismic data took weeks, delaying exploration decisions. No real-time analytics capability.",
@@ -170,7 +170,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "University System",
     industry: "education",
     services: ["integration", "devops", "security"],
-    image: "/images/portfolio/education.png",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200",
     overview:
       "A 10-campus university system needed to consolidate and modernize its learning management platform serving 100k+ students.",
     challenge: "Each campus ran separate LMS instances with no data sharing. Students had fragmented experience.",
