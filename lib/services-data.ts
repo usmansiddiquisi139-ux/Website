@@ -6,6 +6,18 @@ export interface ServiceCapability {
   tools?: string[]
 }
 
+export interface Step {
+  title: string
+  description: string
+  deliverable?: string
+}
+
+export interface Metric {
+  label: string
+  value: string
+  description: string
+}
+
 export interface Service {
   slug: string
   icon?: any
@@ -27,6 +39,10 @@ export interface Service {
   color: string
   glow?: string
   hideCTA?: boolean
+  workflow?: Step[]
+  metrics?: Metric[]
+  frameworks?: string[]
+  image?: string
 }
 
 export const getFeatures = (capabilities: ServiceCapability[]): string[] => {
@@ -39,6 +55,7 @@ export const services: Service[] = [
     icon: "Link2",
     title: "Integration & Migration",
     headline: "Seamlessly Connect. Effortlessly Upgrade. Future-Proof Your Business.",
+    image: "/images/services/integration.png",
     overview:
       "In today's fast-moving digital world, disconnected systems are costly. We eliminate manual workflows, unify scattered data, and modernize tech stacks with end-to-end Integration & Migration solutions.",
     description:
@@ -51,6 +68,39 @@ export const services: Service[] = [
       "Unified analytics and reporting",
       "Modern technology upgrades",
     ],
+    workflow: [
+      {
+        title: "Discovery & Audit",
+        description: "Comprehensive mapping of existing data flows, silos, and technology dependencies.",
+        deliverable: "System Interaction Map"
+      },
+      {
+        title: "Architecture Design",
+        description: "Designing the target state using modern integration patterns (API, Webhooks, ETL).",
+        deliverable: "Technical Blueprint"
+      },
+      {
+        title: "Pipeline Development",
+        description: "Building resilient data pipelines with automated validation and error handling.",
+        deliverable: "Staged Environment"
+      },
+      {
+        title: "Validated Migration",
+        description: "Executing data transfer with dual-write patterns ensuring zero system downtime.",
+        deliverable: "Live Synchronization"
+      },
+      {
+        title: "Optimization & Handover",
+        description: "Continuous monitoring setup and training for internal teams.",
+        deliverable: "Operational Dashboard"
+      }
+    ],
+    metrics: [
+      { label: "Downtime", value: "0%", description: "Zero-downtime migration strategy" },
+      { label: "Data Integrity", value: "100%", description: "Comprehensive verification checks" },
+      { label: "Efficiency", value: "40%", description: "Reduction in operational overhead" }
+    ],
+    frameworks: ["Agile Migration", "Zero-Downtime Architecture", "ETL/ELT Best Practices"],
     capabilities: [
       {
         title: "Data & Application Migration",
@@ -184,8 +234,18 @@ export const services: Service[] = [
       "Reduced manual SEO efforts through automation",
       "Higher organic visibility and brand authority",
     ],
-    color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
+    workflow: [
+      { title: "Semantic Audit", description: "Analyzing current visibility in search and AI bot performance.", deliverable: "LLM Discovery Report" },
+      { title: "Topical Mapping", description: "Clustering entities and keywords for semantic relevance.", deliverable: "Content Architecture" },
+      { title: "RAG Integration", description: "Optimizing content for retrieval-augmented generation models.", deliverable: "AI-Ready Assets" },
+      { title: "Schema Deployment", description: "Implementing advanced JSON-LD and semantic markers.", deliverable: "Verified Rich Results" }
+    ],
+    metrics: [
+      { label: "Search Share", value: "+45%", description: "Increase in semantic search visibility" },
+      { label: "LLM Citation", value: "High", description: "Verified discovery in AI responses" }
+    ],
+    frameworks: ["Semantic SEO", "GEO (Generative Engine Optimization)", "LangChain Framework"]
   },
   {
     slug: "ai-ml-learning-automation",
@@ -246,8 +306,18 @@ export const services: Service[] = [
       "Predictive insights for proactive strategies",
       "Personalized customer experiences driven by AI",
     ],
-    color: "from-purple-500",
     glow: "group-hover:shadow-purple-500/50",
+    workflow: [
+      { title: "Problem Scoping", description: "Identifying automation blockers and high-impact AI use cases.", deliverable: "Opportunity Roadmap" },
+      { title: "Model Selection", description: "Evaluating LLMs and custom ML models for specific tasks.", deliverable: "Technical Specs" },
+      { title: "Pilot Build", description: "Developing a functional MVP in an isolated sandbox environment.", deliverable: "Functional Prototype" },
+      { title: "Scaling & MLOps", description: "Deploying model with robust monitoring and auto-scaling.", deliverable: "Production AI System" }
+    ],
+    metrics: [
+      { label: "Task Speed", value: "10x", description: "Acceleration of automated workflows" },
+      { label: "Accuracy", value: "98%", description: "Verified model precision markers" }
+    ],
+    frameworks: ["MLOps Lifecycle", "Human-in-the-Loop", "Responsible AI Framework"]
   },
   {
     slug: "data-solutions-governance",
@@ -313,8 +383,18 @@ export const services: Service[] = [
       "Regulatory compliance and data security assurance",
       "Empowered analytics and reporting ecosystem",
     ],
-    color: "from-blue-500",
     glow: "group-hover:shadow-blue-500/50",
+    workflow: [
+      { title: "Landscape Review", description: "Mapping data sources, quality issues, and compliance gaps.", deliverable: "Data Maturity Audit" },
+      { title: "Warehouse Design", description: "Modeling the data layer for performance and governance.", deliverable: "Schema Blueprint" },
+      { title: "Pipeline Build", description: "Developing ETL/ELT flows with built-in quality checks.", deliverable: "Verified Data Layer" },
+      { title: "Compliance Link", description: "Applying security and governance policies automatically.", deliverable: "Trust Framework" }
+    ],
+    metrics: [
+      { label: "Data Quality", value: "99.9%", description: "Reduction in manual data cleanup" },
+      { label: "Time-to-Insight", value: "-70%", description: "Faster access to business intelligence" }
+    ],
+    frameworks: ["Data Vault 2.0", "GDPR/HIPAA Compliance", "Modern Data Stack"]
   },
   {
     slug: "web-mobile-app-development",
@@ -524,7 +604,17 @@ export const services: Service[] = [
       { label: "Book a Security Assessment", href: "/contact" },
       { label: "Request a Demo", href: "/contact" },
     ],
-    color: "from-indigo-500",
     glow: "group-hover:shadow-indigo-500/50",
+    workflow: [
+      { title: "Threat Profiling", description: "Analyzing target surface area and likely attack vectors.", deliverable: "Threat Model" },
+      { title: "Offensive Phase", description: "Conducting controlled exploits across apps and systems.", deliverable: "Exploit Report" },
+      { title: "Strategy Deep Dive", description: "Collaborating with teams to design remediation steps.", deliverable: "Security Roadmap" },
+      { title: "Resilience Check", description: "Re-testing and validating all security control fixes.", deliverable: "Compliance Certificate" }
+    ],
+    metrics: [
+      { label: "MTTR", value: "-60%", description: "Reduction in mean time to response" },
+      { label: "Risk Score", value: "90+", description: "Post-remediation security rating" }
+    ],
+    frameworks: ["OWASP Top 10", "NIST Cybersecurity Framework", "MITRE ATT&CK"]
   },
 ]
