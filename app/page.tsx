@@ -4,14 +4,14 @@ import { ServicesGridEnhanced } from "@/components/services-grid-enhanced"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Systems Integration | Strategy-Led Technology Consulting",
+  title: "Systems Integration",
   description:
     "Enterprise AI, cloud migration, cybersecurity, and system integration consulting. No hallucinations. No half work.",
   alternates: {
     canonical: "https://www.systemsintegration.co",
   },
   openGraph: {
-    title: "Systems Integration | Strategy-Led Technology Consulting",
+    title: "Systems Integration",
     description: "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
   },
 }
