@@ -8,6 +8,9 @@ export interface CaseStudy {
   solution: string[]
   outcomes: string[]
   technologies: string[]
+  methodologies: string[]
+  frameworks: string[]
+  image: string
   results: string
 }
 
@@ -19,6 +22,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Global Payment Processor",
     industry: "fintech",
     services: ["ai-ml", "data"],
+    image: "/images/portfolio/fintech.png",
     overview:
       "A leading global payment processor was losing millions annually to fraudulent transactions. They needed a real-time system to detect and prevent fraud without impacting legitimate transactions.",
     challenge:
@@ -37,6 +41,8 @@ export const caseStudyData: CaseStudyMap = {
       "40% increase in legitimate transaction approval",
     ],
     technologies: ["TensorFlow", "XGBoost", "Python", "Kubernetes", "PostgreSQL"],
+    methodologies: ["CRISP-DM", "Real-time Stream Processing", "Ensemble Learning"],
+    frameworks: ["Scikit-learn", "FastAPI", "Prometheus"],
     results:
       "The AI-powered system immediately reduced fraud loss by 85%, enabling the client to expand to new markets with confidence. The system continues learning and improving, now handling billions of transactions annually.",
   },
@@ -45,6 +51,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Healthcare Network",
     industry: "healthcare",
     services: ["integration", "devops", "security"],
+    image: "/images/portfolio/healthcare.png",
     overview:
       "A major healthcare network with 50 hospitals needed to migrate from legacy on-premises EHR to cloud without affecting patient care or losing a single record.",
     challenge:
@@ -64,6 +71,8 @@ export const caseStudyData: CaseStudyMap = {
       "2x improvement in system performance",
     ],
     technologies: ["AWS", "Terraform", "PostgreSQL", "Kafka", "Java"],
+    methodologies: ["Infrastructure as Code (IaC)", "Blue-Green Deployment", "Phased Migration"],
+    frameworks: ["AWS DMS", "Docker", "CloudWatch"],
     results:
       "The healthcare network maintained perfect uptime during the migration, reducing operational costs by 40% while improving system performance and reliability.",
   },
@@ -72,6 +81,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Industrial Manufacturer",
     industry: "manufacturing",
     services: ["ai-ml", "data", "devops"],
+    image: "/images/portfolio/industrial.png",
     overview:
       "A global manufacturer with 200+ production facilities needed to reduce equipment downtime and maintenance costs through predictive maintenance.",
     challenge:
@@ -91,6 +101,8 @@ export const caseStudyData: CaseStudyMap = {
       "45-day ROI on IoT deployment",
     ],
     technologies: ["Python", "TensorFlow", "Kafka", "InfluxDB", "Kubernetes"],
+    methodologies: ["IoT Data Streaming", "Neural Network Forecasting", "Predictive Maintenance"],
+    frameworks: ["LlamaIndex", "LangChain", "Apache Spark"],
     results:
       "The predictive maintenance platform delivered 35% reduction in downtime, equivalent to $8M annual savings, with ROI achieved in just 45 days.",
   },
@@ -99,6 +111,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Aerospace Contractor",
     industry: "aerospace",
     services: ["security", "devops"],
+    image: "/images/portfolio/cybersecurity.png",
     overview:
       "An aerospace contractor needed to consolidate security operations and achieve CMMC Level 3 compliance for Department of Defense contracts.",
     challenge:
@@ -118,6 +131,8 @@ export const caseStudyData: CaseStudyMap = {
       "Successful DoD security audits",
     ],
     technologies: ["Splunk", "Elastic Stack", "Terraform", "Kubernetes"],
+    methodologies: ["Zero Trust Architecture", "SOC 2 Type II", "Incident Response"],
+    frameworks: ["Wazuh", "Metasploit", "Nessus"],
     results:
       "The SOC achieved CMMC Level 3 compliance on first audit and reduced incident response time by 60%, enabling the contractor to compete for higher-value DoD contracts.",
   },
@@ -126,6 +141,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "Oil & Gas Exploration",
     industry: "oil-gas",
     services: ["data", "devops", "ai-ml"],
+    image: "/images/portfolio/oil-gas.png",
     overview:
       "An oil and gas exploration company was drowning in 50TB+ of seismic data but lacked the infrastructure to process it in real-time.",
     challenge: "Processing seismic data took weeks, delaying exploration decisions. No real-time analytics capability.",
@@ -144,6 +160,8 @@ export const caseStudyData: CaseStudyMap = {
       "$50M+ value from improved exploration success",
     ],
     technologies: ["AWS HPC", "CUDA", "PySpark", "Elasticsearch", "Kubernetes"],
+    methodologies: ["High-Performance Computing (HPC)", "Geological Machine Learning", "Big Data Analytics"],
+    frameworks: ["Databricks", "Hadoop", "Dask"],
     results:
       "Real-time seismic processing capabilities improved exploration success by 25%, generating $50M+ in additional value from improved drilling site selection.",
   },
@@ -152,6 +170,7 @@ export const caseStudyData: CaseStudyMap = {
     client: "University System",
     industry: "education",
     services: ["integration", "devops", "security"],
+    image: "/images/portfolio/education.png",
     overview:
       "A 10-campus university system needed to consolidate and modernize its learning management platform serving 100k+ students.",
     challenge: "Each campus ran separate LMS instances with no data sharing. Students had fragmented experience.",
@@ -170,6 +189,8 @@ export const caseStudyData: CaseStudyMap = {
       "Real-time insights for student success interventions",
     ],
     technologies: ["Moodle", "AWS", "Kubernetes", "PostgreSQL"],
+    methodologies: ["Microservices Architecture", "OAuth 2.0 / SAML", "Agile Software Development"],
+    frameworks: ["Next.js", "Redis", "New Relic"],
     results:
       "The unified LMS improved student engagement by 40% while reducing operational costs by 35%, enabling data-driven interventions for student success.",
   },

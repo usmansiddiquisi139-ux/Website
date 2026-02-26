@@ -83,28 +83,64 @@ export default function PortfolioPage() {
       <section className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study) => (
-              <Link key={study.slug} href={`/portfolio/${study.slug}`}>
-                <div className="h-full p-8 rounded-lg border border-orange-500/30 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/5 transition cursor-pointer group">
+            {caseStudies.map((study) => {
+              // Map local data to caseStudyData to get images/techs
+              const fullStudy = require("@/lib/case-studies").default[study.slug]
+              return (
+                <Link key={study.slug} href={`/portfolio/${study.slug}`}>
+                  <div className="h-full rounded-2xl overflow-hidden border border-orange-500/30 bg-transparent backdrop-blur-md hover:border-orange-400 hover:bg-orange-500/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">
 
-                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-orange-400 transition-all duration-300">
-                    {study.title}
-                  </h3>
+                    {/* Image Container */}
+                    <div className="relative h-64 w-full overflow-hidden">
+                      <img
+                        src={fullStudy?.image || "/images/services-bg.jpg"}
+                        alt={study.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  <p className="text-white text-sm mb-4 group-hover:text-white/90 transition-colors duration-300">
-                    {study.client}
-                  </p>
+                      {/* Industry Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-orange-500 text-white text-xs font-bold uppercase tracking-widest rounded-full">
+                          {study.industry}
+                        </span>
+                      </div>
+                    </div>
 
-                  <p className="text-white mb-6 group-hover:text-white transition-colors duration-300">
-                    {study.description}
-                  </p>
+                    <div className="p-8 flex-1 flex flex-col">
+                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-orange-400 transition-all duration-300">
+                        {study.title}
+                      </h3>
 
-                  <p className="text-orange-400 font-semibold group-hover:text-orange-300 transition-colors duration-300">
-                    {study.outcome}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                      <p className="text-orange-400/80 text-sm font-medium mb-4">
+                        {study.client}
+                      </p>
+
+                      <p className="text-white/70 mb-6 line-clamp-2 italic">
+                        &quot;{study.description}&quot;
+                      </p>
+
+                      <div className="mt-auto space-y-4">
+                        {/* Tech Tags */}
+                        <div className="flex flex-wrap gap-2">
+                          {fullStudy?.technologies.slice(0, 3).map((tech: string) => (
+                            <span key={tech} className="text-[10px] text-white/50 border border-white/10 px-2 py-0.5 rounded uppercase">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="pt-4 border-t border-white/10">
+                          <p className="text-orange-400 font-bold group-hover:text-orange-300 transition-colors duration-300 flex items-center gap-2">
+                            <span className="text-xs uppercase tracking-tighter text-white/40">Outcome:</span> {study.outcome}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
