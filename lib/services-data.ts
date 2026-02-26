@@ -55,7 +55,7 @@ export const services: Service[] = [
     icon: "Link2",
     title: "Integration & Migration",
     headline: "Seamlessly Connect. Effortlessly Upgrade. Future-Proof Your Business.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&q=80",
     overview:
       "In today's fast-moving digital world, disconnected systems are costly. We eliminate manual workflows, unify scattered data, and modernize tech stacks with end-to-end Integration & Migration solutions.",
     description:
@@ -234,7 +234,7 @@ export const services: Service[] = [
       "Reduced manual SEO efforts through automation",
       "Higher organic visibility and brand authority",
     ],
-    image: "https://images.unsplash.com/photo-1460925895317-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1557833006-c9f4827dd4f0?auto=format&q=80",
     tagline: "AI-first SEO",
     color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
@@ -309,7 +309,7 @@ export const services: Service[] = [
       "Predictive insights for proactive strategies",
       "Personalized customer experiences driven by AI",
     ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad195?auto=format&q=80",
     color: "from-purple-500",
     glow: "group-hover:shadow-purple-500/50",
     workflow: [
@@ -388,7 +388,7 @@ export const services: Service[] = [
       "Regulatory compliance and data security assurance",
       "Empowered analytics and reporting ecosystem",
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1543286386-713bcd53b971?auto=format&q=80",
     color: "from-blue-500",
     glow: "group-hover:shadow-blue-500/50",
     workflow: [
