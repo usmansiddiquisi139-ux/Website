@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Header } from "@/components/header"
 
 import { Breadcrumbs } from "../../components/Breadcrumbs"
 import { Service } from "@/lib/services-data"
@@ -75,7 +74,6 @@ export default function ServiceContent({ service }: { service: Service }) {
 
   return (
     <main className="min-h-screen text-white bg-transparent">
-      <Header />
 
       {/* 🧭 Breadcrumbs */}
       <div className="max-w-6xl mx-auto px-6 pt-24 pb-6">

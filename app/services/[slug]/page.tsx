@@ -3,7 +3,6 @@ import { services } from "@/lib/services-data";
 import { getTool } from "@/lib/tools-data";
 import { buildMetadata } from "@/lib/seo";
 import ServiceContent from "./service-content";
-import { Header } from "@/components/header";
 
 import Link from "next/link";
 
@@ -93,9 +92,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       />
 
       <div className="absolute inset-0 bg-transparent" />
-      <div className="relative z-10">
-        <Header />
-      </div>
 
       <div className="relative z-10">
         <ServiceContent service={plainService} />
@@ -112,8 +108,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     key={index}
                     href={cta.href || "/contact"}
                     className={`inline-block px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 ${index === 0
-                        ? `text-white bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]`
-                        : `text-white border ${borderColor} border-2 hover:bg-gradient-to-r ${gradientClass} hover:text-white hover:scale-105`
+                      ? `text-white bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]`
+                      : `text-white border ${borderColor} border-2 hover:bg-gradient-to-r ${gradientClass} hover:text-white hover:scale-105`
                       }`}
                   >
                     {cta.label}

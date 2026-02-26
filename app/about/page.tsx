@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Header } from "@/components/header";
 
 import Link from "next/link";
 
@@ -66,7 +65,6 @@ const structuredData = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-center text-white">
-      <Header />
 
       {/* Inject JSON-LD structured data */}
       <script

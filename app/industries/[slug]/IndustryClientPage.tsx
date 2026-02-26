@@ -1,6 +1,5 @@
 "use client"
 
-import { Header } from "@/components/header"
 
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -63,7 +62,6 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       {/* Overlay */}
       <div className="fixed inset-0 -z-10 bg-transparent pointer-events-none" />
 
-      <Header />
 
       {/* Hero */}
       <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-transparent">

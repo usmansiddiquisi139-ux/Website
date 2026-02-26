@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { Header } from "@/components/header";
 
 import Link from "next/link";
 import { services } from "@/lib/services-data";
@@ -34,23 +33,11 @@ export async function generateMetadata({
   if (!post)
     return { title: "Blog Not Found | Systems Integration", description: "The requested blog post could not be found." };
 
-  return buildMetadata({
+  const { metadata } = buildMetadata({
     title: `${post.title} | Systems Integration`,
     description: post.excerpt,
-    url: `https://www.systemsintegration.co/blog/${slug}`,
-    image: post.image || "/images/og-default.jpg",
-    type: "article",
-    keywords: [
-      post.category,
-      "AI Consultancy",
-      "Digital Transformation",
-      "Enterprise Integration",
-      "Systems Integration",
-      "AI Solutions",
-      "Technology Consultancy",
-    ],
-    // 🧩 Structured Data for BlogPost
-    schema: {
+    path: `/blog/${slug}`,
+    jsonLdData: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
@@ -76,6 +63,8 @@ export async function generateMetadata({
       },
     },
   });
+
+  return metadata;
 }
 
 // 🧰 Markdown Formatting — includes ##, ###, and bullet styling
@@ -100,7 +89,7 @@ function renderFormattedContent(raw: string) {
     .replace(/^<p><\/p>/, "")
     // 🟢 Proper list wrapping
     .replace(
-      /(<li>.*?<\/li>)/gims,
+      /(<li>[\s\S]*?<\/li>)/gim,
       "<ul class='list-disc list-outside pl-14 space-y-2 mb-6 marker:text-orange-400'>$1</ul>"
     )
     .trim();
@@ -122,7 +111,6 @@ export default async function BlogPostPage({
 
   return (
     <main className="min-h-screen bg-transparent text-white">
-      <Header />
 
       <article className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16 pt-28 pb-16 leading-relaxed">
         {/* 🟠 Category Pill */}

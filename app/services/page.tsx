@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/header";
 
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -71,7 +70,6 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-cover bg-center bg-no-repeat text-white">
       <div className="bg-transparent min-h-screen text-white">
-        <Header />
 
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 text-center">

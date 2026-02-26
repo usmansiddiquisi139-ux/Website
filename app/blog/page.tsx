@@ -1,6 +1,5 @@
 import { getAllPosts } from "@/lib/blog-data";
 import Link from "next/link";
-import { Header } from "@/components/header";
 
 
 export default function BlogPage() {
@@ -8,7 +7,6 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-transparent text-white">
-      <Header />
 
       <div className="max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Insights & Articles</h1>

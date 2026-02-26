@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-
 import Link from "next/link"
 
 export const metadata = {
@@ -32,7 +30,6 @@ export default function IndustriesPage() {
       {/* Dark overlay to improve contrast */}
       <div className="absolute inset-0 bg-transparent -z-10" />
 
-      <Header />
 
       {/* Hero */}
       <section className="pt-32 pb-4 px-4 sm:px-6 lg:px-8">

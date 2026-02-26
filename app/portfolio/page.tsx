@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-
 import Link from "next/link"
 
 export const metadata = {
@@ -70,7 +68,6 @@ export default function PortfolioPage() {
 
   return (
     <main className="min-h-screen bg-transparent">
-      <Header />
 
       {/* Hero */}
       <section className="pt-24 pb-2 px-4 sm:px-6 lg:px-8">

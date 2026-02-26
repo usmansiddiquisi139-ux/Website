@@ -1,4 +1,3 @@
-import { Header } from "@/components/header"
 
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -59,7 +58,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
       </div>
 
-      <Header />
 
       {/* Hero */}
       <section className="pt-20 pb-6 px-4 sm:px-6 lg:px-8">
