@@ -86,39 +86,47 @@ export default function ServiceContent({ service }: { service: Service }) {
         />
       </div>
 
-      {/* 🌟 Focused Hero (Compact Side-by-Side) */}
+      {/* 🌟 Focused Hero (Brand First) */}
       <section className="pt-4 pb-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1 space-y-6 text-left">
-            <div className="flex items-center gap-3">
-              {IconComponent && <IconComponent className={`w-8 h-8 ${colorClasses.text}`} />}
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">{service.title}</h1>
-            </div>
-            {service.headline && <p className={`text-xl font-medium ${colorClasses.text}`}>{service.headline}</p>}
-            <div className="space-y-4 text-white/80 leading-relaxed text-base italic">
-              {service.overview && <p>{service.overview}</p>}
-              {service.description && <p>{service.description}</p>}
-            </div>
+        <div className="max-w-6xl mx-auto space-y-12">
 
-            {/* CTA Inline */}
-            <div className="pt-4">
-              <a href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block`}>
-                Start Project Analysis
-              </a>
+          {/* Centered Heading & Logo */}
+          <div className="text-center space-y-4">
+            <div className="flex items-center justify-center gap-4">
+              {IconComponent && <IconComponent className={`w-10 h-10 ${colorClasses.text}`} />}
+              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white">{service.title}</h1>
             </div>
+            {service.headline && <p className={`text-2xl font-medium ${colorClasses.text}`}>{service.headline}</p>}
           </div>
 
-          {/* Service Image (Visual Authority) */}
-          {service.image && (
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex-1 w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-[300px] md:h-[400px] relative group"
-            >
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            </motion.div>
-          )}
+          {/* Compact Content Row */}
+          <div className="flex flex-col lg:flex-row gap-12 items-center bg-white/[0.02] p-8 rounded-[2rem] border border-white/5">
+            <div className="flex-1 space-y-6 text-left">
+              <div className="space-y-4 text-white/80 leading-relaxed text-lg italic">
+                {service.overview && <p>{service.overview}</p>}
+                {service.description && <p>{service.description}</p>}
+              </div>
+
+              {/* CTA Inline */}
+              <div className="pt-2">
+                <a href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
+                  Start Project Analysis
+                </a>
+              </div>
+            </div>
+
+            {/* Smaller Service Image (Visual Authority) */}
+            {service.image && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="lg:w-[400px] w-full shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-[250px] md:h-[300px] relative group"
+              >
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
 
