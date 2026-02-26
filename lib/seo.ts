@@ -25,6 +25,11 @@ export const defaultMetadata: Metadata = {
     "API Integration",
     "Business Intelligence",
     "Digital Transformation",
+    "Hire AI Firm",
+    "AI Freelance Expert",
+    "Automation Consultant",
+    "Hire Usman Siddiqui",
+    "Enterprise AI Agency",
   ],
   openGraph: {
     title: "Systems Integration | Transforming Data into Intelligent Solutions",
@@ -121,6 +126,39 @@ export const jsonLdPerson = {
   ]
 };
 
+// 💼 Professional Service Schema (Lead Gen)
+export const jsonLdProfessionalService = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Systems Integration",
+  "image": `${baseUrl}/logo.png`,
+  "url": baseUrl,
+  "telephone": "",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Pakistan"
+  },
+  "priceRange": "$$$",
+  "description": "Enterprise AI, Automation & Digital Transformation Firm. Hire us for expert consulting and high-scale technical delivery.",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${baseUrl}/contact`,
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "Consultation Booking"
+    }
+  }
+};
+
 // 🔧 Utility: Merge multiple JSON-LD objects safely
 function mergeJsonLd(...schemas: any[]) {
   return schemas.flat().filter(Boolean);
@@ -160,7 +198,7 @@ export function buildMetadata({
     },
   };
 
-  const mergedJsonLd = mergeJsonLd(jsonLdOrganization, jsonLdPerson, jsonLdData || schema);
+  const mergedJsonLd = mergeJsonLd(jsonLdOrganization, jsonLdPerson, jsonLdProfessionalService, jsonLdData || schema);
 
   return { metadata, jsonLd: mergedJsonLd };
 }

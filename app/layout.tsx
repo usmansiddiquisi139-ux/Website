@@ -7,7 +7,7 @@ import Script from "next/script";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Header } from "@/components/header";
 import StructuredData from "@/app/components/structured-data";
-import { jsonLdOrganization, jsonLdPerson } from "@/lib/seo";
+import { jsonLdOrganization, jsonLdPerson, jsonLdProfessionalService } from "@/lib/seo";
 import CookieConsent from "@/app/components/CookieConsent";
 
 import Footer from "@/components/footer"; // ✅ Add footer
@@ -116,6 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Global Structured Data */}
         <StructuredData data={jsonLdOrganization} />
         <StructuredData data={jsonLdPerson} />
+        <StructuredData data={jsonLdProfessionalService} />
         <div className="min-h-screen bg-black/50">
           <Header />
           <ScrollToTop />
