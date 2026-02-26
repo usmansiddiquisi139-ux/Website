@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     description:
       "Enterprise AI, cloud migration, cybersecurity, and system integration consulting.",
   },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

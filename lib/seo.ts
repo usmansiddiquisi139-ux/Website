@@ -48,7 +48,7 @@ export const defaultMetadata: Metadata = {
   authors: [{ name: "Usman Siddiqui", url: "https://www.linkedin.com/in/usman-siddiqui-data-engineer" }],
   publisher: "Systems Integration",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
