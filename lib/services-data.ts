@@ -388,7 +388,7 @@ export const services: Service[] = [
       "Regulatory compliance and data security assurance",
       "Empowered analytics and reporting ecosystem",
     ],
-    image: "https://images.unsplash.com/photo-1543286386-713bcd53b971?auto=format&q=80",
+    image: "/images/services/data-governance.jpg",
     color: "from-blue-500",
     glow: "group-hover:shadow-blue-500/50",
     workflow: [
