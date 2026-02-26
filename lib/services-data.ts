@@ -55,7 +55,7 @@ export const services: Service[] = [
     icon: "Link2",
     title: "Integration & Migration",
     headline: "Seamlessly Connect. Effortlessly Upgrade. Future-Proof Your Business.",
-    image: "/images/services/integration.png",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1200",
     overview:
       "In today's fast-moving digital world, disconnected systems are costly. We eliminate manual workflows, unify scattered data, and modernize tech stacks with end-to-end Integration & Migration solutions.",
     description:
@@ -234,6 +234,9 @@ export const services: Service[] = [
       "Reduced manual SEO efforts through automation",
       "Higher organic visibility and brand authority",
     ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    tagline: "AI-first SEO",
+    color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
     workflow: [
       { title: "Semantic Audit", description: "Analyzing current visibility in search and AI bot performance.", deliverable: "LLM Discovery Report" },
@@ -306,6 +309,8 @@ export const services: Service[] = [
       "Predictive insights for proactive strategies",
       "Personalized customer experiences driven by AI",
     ],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
+    color: "from-purple-500",
     glow: "group-hover:shadow-purple-500/50",
     workflow: [
       { title: "Problem Scoping", description: "Identifying automation blockers and high-impact AI use cases.", deliverable: "Opportunity Roadmap" },
@@ -383,6 +388,8 @@ export const services: Service[] = [
       "Regulatory compliance and data security assurance",
       "Empowered analytics and reporting ecosystem",
     ],
+    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
+    color: "from-blue-500",
     glow: "group-hover:shadow-blue-500/50",
     workflow: [
       { title: "Landscape Review", description: "Mapping data sources, quality issues, and compliance gaps.", deliverable: "Data Maturity Audit" },
@@ -450,8 +457,20 @@ export const services: Service[] = [
       "Scalable and secure digital products",
       "Consistent UI/UX across platforms",
     ],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
     color: "from-yellow-500",
     glow: "group-hover:shadow-yellow-500/50",
+    workflow: [
+      { title: "UX Prototyping", description: "Creating interactive wireframes and user flow diagrams.", deliverable: "Interactive Prototype" },
+      { title: "Agile Development", description: "Building product in 2-week sprints with continuous feedback.", deliverable: "Sprint Demo" },
+      { title: "QA & Hardening", description: "Rigorous testing across devices and security penetration.", deliverable: "Release Candidate" },
+      { title: "Store Launch", description: "Managing App Store/Google Play submission and production sync.", deliverable: "Live Application" }
+    ],
+    metrics: [
+      { label: "Performance", value: "95+", description: "Google Lighthouse score average" },
+      { label: "Retention", value: "+30%", description: "Improvement in user engagement markers" }
+    ],
+    frameworks: ["Atomic Design", "Agile/Scrum", "TDD (Test Driven Development)"]
   },
   {
     slug: "devops-cloud",
@@ -506,8 +525,20 @@ export const services: Service[] = [
       "Enhanced visibility through monitoring and observability",
       "Optimized cloud cost and resource utilization",
     ],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
     color: "from-cyan-500",
     glow: "group-hover:shadow-cyan-500/50",
+    workflow: [
+      { title: "Infra Audit", description: "Reviewing existing cloud costs and bottleneck analysis.", deliverable: "Audit Report" },
+      { title: "IaC Automation", description: "Scripting infrastructure using Terraform and Ansible.", deliverable: "Automated Environment" },
+      { title: "CI/CD Setup", description: "Automating testing and deployment with zero-human-touch.", deliverable: "Continuous Delivery" },
+      { title: "Scaling Ops", description: "Implementing Kubernetes and auto-healing mechanisms.", deliverable: "Self-Healing Cluster" }
+    ],
+    metrics: [
+      { label: "Deployment", value: "Hourly", description: "Increase in release frequency" },
+      { label: "Cloud Cost", value: "-25%", description: "Reduction in monthly infrastructure burn" }
+    ],
+    frameworks: ["SRE (Site Reliability Engineering)", "Infrastructure as Code", "GitOps"]
   },
 
   // 🛡️ New Cybersecurity Service
@@ -604,7 +635,9 @@ export const services: Service[] = [
       { label: "Book a Security Assessment", href: "/contact" },
       { label: "Request a Demo", href: "/contact" },
     ],
+    color: "from-indigo-500",
     glow: "group-hover:shadow-indigo-500/50",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
     workflow: [
       { title: "Threat Profiling", description: "Analyzing target surface area and likely attack vectors.", deliverable: "Threat Model" },
       { title: "Offensive Phase", description: "Conducting controlled exploits across apps and systems.", deliverable: "Exploit Report" },
@@ -615,6 +648,5 @@ export const services: Service[] = [
       { label: "MTTR", value: "-60%", description: "Reduction in mean time to response" },
       { label: "Risk Score", value: "90+", description: "Post-remediation security rating" }
     ],
-    frameworks: ["OWASP Top 10", "NIST Cybersecurity Framework", "MITRE ATT&CK"]
   },
 ]

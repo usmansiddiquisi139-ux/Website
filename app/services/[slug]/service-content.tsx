@@ -88,16 +88,32 @@ export default function ServiceContent({ service }: { service: Service }) {
 
       {/* 🌟 Hero Section (hybrid) */}
       {(service.title || service.headline || service.overview || service.description) && (
-        <section className="pt-5 pb-2 text-center px-8">
+        <section className="pt-5 pb-12 text-center px-8">
           <div className="max-w-5xl mx-auto">
             {(IconComponent || service.title) && (
-              <div className="flex items-center justify-center gap-3 mb-4">
-                {IconComponent && <IconComponent className={`w-10 h-10 ${colorClasses.text}`} />}
-                {service.title && <h1 className="text-4xl md:text-5xl font-bold">{service.title}</h1>}
+              <div className="flex items-center justify-center gap-3 mb-8">
+                {IconComponent && <IconComponent className={`w-12 h-12 ${colorClasses.text}`} />}
+                {service.title && <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">{service.title}</h1>}
               </div>
             )}
 
-            {service.headline && <p className="text-white/70 text-lg mb-2">{service.headline}</p>}
+            {/* Service Image */}
+            {service.image && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="mb-16 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl h-[400px] md:h-[500px] relative group"
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+              </motion.div>
+            )}
+
+            {service.headline && <p className={`text-2xl font-medium mb-8 ${colorClasses.text}`}>{service.headline}</p>}
 
             {(service.overview || service.description) && (
               <div className="text-white/90 text-left text-justify leading-relaxed max-w-5xl mx-auto px-6 md:px-4 mt-8 mb-5">
