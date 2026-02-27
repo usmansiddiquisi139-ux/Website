@@ -211,7 +211,7 @@ export default function ServiceContent({ service }: { service: Service }) {
           {/* Section 1: Outcomes */}
           <div>
             <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <div className="w-1.5 h-6 bg-orange-500 rounded-full" /> Expected Outcomes
+              <div className="w-1.5 h-6 bg-orange-500 rounded-full" /> Strategic Outcomes
             </h3>
             <ul className="space-y-4">
               {service.outcomes?.map((o, i) => (

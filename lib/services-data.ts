@@ -166,11 +166,11 @@ export const services: Service[] = [
       "Scalable solutions designed for your future growth",
     ],
     typicalUseCases: [
-      "Migrating legacy ERP/CRM to the cloud",
-      "Connecting websites to CRMs, payment gateways, and marketing tools",
-      "Centralizing business data from multiple sources into a warehouse",
-      "Automating manual workflows & reporting",
-      "Integrating IoT, AI, or ML systems with existing infrastructure",
+      "Enterprise Cloud Migration (LMS/EHR/ERP)",
+      "Cross-Platform Interoperability (API/Webhooks)",
+      "Data Warehouse Centralization (ETL/ELT Pipelines)",
+      "Legacy Tech Stack Modernization",
+      "IoT & Edge Device Data Integration",
     ],
     ctas: [
       { label: "Book a Free Consultation", href: "/contact" },
@@ -422,8 +422,15 @@ export const services: Service[] = [
       { title: "Compliance Link", description: "Applying security and governance policies automatically.", deliverable: "Trust Framework" }
     ],
     metrics: [
-      { label: "Data Quality", value: "99.9%", description: "Reduction in manual data cleanup" },
-      { label: "Time-to-Insight", value: "-70%", description: "Faster access to business intelligence" }
+      { label: "Data Quality", value: "99.9%", description: "Verified data accuracy benchmarks" },
+      { label: "Operational Speed", value: "+75%", description: "Reduction in manual data processing" }
+    ],
+    typicalUseCases: [
+      "Enterprise Data Governance Frameworks",
+      "Real-Time Analytics & Decision Intelligence",
+      "Regulatory Compliance Management (GDPR/HIPAA)",
+      "Automated MDM & Data Quality Pipelines",
+      "Sovereign Data Storage Solutions"
     ],
     frameworks: ["Data Vault 2.0", "GDPR/HIPAA Compliance", "Modern Data Stack"]
   },
