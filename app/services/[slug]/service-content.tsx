@@ -136,7 +136,7 @@ export default function ServiceContent({ service }: { service: Service }) {
 
           {/* Metrics Column */}
           <div className="xl:w-1/3">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">/// Impact Benchmarks</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">Impact Benchmarks</h3>
             <div className="grid grid-cols-2 gap-4">
               {service.metrics?.map((m, i) => (
                 <div key={i} className="p-4 bg-white/5 rounded-xl border border-white/5">
@@ -149,7 +149,7 @@ export default function ServiceContent({ service }: { service: Service }) {
 
           {/* Capabilities Column (Horizontal Scroll on Mobile) */}
           <div className="xl:flex-1">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">/// Core Capabilities</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">Core Capabilities</h3>
             <div className="flex flex-wrap gap-2">
               {service.capabilities.map((cap, i) => (
                 <button
