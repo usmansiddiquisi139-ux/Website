@@ -182,73 +182,97 @@ export const services: Service[] = [
   {
     slug: "langchain-ai-seo-automation",
     icon: "Search",
-    title: "LangChain-Powered AI-SEO Automation",
-    headline: "AI-first SEO for search engines and LLM ecosystems",
+    title: "LangChain AI-SEO & Growth Intelligence",
+    headline: "Strategy-led discoverability for the Generative AI era.",
     overview:
-      "Leverage LangChain frameworks and AI-SEO strategies to deliver intelligent, scalable and AI-ready digital visibility across search engines and LLM platforms.",
+      "We move beyond traditional search. We architect digital authority for both search engines and LLM ecosystems (GEO/AIO), ensuring your enterprise is the first choice for both humans and AI agents.",
     description:
-      "We combine structured data, semantic optimization and automated pipelines to make your content discoverable in ChatGPT, Gemini, Claude, DeepSeek, Ollama and more.",
+      "Leveraging LangChain and autonomous agents, we automate the end-to-end SEO lifecycle—from programmatic content generation to real-time indexing—guaranteeing your brand stays at the top of Google and AI assistant results.",
     capabilities: [
       {
-        title: "Automated Content Optimization",
-        bullets: ["LLM-driven generation of titles, meta descriptions, FAQs and structured content"],
-        tools: ["LangChain", "OpenAI API", "Python", "Next.js"],
+        title: "Programmatic SEO & Content Scale",
+        bullets: [
+          "Deploy thousands of high-quality, high-intent landing pages with automated LLM-driven pipelines",
+          "Automated generation of meta-data, semantic headers, and context-aware FAQs",
+        ],
+        tools: ["LangChain", "Next.js", "Python", "Vercel"],
       },
       {
-        title: "Keyword Intelligence & Clustering",
-        bullets: ["Scalable keyword research, clustering and topical mapping for strategic targeting"],
-        tools: ["Ahrefs", "MarketMuse", "Surfer SEO", "Python NLP libraries"],
+        title: "Generative Engine Optimization (GEO)",
+        bullets: [
+          "Optimize content for discovery in ChatGPT, Gemini, Perplexity, and Claude",
+          "Strategic citation growth and entity-based authority building",
+        ],
+        tools: ["RAG Architecture", "Semantic Marking", "JSON-LD"],
       },
       {
-        title: "RAG-Based Content Intelligence",
-        bullets: ["Retrieval-Augmented Generation to make content AI-accessible and context-aware"],
-        tools: ["LangChain", "FAISS", "Pinecone", "Vector Databases"],
+        title: "Search Intent Automation",
+        bullets: [
+          "Autonomous agents that analyze real-time search trends and adjust content strategy in hours, not months",
+          "Predictive keyword clustering based on user journey mapping",
+        ],
+        tools: ["LangGraph", "OpenAI API", "Hugging Face"],
       },
       {
-        title: "Schema & Structured Data Integration",
-        bullets: ["JSON-LD and Schema.org markup to improve indexing and AI interpretability"],
-        tools: ["Schema.org", "Google Search Console", "Wikidata"],
-      },
-      {
-        title: "Autonomous SEO Agents",
-        bullets: ["Automate sitemap management, indexing workflows and content briefs"],
-        tools: ["LangChain", "OpenAI API", "Python", "Astro"],
+        title: "Semantic Authority Mapping",
+        bullets: [
+          "Topical clustering and entity relationship mapping to build industry's first-choice authority",
+          "Wikidata and Knowledge Graph integration for enhanced AI interpretability",
+        ],
+        tools: ["MarketMuse", "Ahrefs", "Surfer SEO", "Neo4j"],
       },
     ],
     tools: [
       "LangChain",
+      "LangGraph",
       "OpenAI API",
       "Python",
       "Next.js",
-      "Astro",
       "Schema.org",
-      "Google Search Console",
+      "JSON-LD",
       "Wikidata",
-      "Surfer SEO",
-      "MarketMuse",
       "Ahrefs",
+      "Surfer SEO",
+      "Pinecone",
     ],
     outcomes: [
-      "Future-proof digital presence across search engines and LLMs",
-      "Improved discoverability in AI assistants and models",
-      "Reduced manual SEO efforts through automation",
-      "Higher organic visibility and brand authority",
+      "Dominant rankings in traditional Search and AI generative results",
+      "Increased citation frequency by AI personal assistants",
+      "Scalable lead generation through programmatic intent targeting",
+      "Future-proof brand discoverability in the agentic web era",
     ],
     image: "https://images.unsplash.com/photo-1557833006-c9f4827dd4f0?auto=format&q=80",
-    tagline: "AI-first SEO",
+    tagline: "Strategy-Led AIO",
     color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
     workflow: [
-      { title: "Semantic Audit", description: "Analyzing current visibility in search and AI bot performance.", deliverable: "LLM Discovery Report" },
-      { title: "Topical Mapping", description: "Clustering entities and keywords for semantic relevance.", deliverable: "Content Architecture" },
-      { title: "RAG Integration", description: "Optimizing content for retrieval-augmented generation models.", deliverable: "AI-Ready Assets" },
-      { title: "Schema Deployment", description: "Implementing advanced JSON-LD and semantic markers.", deliverable: "Verified Rich Results" }
+      {
+        title: "Semantic Discovery",
+        description: "Mapping the entity landscape and identifying authority gaps in Search & LLM ecosystems.",
+        deliverable: "Discoverability Audit"
+      },
+      {
+        title: "Topographic Mapping",
+        description: "Clustering intent to build a resonant content architecture that AI agents can easily cite.",
+        deliverable: "Strategic Roadmap"
+      },
+      {
+        title: "Autonomous Pipeline",
+        description: "Deploying programmatic content agents to scale high-intent pages with 100% semantic accuracy.",
+        deliverable: "Agentic SEO Engine"
+      },
+      {
+        title: "GEO Hardening",
+        description: "Continuous monitoring of citation rates across ChatGPT, Gemini, and Perplexity.",
+        deliverable: "Visibility Dashboard"
+      }
     ],
     metrics: [
-      { label: "Search Share", value: "+45%", description: "Increase in semantic search visibility" },
-      { label: "LLM Citation", value: "High", description: "Verified discovery in AI responses" }
+      { label: "AI Citation", value: "High", description: "Verified discovery in LLM responses" },
+      { label: "Semantic Share", value: "+60%", description: "Increase in topical authority markers" },
+      { label: "Scale Speed", value: "10x", description: "Acceleration in content deployment" }
     ],
-    frameworks: ["Semantic SEO", "GEO (Generative Engine Optimization)", "LangChain Framework"]
+    frameworks: ["GEO (Generative Engine Optimization)", "AIO (AI Optimization)", "LangChain/LangGraph Framework"]
   },
   {
     slug: "ai-ml-learning-automation",
