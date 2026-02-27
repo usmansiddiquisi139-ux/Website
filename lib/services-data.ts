@@ -359,6 +359,19 @@ export const services: Service[] = [
       { label: "Task Speed", value: "10x", description: "Acceleration of automated workflows" },
       { label: "Accuracy", value: "98%", description: "Verified model precision markers" }
     ],
+    whyChooseUs: [
+      "Custom ML Orchestration: We design bespoke models tailored to your specific operational logic.",
+      "Human-in-the-Loop Experts: We ensure AI safety and precision through strategic human oversight.",
+      "Scalable MLOps: Infrastructure designed to support continuous learning and rapid model iteration.",
+      "Intelligence-First Approach: Moving beyond simple scripts to autonomous, decision-making systems."
+    ],
+    typicalUseCases: [
+      "Intelligent Process Automation (IPA) for High-Volume Ops",
+      "Predictive Maintenance for Energy & Manufacturing",
+      "Large-Scale NLP & Document Understanding Engines",
+      "Personalized Recommendation Systems for E-commerce",
+      "Autonomous AI Agents for Customer & Internal Support"
+    ],
     frameworks: ["MLOps Lifecycle", "Human-in-the-Loop", "Responsible AI Framework"]
   },
   {
@@ -438,6 +451,12 @@ export const services: Service[] = [
       { label: "Data Quality", value: "99.9%", description: "Verified data accuracy benchmarks" },
       { label: "Operational Speed", value: "+75%", description: "Reduction in manual data processing" }
     ],
+    whyChooseUs: [
+      "Sovereign Data Architecture: We build secure systems that keep you in full control of your assets.",
+      "Governance-by-Design: Compliance and quality are baked into the code, not added as afterthoughts.",
+      "Scalable Intelligence: Engineered to handle petabyte-scale data with millisecond response times.",
+      "Strategy-Led ETL: Every pipeline is aligned with your business's primary intelligence goals."
+    ],
     typicalUseCases: [
       "Enterprise Data Governance Frameworks",
       "Real-Time Analytics & Decision Intelligence",
@@ -514,6 +533,19 @@ export const services: Service[] = [
       { label: "Performance", value: "95+", description: "Google Lighthouse score average" },
       { label: "Retention", value: "+30%", description: "Improvement in user engagement markers" }
     ],
+    whyChooseUs: [
+      "Atomic Design Systems: We build scalable, reusable UI components for long-term consistency.",
+      "Performance-First Stack: Using Next.js and Flutter for lightning-fast digital experiences.",
+      "User-Centric Architecture: Every feature is mapped to a documented user need or business goal.",
+      "End-to-End Product Lifecycle: From rapid Figma prototyping to production-scale deployment."
+    ],
+    typicalUseCases: [
+      "High-Performance SaaS Product Engineering",
+      "Enterprise Customer & Partner Portals",
+      "Native iOS & Android Application Suites",
+      "Interactive Digital Experience Platforms",
+      "Custom E-commerce & Fintech Ecosystems"
+    ],
     frameworks: ["Atomic Design", "Agile/Scrum", "TDD (Test Driven Development)"]
   },
   {
@@ -581,6 +613,19 @@ export const services: Service[] = [
     metrics: [
       { label: "Deployment", value: "Hourly", description: "Increase in release frequency" },
       { label: "Cloud Cost", value: "-25%", description: "Reduction in monthly infrastructure burn" }
+    ],
+    whyChooseUs: [
+      "Zero-Human-Touch Pipelines: Fully automated CI/CD for error-free production releases.",
+      "Immutable Infrastructure: Using IaC (Terraform) to ensure environments are reproducible and secure.",
+      "Cloud-Native Scalability: Architected for horizontal growth using Kubernetes and serverless patterns.",
+      "SRE-Led Reliability: Applying site reliability engineering to guarantee 99.9% uptime."
+    ],
+    typicalUseCases: [
+      "Multi-Cloud Infrastructure Automation",
+      "Kubernetes & Container Orchestration Ops",
+      "Cost Optimization & FinOps Governance",
+      "Advanced CI/CD Pipeline Engineering",
+      "Disaster Recovery & High-Availability Clusters"
     ],
     frameworks: ["SRE (Site Reliability Engineering)", "Infrastructure as Code", "GitOps"]
   },
@@ -691,6 +736,13 @@ export const services: Service[] = [
     metrics: [
       { label: "MTTR", value: "-60%", description: "Reduction in mean time to response" },
       { label: "Risk Score", value: "90+", description: "Post-remediation security rating" }
+    ],
+    typicalUseCases: [
+      "Sovereign Security Testing for High-Value Assets",
+      "Red Team Adversary Simulations for SOC Readiness",
+      "Continuous Penetration Testing for SaaS Products",
+      "Regulatory Compliance Audits (SOC2/ISO/HIPAA)",
+      "Employee Security Awareness & Phishing Campaigns"
     ],
   },
 ]
