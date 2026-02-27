@@ -59,7 +59,7 @@ export const services: Service[] = [
     overview:
       "In today's fast-moving digital world, disconnected systems are costly. We eliminate manual workflows, unify scattered data, and modernize tech stacks with end-to-end Integration & Migration solutions.",
     description:
-      "We connect your existing tools, apps, and platforms to create a single, automated ecosystem — no more data silos, just smooth real-time communication between CRM, ERP, website, APIs, and data sources.",
+      "We connect your existing tools, apps, and platforms to create a single, automated ecosystem, no more data silos, just smooth real-time communication between CRM, ERP, website, APIs, and data sources.",
     features: [
       "Zero-downtime migration strategies",
       "Data verification & integrity checks",
@@ -187,7 +187,7 @@ export const services: Service[] = [
     overview:
       "We move beyond traditional search. We architect digital authority for both search engines and LLM ecosystems (GEO/AIO), ensuring your enterprise is the first choice for both humans and AI agents.",
     description:
-      "Leveraging LangChain and autonomous agents, we automate the end-to-end SEO lifecycle—from programmatic content generation to real-time indexing—guaranteeing your brand stays at the top of Google and AI assistant results.",
+      "Leveraging LangChain and autonomous agents, we automate the end-to-end SEO lifecycle, from programmatic content generation to real-time indexing, guaranteeing your brand stays at the top of Google and AI assistant results.",
     capabilities: [
       {
         title: "Programmatic SEO & Content Scale",
@@ -295,7 +295,7 @@ export const services: Service[] = [
     overview:
       "Use AI and ML to automate repetitive tasks, uncover insights from complex data and enable predictive decision-making.",
     description:
-      "We move beyond basic automation — embedding intelligence into business processes to reduce cost, increase efficiency and improve accuracy.",
+      "We move beyond basic automation, embedding intelligence into business processes to reduce cost, increase efficiency and improve accuracy.",
     capabilities: [
       {
         title: "Intelligent Process Automation (RPA + AI)",
@@ -453,7 +453,7 @@ export const services: Service[] = [
     title: "Web & Mobile App Development",
     headline: "Building fast, intelligent, and impactful digital products.",
     overview:
-      "Modern web and mobile experiences — fast, secure, scalable and optimized for users. We blend front-end innovation, back-end architecture and modern deployment practices.",
+      "Modern web and mobile experiences, fast, secure, scalable and optimized for users. We blend front-end innovation, back-end architecture and modern deployment practices.",
     capabilities: [
       {
         title: "Responsive Web Applications (SPA / PWA)",
