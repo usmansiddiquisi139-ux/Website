@@ -272,6 +272,19 @@ export const services: Service[] = [
       { label: "Semantic Share", value: "+60%", description: "Increase in topical authority markers" },
       { label: "Scale Speed", value: "10x", description: "Acceleration in content deployment" }
     ],
+    whyChooseUs: [
+      "LangChain & LangGraph Orchestration: We build agentic systems that master vertical search dominance.",
+      "AI-First Architecture: Built from the ground up for LLM discovery and traditional search ranking.",
+      "Scalable Intelligence: Automated programmatic pipelines that deploy verified assets at 10x speed.",
+      "GEO/AIO Methodology: Future-proof strategies designed for the Generative Engine era."
+    ],
+    typicalUseCases: [
+      "Programmatic SEO for SaaS & E-commerce Platforms",
+      "Generative Engine Optimization (GEO) for Enterprise Brands",
+      "LLM Discoverability for AI-First Infrastructure",
+      "Automated Semantic Content & Entity Growth",
+      "Citation Engineering for Thought Leadership"
+    ],
     frameworks: ["GEO (Generative Engine Optimization)", "AIO (AI Optimization)", "LangChain/LangGraph Framework"]
   },
   {
