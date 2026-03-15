@@ -122,7 +122,7 @@ export default function ServiceContent({ service }: { service: Service }) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="lg:w-[400px] w-full shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-[250px] md:h-[300px] relative group"
               >
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={service.image} alt={service.title} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </motion.div>
             )}
