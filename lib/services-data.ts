@@ -714,12 +714,6 @@ export const services: Service[] = [
       "Comprehensive coverage from apps to infrastructure to people.",
       "Actionable reporting with remediation guidance.",
     ],
-    typicalUseCases: [
-      "Security testing during SDLC and product release cycles.",
-      "Annual or quarterly penetration tests for compliance and audit readiness.",
-      "Continuous breach simulation for security control validation.",
-      "Internal awareness and phishing simulation campaigns.",
-    ],
     ctas: [
       { label: "Book a Security Assessment", href: "/contact" },
       { label: "Request a Demo", href: "/contact" },
