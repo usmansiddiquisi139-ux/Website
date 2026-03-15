@@ -241,7 +241,7 @@ export const services: Service[] = [
       "Scalable lead generation through programmatic intent targeting",
       "Future-proof brand discoverability in the agentic web era",
     ],
-    image: "https://images.unsplash.com/photo-1557833006-c9f4827dd4f0?auto=format&q=80",
+    image: "/images/services/ai-seo-automation.gif",
     tagline: "Strategy-Led AIO",
     color: "from-green-500",
     glow: "group-hover:shadow-green-500/50",
