@@ -115,14 +115,25 @@ export default function ServiceContent({ service }: { service: Service }) {
               </div>
             </div>
 
-            {/* Smaller Service Image (Visual Authority) */}
+            {/* Smaller Service Image / Video (Visual Authority) */}
             {service.image && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="lg:w-[450px] xl:w-[500px] w-full shrink-0 rounded-2xl overflow-hidden shadow-2xl relative group"
               >
-                <img src={service.image} alt={service.title} className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" />
+                {service.image.endsWith(".mp4") ? (
+                  <video
+                    src={service.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <img src={service.image} alt={service.title} className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </motion.div>
             )}

@@ -346,7 +346,7 @@ export const services: Service[] = [
       "Predictive insights for proactive strategies",
       "Personalized customer experiences driven by AI",
     ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad195?auto=format&q=80",
+    image: "/videos/ai-ml-automation.mp4",
     color: "from-purple-500",
     glow: "group-hover:shadow-purple-500/50",
     workflow: [
