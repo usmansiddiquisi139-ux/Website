@@ -1,6 +1,6 @@
 // /lib/blog-data.ts
 
-export const blogPosts = {
+export const blogPosts: Record<string, any> = {
   "zero-downtime-migrations": {
     title: "The Art of Zero-Downtime Cloud Migrations",
     excerpt:
