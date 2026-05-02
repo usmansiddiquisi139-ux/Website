@@ -38,7 +38,7 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
       </div>
 
       <div>
-        <p className="text-sm md:text-base lg:text-lg text-gray-300 text-center">
+        <p className="text-sm md:text-base lg:text-lg text-slate-700 text-center">
           Strategy-led consultancy commanding algorithms, not worshipping them.
         </p>
       </div>
@@ -51,9 +51,9 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-gray-300 text-center">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-slate-700 text-center">
         <div className="flex items-center gap-2">
-          <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-5 h-5 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm.5-9H9V7a1 1 0 012 0v3.5a1 1 0 01-1.5.866l-3-1.732a1 1 0 011-1.732l2.5 1.443V7z"
@@ -62,7 +62,7 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
           </svg>
           <span className="text-sm font-medium">{time}</span>
         </div>
-        <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-gray-500">
+        <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-300">
           <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
           <span className="text-sm font-medium">Available</span>
         </div>

@@ -185,7 +185,7 @@ export default function Home() {
                 className="p-6 bg-slate-100 backdrop-blur-sm rounded-lg border border-gray-300/30 hover:border-orange-400 transition-all duration-300"
               >
                 <h3 className="text-base font-semibold text-orange-400 mb-3">{faq.q}</h3>
-                <p className="text-sm text-gray-200">{faq.a}</p>
+                <p className="text-sm text-slate-700">{faq.a}</p>
               </div>
             ))}
           </div>
