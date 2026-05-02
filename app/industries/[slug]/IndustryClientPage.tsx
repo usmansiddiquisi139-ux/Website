@@ -53,22 +53,22 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
     .filter(Boolean)
 
   return (
-    <main className="min-h-screen text-white relative">
+    <main className="min-h-screen text-slate-900 relative">
       {/* Background */}
       <div className="fixed inset-0 -z-20">
         <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
       </div>
 
       {/* Overlay */}
-      <div className="fixed inset-0 -z-10 bg-transparent pointer-events-none" />
+      <div className="fixed inset-0 -z-10 bg-[#F8FAFC] pointer-events-none" />
 
 
       {/* Hero */}
-      <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-transparent">
+      <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-2 text-white">{industry.name}</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-2 text-slate-900">{industry.name}</h1>
           {industry.description && (
-            <p className="text-xl text-white/90">{industry.description}</p>
+            <p className="text-xl text-slate-800">{industry.description}</p>
           )}
         </div>
       </section>
@@ -77,12 +77,12 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       {challenges.length > 0 && (
         <section className="py-16 px-0 sm:px-3 lg:px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-white">Industry Challenges</h2>
+            <h2 className="text-3xl font-bold mb-8 text-slate-900">Industry Challenges</h2>
             <ul className="space-y-2">
               {challenges.map((challenge: string, idx: number) => (
                 <li key={idx} className="flex gap-4">
-                  <span className="text-white font-bold flex-shrink-0">•</span>
-                  <span className="text-white">{challenge}</span>
+                  <span className="text-slate-900 font-bold flex-shrink-0">•</span>
+                  <span className="text-slate-900">{challenge}</span>
                 </li>
               ))}
             </ul>
@@ -92,9 +92,9 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
 
       {/* Solutions */}
       {relatedServices.length > 0 && (
-        <section className="py-0 px-4 sm:px-6 lg:px-8 bg-transparent">
+        <section className="py-0 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-white">Our Solutions</h2>
+            <h2 className="text-3xl font-bold mb-8 text-slate-900">Our Solutions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {relatedServices.map((service: any) => {
                 const color = service?.color ? service.color.replace(/^from-/, "") : "blue-500"
@@ -106,7 +106,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
                 return (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
                     <div
-                      className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}
+                      className={`p-6 rounded-lg border ${colorClasses.border} bg-[#F8FAFC] hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}
                     >
                       <div className="flex items-start space-x-4">
                         {IconComponent && (
@@ -115,16 +115,16 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
                           </div>
                         )}
                         <div className="flex-1">
-                          <h3 className="font-bold text-lg text-white transition group-hover:text-opacity-90">
+                          <h3 className="font-bold text-lg text-slate-900 transition group-hover:text-opacity-90">
                             {service.title}
                           </h3>
                           {service.headline && (
-                            <p className="mt-2 text-sm text-white/80 group-hover:text-white/90">
+                            <p className="mt-2 text-sm text-slate-700 group-hover:text-slate-800">
                               {service.headline}
                             </p>
                           )}
                           {service.overview && (
-                            <p className="mt-3 text-sm text-white/70">{service.overview}</p>
+                            <p className="mt-3 text-sm text-slate-600">{service.overview}</p>
                           )}
                         </div>
                       </div>
@@ -142,7 +142,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
                               </span>
                             ))}
                             {service.features.length > 3 && (
-                              <span className="text-xs text-white/60">
+                              <span className="text-xs text-slate-900/60">
                                 +{service.features.length - 3} more
                               </span>
                             )}
@@ -166,17 +166,17 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       )}
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-white">
+          <h2 className="text-3xl font-bold mb-4 text-slate-900">
             Transform Your {industry.name} Operations
           </h2>
-          <p className="text-lg mb-8 text-white/90">
+          <p className="text-lg mb-8 text-slate-800">
             Let's discuss how we can address your industry-specific challenges.
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block px-8 py-3 bg-orange-500 text-slate-900 rounded-lg font-semibold hover:opacity-90 transition"
           >
             Schedule Consultation
           </Link>

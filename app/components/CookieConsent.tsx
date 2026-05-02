@@ -72,12 +72,12 @@ export default function CookieConsent() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-50 max-w-md backdrop-blur-md bg-black/70 text-white rounded-2xl shadow-lg border border-white/10 p-6"
+          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-50 max-w-md backdrop-blur-md bg-white/70 text-slate-900 rounded-2xl shadow-lg border border-slate-200 p-6"
         >
           <h3 className="text-lg font-semibold mb-2 text-orange-400">
             🍪 Cookie Consent
           </h3>
-          <p className="text-sm text-white/80 leading-relaxed mb-4">
+          <p className="text-sm text-slate-700 leading-relaxed mb-4">
             We use cookies to enhance your browsing experience, analyze traffic,
             and serve personalized content. By clicking “Accept,” you agree to
             the use of non-essential cookies as outlined in our{" "}
@@ -99,13 +99,13 @@ export default function CookieConsent() {
           <div className="flex justify-end gap-3">
             <button
               onClick={handleDecline}
-              className="px-4 py-2 rounded-lg border border-white/20 text-sm text-white/80 hover:bg-white/10 transition"
+              className="px-4 py-2 rounded-lg border border-slate-300 text-sm text-slate-700 hover:bg-slate-100 transition"
             >
               Decline
             </button>
             <button
               onClick={handleAccept}
-              className="px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-sm font-semibold text-white transition"
+              className="px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-sm font-semibold text-slate-900 transition"
             >
               Accept
             </button>

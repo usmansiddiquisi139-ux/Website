@@ -93,15 +93,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body
-        className="font-sans antialiased min-h-screen"
+        className="font-sans antialiased min-h-screen bg-[#F8FAFC] text-slate-900"
         suppressHydrationWarning
-        style={{
-          backgroundImage: 'url("/images/services-bg.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-        }}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -118,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <StructuredData data={jsonLdOrganization} />
         <StructuredData data={jsonLdPerson} />
         <StructuredData data={jsonLdProfessionalService} />
-        <div className="min-h-screen bg-black/50">
+        <div className="min-h-screen">
           <Header />
           <ScrollToTop />
           <CookieConsent />

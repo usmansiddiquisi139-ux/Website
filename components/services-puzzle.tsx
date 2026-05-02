@@ -54,7 +54,7 @@ export function ServicesPuzzle({ services }: ServicesPuzzleProps) {
                 }}
               >
                 <div
-                  className={`w-full h-full p-8 bg-transparent rounded-xl transition-all duration-500 ease-out flex flex-col items-start justify-start hover:shadow-2xl ${
+                  className={`w-full h-full p-8 bg-[#F8FAFC] rounded-xl transition-all duration-500 ease-out flex flex-col items-start justify-start hover:shadow-2xl ${
                     isHovered ? "transform" : ""
                   }`}
                   style={{

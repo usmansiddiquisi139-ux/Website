@@ -81,14 +81,14 @@ export default function SiteMapPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-transparent">
+        <div className="min-h-screen bg-[#F8FAFC]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
                 {/* Header */}
                 <div className="mb-16">
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                    <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
                         Site Map
                     </h1>
-                    <p className="text-xl text-white/70 max-w-3xl leading-relaxed">
+                    <p className="text-xl text-slate-600 max-w-3xl leading-relaxed">
                         Navigate our complete site structure. Optimized for AI crawlers, LLMs, and semantic search engines.
                     </p>
                 </div>
@@ -105,7 +105,7 @@ export default function SiteMapPage() {
                                     <li key={linkIdx}>
                                         <Link
                                             href={link.href}
-                                            className="group flex items-center text-white/80 hover:text-white transition-colors duration-200"
+                                            className="group flex items-center text-slate-700 hover:text-slate-900 transition-colors duration-200"
                                         >
                                             <ChevronRight className="w-4 h-4 text-orange-400 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                                             <span className="text-base group-hover:translate-x-1 transition-transform duration-200">
@@ -120,11 +120,11 @@ export default function SiteMapPage() {
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-white/10 my-12"></div>
+                <div className="border-t border-slate-200 my-12"></div>
 
                 {/* Footer Note */}
                 <div className="text-center">
-                    <p className="text-sm text-white/50 mb-3">
+                    <p className="text-sm text-slate-500 mb-3">
                         For search engines and automated crawlers
                     </p>
                     <Link

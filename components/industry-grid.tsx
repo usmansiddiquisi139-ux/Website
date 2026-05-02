@@ -118,10 +118,10 @@ export default function IndustryGrid() {
             >
               <button
                 onClick={() => setSelected(industry)}
-                className={`group relative w-full h-full flex flex-col items-center justify-center rounded-2xl backdrop-blur-xl border border-white/10 transition-all duration-300 overflow-hidden ${
+                className={`group relative w-full h-full flex flex-col items-center justify-center rounded-2xl backdrop-blur-xl border border-slate-200 transition-all duration-300 overflow-hidden ${
                   index === 0
                     ? "p-8 sm:p-12 bg-gradient-to-br from-primary/20 to-primary/5 hover:from-primary/30 hover:to-primary/10 hover:border-primary/50"
-                    : "p-6 sm:p-8 bg-white/5 hover:bg-white/10 hover:border-primary/30"
+                    : "p-6 sm:p-8 bg-white shadow-sm hover:bg-slate-100 hover:border-primary/30"
                 }`}
                 aria-haspopup="dialog"
               >
@@ -161,7 +161,7 @@ export default function IndustryGrid() {
         >
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             View All Industries
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -176,7 +176,7 @@ export default function IndustryGrid() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-white/60 backdrop-blur-md p-4"
               onClick={() => setSelected(null)}
             >
               <motion.div
@@ -184,7 +184,7 @@ export default function IndustryGrid() {
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.95, y: 8, opacity: 0 }}
                 transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-                className="bg-gradient-to-br from-background to-background/95 border border-white/10 rounded-3xl p-8 md:p-12 max-w-lg w-full relative overflow-hidden"
+                className="bg-gradient-to-br from-background to-background/95 border border-slate-200 rounded-3xl p-8 md:p-12 max-w-lg w-full relative overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-modal="true"
@@ -205,7 +205,7 @@ export default function IndustryGrid() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
-                    className="w-20 h-20 mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-5xl"
+                    className="w-20 h-20 mb-6 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-5xl"
                   >
                     {selected.icon}
                   </motion.div>
@@ -217,7 +217,7 @@ export default function IndustryGrid() {
 
                   <Link
                     href={`/industries/${selected.slug}`}
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-slate-900 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
                     onClick={() => setSelected(null)}
                   >
                     Learn More

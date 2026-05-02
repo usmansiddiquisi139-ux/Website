@@ -33,7 +33,7 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
         </div>
 
         <div className="animate-slide-in-right text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">Systems Integration</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900">Systems Integration</h1>
         </div>
       </div>
 
@@ -71,13 +71,13 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4 w-full sm:w-auto">
         <a
           href="/contact"
-          className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
         >
           Book Consultation
         </a>
         <a
           href="/services"
-          className="w-full sm:w-auto px-8 py-3 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors duration-300"
+          className="w-full sm:w-auto px-8 py-3 bg-white/20 text-slate-900 font-semibold rounded-lg hover:bg-white/30 transition-colors duration-300"
         >
           Explore
         </a>

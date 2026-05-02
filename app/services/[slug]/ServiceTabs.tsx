@@ -25,8 +25,8 @@ export default function ServiceTabs({ service }: { service: any }) {
             onClick={() => setActiveTab(tab.id)}
             className={`px-5 py-2 rounded-full text-sm font-medium transition ${
               activeTab === tab.id
-                ? "bg-white text-black"
-                : "bg-gray-800 hover:bg-gray-700 text-white"
+                ? "bg-white text-white"
+                : "bg-gray-800 hover:bg-gray-700 text-slate-900"
             }`}
           >
             {tab.label}
@@ -46,7 +46,7 @@ export default function ServiceTabs({ service }: { service: any }) {
           <div className="space-y-6">
             {service.capabilities.map((cap: any, i: number) => (
               <div key={i}>
-                <h3 className="text-xl font-medium text-white">{cap.title}</h3>
+                <h3 className="text-xl font-medium text-slate-900">{cap.title}</h3>
                 <ul className="list-disc pl-6 text-gray-400">
                   {cap.bullets.map((b: string, j: number) => (
                     <li key={j}>{b}</li>

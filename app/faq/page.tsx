@@ -80,15 +80,15 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-transparent text-white">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-white">
+          <p className="text-xl text-slate-900">
             Find answers to common questions about our services, process, and
             expertise.
           </p>
@@ -101,10 +101,10 @@ export default function FAQPage() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`}>
-                <AccordionTrigger className="text-lg font-semibold text-white">
+                <AccordionTrigger className="text-lg font-semibold text-slate-900">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-white leading-relaxed">
+                <AccordionContent className="text-slate-900 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -114,17 +114,17 @@ export default function FAQPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-white">
+          <h2 className="text-3xl font-bold mb-4 text-slate-900">
             Didn't find your answer?
           </h2>
-          <p className="text-white mb-6">
+          <p className="text-slate-900 mb-6">
             Reach out directly to discuss your specific questions and challenges.
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition"
+            className="inline-block px-8 py-3 bg-orange-500 text-slate-900 rounded-lg font-semibold hover:opacity-90 transition"
           >
             Contact Us
           </a>

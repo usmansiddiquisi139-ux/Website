@@ -12,7 +12,7 @@ export default function ServiceContent({ service }: { service: Service }) {
   const [activeCapIndex, setActiveCapIndex] = useState(0)
 
   if (!service)
-    return <div className="text-center mt-32 text-white">Service not found.</div>
+    return <div className="text-center mt-32 text-slate-900">Service not found.</div>
 
   // 🎨 Color Theme Utility
   const getColorClasses = (colorKey: string) => {
@@ -72,7 +72,7 @@ export default function ServiceContent({ service }: { service: Service }) {
   const activeCap = capabilities[activeCapIndex]
 
   return (
-    <main className="min-h-screen text-white bg-transparent">
+    <main className="min-h-screen text-slate-900 bg-[#F8FAFC]">
 
       {/* 🧭 Breadcrumbs */}
       <div className="max-w-6xl mx-auto px-6 pt-24 pb-4">
@@ -93,22 +93,22 @@ export default function ServiceContent({ service }: { service: Service }) {
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center gap-4">
               {IconComponent && <IconComponent className={`w-10 h-10 ${colorClasses.text}`} />}
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white">{service.title}</h1>
+              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900">{service.title}</h1>
             </div>
             {service.headline && <p className={`text-2xl font-medium ${colorClasses.text}`}>{service.headline}</p>}
           </div>
 
           {/* Compact Content Row */}
-          <div className="flex flex-col lg:flex-row gap-12 items-center bg-white/[0.02] p-8 rounded-[2rem] border border-white/5">
+          <div className="flex flex-col lg:flex-row gap-12 items-center bg-white shadow-sm p-8 rounded-[2rem] border border-slate-100">
             <div className="flex-1 space-y-6 text-left">
-              <div className="space-y-4 text-white/80 leading-relaxed text-lg italic">
+              <div className="space-y-4 text-slate-700 leading-relaxed text-lg italic">
                 {service.overview && <p>{service.overview}</p>}
                 {service.description && <p>{service.description}</p>}
               </div>
 
               {/* CTA Inline */}
               <div className="pt-2">
-                <Link href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
+                <Link href="/contact" className={`px-8 py-3 rounded-xl bg-white text-white font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
                   Start Project Analysis
                 </Link>
               </div>
@@ -141,7 +141,7 @@ export default function ServiceContent({ service }: { service: Service }) {
       </section>
 
       {/* 🚀 Metrics & Capabilities Row (High Density) */}
-      <section className="py-12 px-6 border-y border-white/5 bg-white/[0.02]">
+      <section className="py-12 px-6 border-y border-slate-100 bg-white shadow-sm">
         <div className="max-w-6xl mx-auto flex flex-col xl:flex-row gap-12">
 
           {/* Metrics Column */}
@@ -149,9 +149,9 @@ export default function ServiceContent({ service }: { service: Service }) {
             <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">Impact Benchmarks</h3>
             <div className="grid grid-cols-2 gap-4">
               {service.metrics?.map((m, i) => (
-                <div key={i} className="p-4 bg-white/5 rounded-xl border border-white/5">
+                <div key={i} className="p-4 bg-white shadow-sm rounded-xl border border-slate-100">
                   <div className={`text-2xl font-bold ${colorClasses.text}`}>{m.value}</div>
-                  <div className="text-[10px] uppercase font-bold text-white/40 tracking-tighter">{m.label}</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400 tracking-tighter">{m.label}</div>
                 </div>
               ))}
             </div>
@@ -165,7 +165,7 @@ export default function ServiceContent({ service }: { service: Service }) {
                 <button
                   key={i}
                   onClick={() => setActiveCapIndex(i)}
-                  className={`px-4 py-2 rounded-lg text-xs font-semibold border transition-all ${activeCapIndex === i ? `${colorClasses.bg} ${colorClasses.text} border-orange-500/50` : 'border-white/10 hover:border-white/20'}`}
+                  className={`px-4 py-2 rounded-lg text-xs font-semibold border transition-all ${activeCapIndex === i ? `${colorClasses.bg} ${colorClasses.text} border-orange-500/50` : 'border-slate-200 hover:border-slate-300'}`}
                 >
                   {cap.title}
                 </button>
@@ -173,8 +173,8 @@ export default function ServiceContent({ service }: { service: Service }) {
             </div>
 
             {/* Capability Content (Compact) */}
-            <div className="mt-6 p-6 bg-white/5 rounded-2xl border border-white/5 min-h-[120px]">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/70">
+            <div className="mt-6 p-6 bg-white shadow-sm rounded-2xl border border-slate-100 min-h-[120px]">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600">
                 {activeCap?.bullets.map((b, i) => (
                   <li key={i} className="flex gap-2">
                     <span className="text-orange-500">•</span> {b}
@@ -190,21 +190,21 @@ export default function ServiceContent({ service }: { service: Service }) {
       {service.workflow && (
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-10 text-white flex items-center gap-3">
+            <h2 className="text-3xl font-bold mb-10 text-slate-900 flex items-center gap-3">
               <div className={`w-8 h-px bg-white/20`} /> Delivery Pipeline
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {service.workflow.map((step, idx) => (
-                <div key={idx} className="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-orange-500/30 transition-all group h-full flex flex-col">
+                <div key={idx} className="p-6 bg-white shadow-sm rounded-2xl border border-slate-100 hover:border-orange-500/30 transition-all group h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-black/40 ${colorClasses.text}`}>Phase 0{idx + 1}</span>
-                    <span className="text-white/10 text-3xl font-black italic">{idx + 1}</span>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-slate-100/80 ${colorClasses.text}`}>Phase 0{idx + 1}</span>
+                    <span className="text-slate-100 text-3xl font-black italic">{idx + 1}</span>
                   </div>
-                  <h4 className="font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">{step.title}</h4>
-                  <p className="text-xs text-white/50 leading-relaxed mb-4 flex-1">{step.description}</p>
+                  <h4 className="font-bold text-slate-900 mb-2 group-hover:text-orange-400 transition-colors">{step.title}</h4>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{step.description}</p>
                   {step.deliverable && (
-                    <div className="pt-3 border-t border-white/5 text-[10px]">
-                      <span className="text-white/30 block mb-1 uppercase tracking-tighter">Deliverable</span>
+                    <div className="pt-3 border-t border-slate-100 text-[10px]">
+                      <span className="text-slate-300 block mb-1 uppercase tracking-tighter">Deliverable</span>
                       <span className="text-orange-400 font-bold">{step.deliverable}</span>
                     </div>
                   )}
@@ -216,7 +216,7 @@ export default function ServiceContent({ service }: { service: Service }) {
       )}
 
       {/* 💼 Integrated Value Layer (Why, Use, Outcomes) */}
-      <section className="py-16 px-6 bg-white/[0.03] rounded-[3rem] mx-4 mb-12">
+      <section className="py-16 px-6 bg-white shadow-md rounded-[3rem] mx-4 mb-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Section 1: Outcomes */}
           <div>
@@ -225,7 +225,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             </h3>
             <ul className="space-y-4">
               {service.outcomes?.map((o, i) => (
-                <li key={i} className="flex gap-3 text-sm text-white/70">
+                <li key={i} className="flex gap-3 text-sm text-slate-600">
                   <span className="text-orange-500 font-bold">✓</span> {o}
                 </li>
               ))}
@@ -239,7 +239,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             </h3>
             <div className="space-y-3">
               {service.typicalUseCases?.map((u, i) => (
-                <div key={i} className="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-white/80">
+                <div key={i} className="p-3 bg-white shadow-sm rounded-xl border border-slate-100 text-xs text-slate-700">
                   {u}
                 </div>
               ))}
@@ -253,7 +253,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             </h3>
             <ul className="space-y-4">
               {service.whyChooseUs?.map((w, i) => (
-                <li key={i} className="text-sm text-white/70 leading-relaxed pl-4 border-l border-white/10 hover:border-orange-500 transition-colors">
+                <li key={i} className="text-sm text-slate-600 leading-relaxed pl-4 border-l border-slate-200 hover:border-orange-500 transition-colors">
                   {w}
                 </li>
               ))}

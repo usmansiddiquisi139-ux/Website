@@ -68,16 +68,16 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-cover bg-center bg-no-repeat text-white">
-      <div className="bg-transparent min-h-screen text-white">
+    <main className="min-h-screen bg-cover bg-center bg-no-repeat text-slate-900">
+      <div className="bg-[#F8FAFC] min-h-screen text-slate-900">
 
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
               Our Services
             </h1>
-            <p className="text-lg text-white">
+            <p className="text-lg text-slate-900">
               Explore our specialized solutions tailored to your business needs.
             </p>
           </div>
@@ -99,18 +99,18 @@ export default function ServicesPage() {
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   prefetch={false}
-                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-transparent backdrop-Transparent`}
+                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-[#F8FAFC] backdrop-Transparent`}
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       {IconComponent && (
                         <IconComponent className={`w-8 h-8 ${colorClasses.text}`} />
                       )}
-                      <h3 className="text-2xl font-bold text-white transition-all duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 transition-all duration-300">
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-white transition-all duration-300">
+                    <p className="text-slate-900 transition-all duration-300">
                       {service.headline || service.description}
                     </p>
                   </div>

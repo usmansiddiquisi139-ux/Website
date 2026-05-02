@@ -31,7 +31,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
     <>
       {/* Backdrop */}
       <motion.div
-        className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-md"
+        className="fixed inset-0 z-[9998] bg-white/60 backdrop-blur-md"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -57,14 +57,14 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-white/10 transition-colors text-white"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-slate-100 transition-colors text-slate-900"
             aria-label="Close"
           >
             <X size={24} />
           </button>
 
           {/* Content */}
-          <div className="p-8 text-white space-y-8">
+          <div className="p-8 text-slate-900 space-y-8">
             {/* Header */}
             <div>
               <h2 className={`text-4xl font-bold ${colorClasses.text} mb-2`}>{service.title}</h2>
@@ -84,7 +84,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                 <div className="space-y-4">
                   {service.capabilities.map((cap, idx) => (
                     <div key={idx} className={`${colorClasses.bg} border ${colorClasses.border} rounded-lg p-4`}>
-                      <h4 className="font-semibold text-white mb-2">{cap.title}</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">{cap.title}</h4>
                       <ul className="text-gray-300 text-sm space-y-1">
                         {cap.bullets.map((bullet, bidx) => (
                           <li key={bidx} className="flex items-start gap-2">
@@ -96,7 +96,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                       {cap.tools && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {cap.tools.map((tool, tidx) => (
-                            <span key={tidx} className="text-xs bg-white/5 text-gray-300 px-2 py-1 rounded">
+                            <span key={tidx} className="text-xs bg-white shadow-sm text-gray-300 px-2 py-1 rounded">
                               {tool}
                             </span>
                           ))}
@@ -131,7 +131,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                   {service.tools.map((tool, idx) => (
                     <span
                       key={idx}
-                      className="bg-white/5 border border-white/10 text-gray-300 px-3 py-1 rounded-full text-sm"
+                      className="bg-white shadow-sm border border-slate-200 text-gray-300 px-3 py-1 rounded-full text-sm"
                     >
                       {tool}
                     </span>
@@ -149,8 +149,8 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                     href={cta.href || "/contact"}
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       idx === 0
-                        ? `${colorClasses.text} bg-white/5 hover:bg-white/10 border ${colorClasses.border}`
-                        : "bg-white/10 text-white hover:bg-white/20"
+                        ? `${colorClasses.text} bg-white shadow-sm hover:bg-slate-100 border ${colorClasses.border}`
+                        : "bg-slate-100 text-slate-900 hover:bg-white/20"
                     }`}
                   >
                     {cta.label}

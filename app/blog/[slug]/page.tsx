@@ -110,7 +110,7 @@ export default async function BlogPostPage({
   const serviceSlug = findServiceSlug(post.category);
 
   return (
-    <main className="min-h-screen bg-transparent text-white">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
 
       <article className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16 pt-28 pb-16 leading-relaxed">
         {/* 🟠 Category Pill */}
@@ -124,12 +124,12 @@ export default async function BlogPostPage({
         </div>
 
         {/* 🧠 Title + Description */}
-        <h1 className="text-4xl md:text-4xl font-bold text-white mb-3 leading-tight tracking-tight">
+        <h1 className="text-4xl md:text-4xl font-bold text-slate-900 mb-3 leading-tight tracking-tight">
           {post.title}
         </h1>
         <p className="text-gray-300 text-lg mb-3 max-w-3xl">{post.excerpt}</p>
 
-        <div className="flex flex-wrap items-center justify-between text-sm text-white mb-8 border-b border-gray-800 pb-4">
+        <div className="flex flex-wrap items-center justify-between text-sm text-slate-900 mb-8 border-b border-gray-800 pb-4">
           <time>
             {new Date(post.publishedDate).toLocaleDateString("en-US", {
               year: "numeric",

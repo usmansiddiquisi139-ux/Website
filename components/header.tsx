@@ -55,7 +55,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 transition-all duration-300 border-b border-orange-500/20 backdrop-blur-md bg-black/30">
+    <header className="fixed top-0 w-full z-50 transition-all duration-300 border-b border-orange-500/20 backdrop-blur-md bg-white/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
@@ -66,23 +66,23 @@ export function Header() {
             height={32}
             className="h-8 w-8"
           />
-          <span className="font-bold text-xl hidden md:inline transition-colors text-white">
+          <span className="font-bold text-xl hidden md:inline transition-colors text-slate-900">
             Systems Integration
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/services" className="transition text-white/80 hover:text-white">
+          <Link href="/services" className="transition text-slate-700 hover:text-slate-900">
             Services
           </Link>
-          <Link href="/industries" className="transition text-white/80 hover:text-white">
+          <Link href="/industries" className="transition text-slate-700 hover:text-slate-900">
             Industries
           </Link>
-          <Link href="/portfolio" className="transition text-white/80 hover:text-white">
+          <Link href="/portfolio" className="transition text-slate-700 hover:text-slate-900">
             Portfolio
           </Link>
-          <Link href="/blog" className="transition text-white/80 hover:text-white">
+          <Link href="/blog" className="transition text-slate-700 hover:text-slate-900">
             Case Studies
           </Link>
         </nav>
@@ -90,14 +90,14 @@ export function Header() {
         {/* ✅ Smart “Let's Talk” Button */}
         <Button
           onClick={handleLetsTalk}
-          className="hidden md:inline-flex bg-orange-500 hover:bg-orange-600 text-white"
+          className="hidden md:inline-flex bg-orange-500 hover:bg-orange-600 text-slate-900"
         >
           Contact Us
         </Button>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 transition text-white"
+          className="md:hidden p-2 transition text-slate-900"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="sr-only">Toggle menu</span>
@@ -134,7 +134,7 @@ export function Header() {
               </Link>
               <Button
                 onClick={handleLetsTalk}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-slate-900"
               >
                 Contact Us
               </Button>
