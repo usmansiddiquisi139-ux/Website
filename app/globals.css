@@ -194,7 +194,7 @@ html {
 
 /* Added gradient text utility for orange-to-red hover effect */
 .gradient-text-hover {
-  @apply text-white transition-all duration-300;
+  @apply text-slate-900 transition-all duration-300;
 }
 
 .gradient-text-hover:hover {
@@ -322,11 +322,11 @@ html {
 }
 
 .section-title {
-  @apply text-4xl md:text-5xl lg:text-5xl font-bold mb-4 text-white;
+  @apply text-4xl md:text-5xl lg:text-5xl font-bold mb-4 text-slate-900;
 }
 
 .section-subtitle {
-  @apply text-lg text-gray-200 max-w-2xl mx-auto;
+  @apply text-lg text-slate-700 max-w-2xl mx-auto;
 }
 
 .gap-spacing {

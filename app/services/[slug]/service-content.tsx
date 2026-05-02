@@ -108,7 +108,7 @@ export default function ServiceContent({ service }: { service: Service }) {
 
               {/* CTA Inline */}
               <div className="pt-2">
-                <Link href="/contact" className={`px-8 py-3 rounded-xl bg-white text-white font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
+                <Link href="/contact" className={`px-8 py-3 rounded-xl bg-white text-slate-900 font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
                   Start Project Analysis
                 </Link>
               </div>
