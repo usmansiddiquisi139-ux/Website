@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/seo";
 import StructuredData from "@/app/components/structured-data";
 import { Footer } from "react-day-picker";
+import Link from "next/link";
 
 const { metadata, jsonLd } = buildMetadata({
   title: "Privacy Policy | Systems Integration",
@@ -46,7 +47,7 @@ export default function PrivacyPolicyPage() {
         <li>Company and professional details</li>
         <li>Usage data (pages visited, actions taken, time spent)</li>
         <li>Technical data (browser, device type, IP address)</li>
-        <li>Cookies and analytics identifiers (see our <a href="/cookie-policy" className="text-orange-400 hover:underline">Cookie Policy</a>)</li>
+        <li>Cookies and analytics identifiers (see our <Link href="/cookie-policy" className="text-orange-400 hover:underline">Cookie Policy</Link>)</li>
       </ul>
 
       <h2 className="text-2xl font-semibold mt-10 mb-3 text-orange-400">
@@ -83,9 +84,9 @@ export default function PrivacyPolicyPage() {
         usage, and personalize content. A cookie consent banner appears when you
         first visit our website, allowing you to accept or reject non-essential
         cookies. Details on how cookies are used are available in our{" "}
-        <a href="/cookie-policy" className="text-orange-400 hover:underline">
+        <Link href="/cookie-policy" className="text-orange-400 hover:underline">
           Cookie Policy
-        </a>
+        </Link>
         .
       </p>
 

@@ -4,13 +4,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { ASSETS } from "@/lib/assets-index";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isLandingPage, setIsLandingPage] = useState(true);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const isHome = pathname === "/";
@@ -44,11 +46,11 @@ export function Header() {
         section.scrollIntoView({ behavior: "smooth" });
       } else {
         // fallback if section not found
-        window.location.href = "/contact";
+        router.push("/contact");
       }
     } else {
       // Navigate to contact page
-      window.location.href = "/contact";
+      router.push("/contact");
     }
   };
 
@@ -57,9 +59,11 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <img
+          <Image
             src={ASSETS.logo.company || "/placeholder.svg"}
             alt={ASSETS.logo.alt}
+            width={32}
+            height={32}
             className="h-8 w-8"
           />
           <span className="font-bold text-xl hidden md:inline transition-colors text-white">

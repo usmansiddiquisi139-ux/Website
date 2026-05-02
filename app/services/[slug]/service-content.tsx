@@ -6,8 +6,7 @@ import { motion } from "framer-motion"
 import { Breadcrumbs } from "../../components/Breadcrumbs"
 import { Service } from "@/lib/services-data"
 import { getLucideIcon } from "@/lib/get-lucide-icon"
-
-
+import Link from "next/link"
 
 export default function ServiceContent({ service }: { service: Service }) {
   const [activeCapIndex, setActiveCapIndex] = useState(0)
@@ -109,9 +108,9 @@ export default function ServiceContent({ service }: { service: Service }) {
 
               {/* CTA Inline */}
               <div className="pt-2">
-                <a href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
+                <Link href="/contact" className={`px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all inline-block shadow-xl`}>
                   Start Project Analysis
-                </a>
+                </Link>
               </div>
             </div>
 
