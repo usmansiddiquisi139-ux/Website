@@ -64,6 +64,8 @@
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.184.0",
+    "threejs-components": "^0.0.30",
     "vaul": "latest",
     "zod": "3.25.76"
   },
