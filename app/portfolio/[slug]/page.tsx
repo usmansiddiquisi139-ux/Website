@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import caseStudyData from "@/lib/case-studies"
+import { caseStudyData } from "@/lib/case-studies"
 import * as Icons from "lucide-react"
 
 export function getLucideIcon(name?: string) {
