@@ -67,7 +67,7 @@ export default function PortfolioPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC]">
+    <main className="min-h-screen bg-transparent">
 
       {/* Hero */}
       <section className="pt-24 pb-2 px-4 sm:px-6 lg:px-8">
@@ -88,7 +88,7 @@ export default function PortfolioPage() {
               const fullStudy = require("@/lib/case-studies").default[study.slug]
               return (
                 <Link key={study.slug} href={`/portfolio/${study.slug}`}>
-                  <div className="h-full rounded-2xl overflow-hidden border border-orange-500/30 bg-[#F8FAFC] backdrop-blur-md hover:border-orange-400 hover:bg-orange-500/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">
+                  <div className="h-full rounded-2xl overflow-hidden border border-orange-500/30 bg-white/40 backdrop-blur-md hover:border-orange-400 hover:bg-orange-500/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">
 
                     {/* Image Container */}
                     <div className="relative h-64 w-full overflow-hidden">

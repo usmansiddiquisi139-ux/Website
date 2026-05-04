@@ -53,10 +53,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
   return (
     <main className="min-h-screen text-slate-900 relative">
-      {/* Background */}
-      <div className="fixed inset-0 -z-20">
-        <div className="w-full h-full bg-cover bg-center bg-fixed bg-[url('/images/services-bg.jpg')]" />
-      </div>
+
 
 
       {/* Hero */}
@@ -126,7 +123,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Challenge / Solution / Outcomes */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-sm backdrop-blur-sm rounded-[3rem] mx-4 sm:mx-8 lg:mx-12 border border-slate-200">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/40 shadow-sm backdrop-blur-md rounded-[3rem] mx-4 sm:mx-8 lg:mx-12 border border-slate-200">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12">
             <div>
@@ -193,7 +190,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Related Services — clean icon (no background) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-slate-900">Related Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -219,7 +216,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               return (
                 <Link key={service.slug} href={`/services/${service.slug}`}>
                   <div
-                    className={`p-6 rounded-2xl border ${colorClasses.border} bg-[#F8FAFC] hover:bg-white shadow-sm transition cursor-pointer group backdrop-blur-sm hover:shadow-lg`}
+                    className={`p-6 rounded-2xl border ${colorClasses.border} bg-white/40 hover:bg-white/60 shadow-sm transition cursor-pointer group backdrop-blur-md hover:shadow-lg`}
                   >
                     <div className="flex items-start space-x-4">
                       {IconComponent && (
@@ -250,7 +247,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* CTA */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-slate-900">Ready for Your Next Project?</h2>
           <Link
