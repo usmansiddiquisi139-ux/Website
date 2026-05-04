@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   }
 
   return (
-    <main className="min-h-screen text-slate-900 relative">
+    <main className="min-h-screen text-slate-900 relative bg-transparent">
 
 
 

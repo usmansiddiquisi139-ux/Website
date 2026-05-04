@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   };
 
   return (
-    <main className="relative min-h-screen text-slate-900 overflow-hidden">
+    <main className="relative min-h-screen text-slate-900 overflow-hidden bg-transparent">
       {/* 🧩 Inject JSON-LD for Google SEO */}
       <script
         type="application/ld+json"
