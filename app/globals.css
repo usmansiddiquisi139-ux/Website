@@ -124,8 +124,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply text-foreground;
-    background: transparent;
+    background: transparent !important;
   }
 }
 

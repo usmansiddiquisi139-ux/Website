@@ -1,7 +1,7 @@
-
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { caseStudyData } from "@/lib/case-studies"
+import Image from "next/image"
 import * as Icons from "lucide-react"
 
 export function getLucideIcon(name?: string) {
@@ -76,14 +76,15 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
       {/* Featured Image */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-2xl relative group">
-          <img
-            src={study.image || "/images/services-bg.jpg"}
-            alt={study.title}
-            className="w-full h-[400px] md:h-[600px] object-cover transition-transform duration-1000 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-        </div>
+          <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-3xl border border-slate-200 shadow-2xl">
+            <Image
+              src={study.image || "/images/services-bg.jpg"}
+              alt={study.title}
+              fill
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              priority
+            />
+          </div>
       </section>
 
       {/* Proof Layer: Frameworks & Methodologies */}
