@@ -26,7 +26,7 @@ export default function ServiceTabs({ service }: { service: any }) {
             className={`px-5 py-2 rounded-full text-sm font-medium transition ${
               activeTab === tab.id
                 ? "bg-white text-slate-900 shadow-sm"
-                : "bg-gray-800 hover:bg-gray-700 text-slate-900"
+                : "bg-gray-800 hover:bg-gray-700 text-slate-400"
             }`}
           >
             {tab.label}

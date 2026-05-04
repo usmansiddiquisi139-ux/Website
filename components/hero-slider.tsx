@@ -60,7 +60,7 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
               clipRule="evenodd"
             />
           </svg>
-          <span className="text-sm font-medium">{time}</span>
+          <span className="text-sm font-medium">{time || "--:--:--"}</span>
         </div>
         <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-300">
           <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>

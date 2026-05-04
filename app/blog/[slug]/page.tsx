@@ -127,7 +127,7 @@ export default async function BlogPostPage({
         <h1 className="text-4xl md:text-4xl font-bold text-slate-900 mb-3 leading-tight tracking-tight">
           {post.title}
         </h1>
-        <p className="text-gray-300 text-lg mb-3 max-w-3xl">{post.excerpt}</p>
+        <p className="text-slate-600 text-lg mb-3 max-w-3xl">{post.excerpt}</p>
 
         <div className="flex flex-wrap items-center justify-between text-sm text-slate-900 mb-8 border-b border-gray-800 pb-4">
           <time>
@@ -142,9 +142,9 @@ export default async function BlogPostPage({
 
         {/* 📝 Main Content */}
         <section
-          className="max-w-none text-gray-200 text-base leading-relaxed space-y-6 [&_ul]:list-none [&_ul]:pl-10 [&_li]:pl-2 [&_ul]:mb-4 [&_ul]:space-y-2"
+          className="max-w-none text-slate-700 text-base leading-relaxed space-y-6 [&_ul]:list-none [&_ul]:pl-10 [&_li]:pl-2 [&_ul]:mb-4 [&_ul]:space-y-2"
           style={{ listStyleType: "none" }}
-          dangerouslySetInnerHTML={{ __html: `<p>${formattedHTML}</p>` }}
+          dangerouslySetInnerHTML={{ __html: formattedHTML }}
         ></section>
       </article>
 

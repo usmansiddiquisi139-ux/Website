@@ -95,7 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body
-        className="font-sans antialiased min-h-screen bg-[#F8FAFC] text-slate-900"
+        className="font-sans antialiased min-h-screen bg-transparent text-slate-900"
         suppressHydrationWarning
       >
         {/* Google Tag Manager (noscript) */}

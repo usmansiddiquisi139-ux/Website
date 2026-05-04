@@ -176,5 +176,5 @@ export function getAllPosts() {
 }
 
 export function getPost(slug: string) {
-  return blogPosts[slug];
+  return (blogPosts as any)[slug];
 }

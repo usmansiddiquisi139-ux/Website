@@ -63,7 +63,7 @@ export const jsonLdOrganization = {
   "@type": "Organization",
   name: "Systems Integration",
   url: baseUrl,
-  logo: `${baseUrl}/logo.png`,
+  logo: `${baseUrl}/favicon.png`,
   email: "connect@systemsintegration.co",
   slogan: "Commanding algorithms, not worshipping them",
   knowsAbout: [
@@ -131,7 +131,7 @@ export const jsonLdProfessionalService = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Systems Integration",
-  "image": `${baseUrl}/logo.png`,
+  "image": `${baseUrl}/favicon.png`,
   "url": baseUrl,
   "telephone": "",
   "address": {
