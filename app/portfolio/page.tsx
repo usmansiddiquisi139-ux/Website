@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { caseStudyData } from "@/lib/case-studies"
 
 export const metadata = {
   title: "Portfolio | Systems Integration",
@@ -84,8 +85,7 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseStudies.map((study) => {
-              // Map local data to caseStudyData to get images/techs
-              const fullStudy = require("@/lib/case-studies").default[study.slug]
+              const fullStudy = caseStudyData[study.slug] as any
               return (
                 <Link key={study.slug} href={`/portfolio/${study.slug}`}>
                   <div className="h-full rounded-2xl overflow-hidden border border-orange-500/30 bg-white/40 backdrop-blur-md hover:border-orange-400 hover:bg-orange-500/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">

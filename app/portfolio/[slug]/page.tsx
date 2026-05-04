@@ -93,7 +93,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6">Technical Frameworks</h3>
             <div className="flex flex-wrap gap-4">
               {study.frameworks.map((framework) => (
-                <div key={framework} className="flex items-center gap-2 text-slate-800 bg-white shadow-sm px-4 py-2 rounded-xl border border-slate-200">
+                <div key={framework} className="flex items-center gap-2 text-slate-800 bg-white/60 backdrop-blur-sm shadow-sm px-4 py-2 rounded-xl border border-slate-200">
                   <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   <span className="font-medium">{framework}</span>
                 </div>
@@ -155,7 +155,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {study.outcomes.map((item: string, idx: number) => (
-                  <div key={idx} className="p-4 bg-white shadow-sm rounded-2xl border border-slate-200 flex items-center gap-3">
+                  <div key={idx} className="p-4 bg-white/60 backdrop-blur-sm shadow-sm rounded-2xl border border-slate-200 flex items-center gap-3">
                     <Icons.CheckCircle2 className="text-orange-500 w-5 h-5 flex-shrink-0" />
                     <span className="text-sm font-medium">{item}</span>
                   </div>
@@ -181,7 +181,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <h2 className="text-3xl font-bold mb-10">Tech Stack Authority</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {study.technologies.map((tech: string) => (
-              <span key={tech} className="px-6 py-3 bg-white shadow-sm hover:bg-slate-100 border border-slate-200 hover:border-orange-500/50 transition-all rounded-2xl text-lg font-medium">
+              <span key={tech} className="px-6 py-3 bg-white/60 backdrop-blur-sm shadow-sm hover:bg-white/80 border border-slate-200 hover:border-orange-500/50 transition-all rounded-2xl text-lg font-medium">
                 {tech}
               </span>
             ))}

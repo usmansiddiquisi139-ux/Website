@@ -91,7 +91,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="absolute inset-0 bg-[#F8FAFC]" />
+      <div className="absolute inset-0 bg-transparent" />
 
       <div className="relative z-10">
         <ServiceContent service={plainService} />
