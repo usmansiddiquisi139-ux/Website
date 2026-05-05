@@ -64,7 +64,7 @@ const structuredData = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-center text-slate-900">
+    <main className="min-h-screen bg-center text-white">
 
       {/* Inject JSON-LD structured data */}
       <script

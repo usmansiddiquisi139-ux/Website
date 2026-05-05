@@ -55,8 +55,8 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">Let's Talk</h1>
-          <p className="text-xl text-slate-700 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Let's Talk</h1>
+          <p className="text-xl text-white/80 max-w-2xl">
             Ready to transform your business? Reach out to schedule a consultation.
           </p>
         </div>
@@ -67,45 +67,45 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-xl bg-slate-100 backdrop-blur-sm border border-gray-300/30">
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-900">Name *</label>
+              <label className="block text-sm font-medium mb-2 text-white">Name *</label>
               <Input
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="bg-white/20 border-gray-300/30 text-slate-900"
+                className="bg-white/20 border-gray-300/30 text-white"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-900">Email *</label>
+              <label className="block text-sm font-medium mb-2 text-white">Email *</label>
               <Input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your@company.com"
-                className="bg-white/20 border-gray-300/30 text-slate-900"
+                className="bg-white/20 border-gray-300/30 text-white"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-900">Company</label>
+              <label className="block text-sm font-medium mb-2 text-white">Company</label>
               <Input
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="Company name"
-                className="bg-white/20 border-gray-300/30 text-slate-900"
+                className="bg-white/20 border-gray-300/30 text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-slate-900">Message *</label>
+              <label className="block text-sm font-medium mb-2 text-white">Message *</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300/30 bg-white/20 text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300/30 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                 rows={6}
                 placeholder="Tell us about your project..."
                 required
@@ -128,7 +128,7 @@ export default function ContactPage() {
               type="submit"
               size="lg"
               disabled={status === "loading"}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "loading" ? "Sending..." : "Send Message"}
             </Button>

@@ -6,7 +6,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
+    <main className="min-h-screen bg-[#F8FAFC] text-white">
 
       <div className="max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Insights & Articles</h1>
@@ -22,7 +22,7 @@ export default function BlogPage() {
               <h2 className="text-xl font-bold mb-2 group-hover:text-orange-400 transition">
                 {post.title}
               </h2>
-              <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
+              <p className="text-white/70 mb-4 line-clamp-3">{post.excerpt}</p>
               <p className="text-xs text-slate-500">
                 {new Date(post.publishedDate).toLocaleDateString("en-US", {
                   year: "numeric",

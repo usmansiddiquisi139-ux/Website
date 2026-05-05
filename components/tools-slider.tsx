@@ -81,7 +81,7 @@ function ToolLogo({ src, alt, name }: LogoProps) {
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-slate-600 text-sm font-semibold">
+          <div className="w-full h-full flex items-center justify-center text-white/70 text-sm font-semibold">
             {name.split(" ")[0]}
           </div>
         )}
@@ -200,7 +200,7 @@ export function ToolsSlider() {
   return (
     <section className="w-full px-4 sm:px-6 py-12 md:py-12">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 text-slate-900">Tools & Technologies We Use</h2>
+        <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 text-white">Tools & Technologies We Use</h2>
         <div className="space-y-6">
           {toolCategories.map((category, index) => (
             <CarouselSlider key={index} tools={category.tools} animateDirection={index === 1 ? "reverse" : "normal"} />

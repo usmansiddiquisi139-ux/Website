@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   };
 
   return (
-    <main className="relative min-h-screen text-slate-900 overflow-hidden bg-transparent">
+    <main className="relative min-h-screen text-white overflow-hidden bg-transparent">
       {/* 🧩 Inject JSON-LD for Google SEO */}
       <script
         type="application/ld+json"
@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         {!service.hideCTA && (
           <div className="mt-20 mb-24 text-center px-4">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">{dynamicHeading}</h2>
-            <p className="text-slate-700 max-w-2xl mx-auto mb-10">{dynamicDescription}</p>
+            <p className="text-white/80 max-w-2xl mx-auto mb-10">{dynamicDescription}</p>
 
             {service.ctas && service.ctas.length > 0 ? (
               <div className="flex flex-wrap justify-center gap-4">
@@ -108,8 +108,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     key={index}
                     href={cta.href || "/contact"}
                     className={`inline-block px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 ${index === 0
-                      ? `text-slate-900 bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]`
-                      : `text-slate-900 border ${borderColor} border-2 hover:bg-gradient-to-r ${gradientClass} hover:text-slate-900 hover:scale-105`
+                      ? `text-white bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]`
+                      : `text-white border ${borderColor} border-2 hover:bg-gradient-to-r ${gradientClass} hover:text-white hover:scale-105`
                       }`}
                   >
                     {cta.label}
@@ -119,7 +119,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ) : (
               <Link
                 href="/contact"
-                className={`inline-block px-8 py-4 text-lg font-semibold text-slate-900 rounded-full bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all duration-300`}
+                className={`inline-block px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r ${gradientClass} hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all duration-300`}
               >
                 Get in Touch
               </Link>

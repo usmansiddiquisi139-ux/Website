@@ -57,14 +57,14 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-slate-100 transition-colors text-slate-900"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-slate-100 transition-colors text-white"
             aria-label="Close"
           >
             <X size={24} />
           </button>
 
           {/* Content */}
-          <div className="p-8 text-slate-900 space-y-8">
+          <div className="p-8 text-white space-y-8">
             {/* Header */}
             <div>
               <h2 className={`text-4xl font-bold ${colorClasses.text} mb-2`}>{service.title}</h2>
@@ -84,7 +84,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                 <div className="space-y-4">
                   {service.capabilities.map((cap, idx) => (
                     <div key={idx} className={`${colorClasses.bg} border ${colorClasses.border} rounded-lg p-4`}>
-                      <h4 className="font-semibold text-slate-900 mb-2">{cap.title}</h4>
+                      <h4 className="font-semibold text-white mb-2">{cap.title}</h4>
                       <ul className="text-gray-300 text-sm space-y-1">
                         {cap.bullets.map((bullet, bidx) => (
                           <li key={bidx} className="flex items-start gap-2">
@@ -150,7 +150,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       idx === 0
                         ? `${colorClasses.text} bg-white shadow-sm hover:bg-slate-100 border ${colorClasses.border}`
-                        : "bg-slate-100 text-slate-900 hover:bg-white/20"
+                        : "bg-slate-100 text-white hover:bg-white/20"
                     }`}
                   >
                     {cta.label}

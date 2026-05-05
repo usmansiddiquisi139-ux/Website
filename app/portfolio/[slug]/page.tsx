@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   }
 
   return (
-    <main className="min-h-screen text-slate-900 relative bg-transparent">
+    <main className="min-h-screen text-white relative bg-transparent">
 
 
 
@@ -60,15 +60,15 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="pt-20 pb-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-end">
           <div className="flex-1">
-            <Link href="/portfolio" className="text-slate-900/60 hover:text-slate-900 mb-6 inline-flex items-center gap-2 transition-colors">
+            <Link href="/portfolio" className="text-white/60 hover:text-white mb-6 inline-flex items-center gap-2 transition-colors">
               <Icons.ArrowLeft size={16} /> Back to Portfolio
             </Link>
             <div className="space-y-2">
               <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest rounded-full border border-orange-500/30">
                 {study.industry}
               </span>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">{study.title}</h1>
-              <p className="text-xl text-slate-600 italic">&quot;{study.client}&quot;</p>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">{study.title}</h1>
+              <p className="text-xl text-white/70 italic">&quot;{study.client}&quot;</p>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6">Technical Frameworks</h3>
             <div className="flex flex-wrap gap-4">
               {study.frameworks.map((framework) => (
-                <div key={framework} className="flex items-center gap-2 text-slate-800 bg-white/60 backdrop-blur-sm shadow-sm px-4 py-2 rounded-xl border border-slate-200">
+                <div key={framework} className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm shadow-sm px-4 py-2 rounded-xl border border-white/20">
                   <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   <span className="font-medium">{framework}</span>
                 </div>
@@ -105,7 +105,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6">Methodologies Opted</h3>
             <div className="flex flex-wrap gap-4">
               {study.methodologies.map((method) => (
-                <div key={method} className="flex items-center gap-2 text-slate-800 bg-white shadow-sm px-4 py-2 rounded-xl border border-slate-200">
+                <div key={method} className="flex items-center gap-2 text-white bg-white/10 shadow-sm px-4 py-2 rounded-xl border border-white/20">
                   <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   <span className="font-medium">{method}</span>
                 </div>
@@ -119,7 +119,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
-          <p className="text-xl text-slate-700 leading-relaxed font-light">{study.overview}</p>
+          <p className="text-xl text-white/90 leading-relaxed font-light">{study.overview}</p>
         </div>
       </section>
 
@@ -131,7 +131,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Icons.Target className="text-orange-500" /> The Challenge
               </h2>
-              <p className="text-slate-700 leading-relaxed text-lg">{study.challenge}</p>
+              <p className="text-white/90 leading-relaxed text-lg">{study.challenge}</p>
             </div>
 
             <div>
@@ -142,7 +142,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 {study.solution.map((item: string, idx: number) => (
                   <li key={idx} className="flex gap-4 group">
                     <span className="text-orange-500 font-bold flex-shrink-0 mt-1">•</span>
-                    <span className="text-slate-700 group-hover:text-slate-900 transition-colors">{item}</span>
+                    <span className="text-white/90 group-hover:text-white transition-colors">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -156,9 +156,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {study.outcomes.map((item: string, idx: number) => (
-                  <div key={idx} className="p-4 bg-white/60 backdrop-blur-sm shadow-sm rounded-2xl border border-slate-200 flex items-center gap-3">
+                  <div key={idx} className="p-4 bg-white/10 backdrop-blur-sm shadow-sm rounded-2xl border border-white/20 flex items-center gap-3">
                     <Icons.CheckCircle2 className="text-orange-500 w-5 h-5 flex-shrink-0" />
-                    <span className="text-sm font-medium">{item}</span>
+                    <span className="text-sm font-medium text-white">{item}</span>
                   </div>
                 ))}
               </div>
@@ -168,8 +168,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Icons.Zap className="text-orange-500" /> Results
               </h2>
-              <div className="p-8 bg-orange-500 rounded-[2rem] text-slate-900">
-                <p className="text-xl font-medium leading-relaxed italic">&quot;{study.results}&quot;</p>
+              <div className="p-8 bg-orange-500 rounded-[2rem] text-white">
+                <p className="text-xl font-medium leading-relaxed italic text-white/90">&quot;{study.results}&quot;</p>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <h2 className="text-3xl font-bold mb-10">Tech Stack Authority</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {study.technologies.map((tech: string) => (
-              <span key={tech} className="px-6 py-3 bg-white/60 backdrop-blur-sm shadow-sm hover:bg-white/80 border border-slate-200 hover:border-orange-500/50 transition-all rounded-2xl text-lg font-medium">
+              <span key={tech} className="px-6 py-3 bg-white/10 backdrop-blur-sm shadow-sm hover:bg-white/20 border border-white/20 hover:border-orange-500/50 transition-all rounded-2xl text-lg font-medium text-white">
                 {tech}
               </span>
             ))}
@@ -193,7 +193,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {/* Related Services — clean icon (no background) */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-slate-900">Related Services</h2>
+          <h2 className="text-3xl font-bold mb-8 text-white">Related Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {study.services.map((slug: string) => {
               const allServices = require("@/lib/services-data").services
@@ -224,16 +224,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         <IconComponent className={`w-6 h-6 ${colorClasses.text} flex-shrink-0`} />
                       )}
                       <div className="flex-1">
-                        <h3 className="font-bold text-lg text-slate-900 group-hover:text-orange-400 transition-all duration-300">
+                        <h3 className="font-bold text-lg text-white group-hover:text-orange-400 transition-all duration-300">
                           {service.title}
                         </h3>
                         {service.headline && (
-                          <p className="mt-2 text-sm text-slate-700 group-hover:text-slate-900">
+                          <p className="mt-2 text-sm text-white/80 group-hover:text-white">
                             {service.headline}
                           </p>
                         )}
                         {service.overview && (
-                          <p className="mt-3 text-sm text-slate-600 group-hover:text-slate-800">
+                          <p className="mt-3 text-sm text-white/70 group-hover:text-white/90">
                             {service.overview}
                           </p>
                         )}
@@ -250,10 +250,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {/* CTA */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">Ready for Your Next Project?</h2>
+          <h2 className="text-3xl font-bold mb-4 text-white">Ready for Your Next Project?</h2>
           <Link
             href="/contact"
-            className="inline-block px-8 py-4 bg-orange-500 text-slate-900 rounded-lg font-semibold hover:scale-105 transition-all duration-300"
+            className="inline-block px-8 py-4 bg-orange-500 text-white rounded-lg font-semibold hover:scale-105 transition-all duration-300"
           >
             Let's Discuss Your Goals
           </Link>

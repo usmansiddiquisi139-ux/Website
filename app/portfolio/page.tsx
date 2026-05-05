@@ -73,8 +73,8 @@ export default function PortfolioPage() {
       {/* Hero */}
       <section className="pt-24 pb-2 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-slate-900">Our Work</h1>
-          <p className="text-lg sm:text-xl text-slate-900 max-w-3xl mx-auto whitespace-nowrap sm:whitespace-normal">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">Our Work</h1>
+          <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto whitespace-nowrap sm:whitespace-normal">
             Case studies demonstrating measurable outcomes across industries and technologies.
           </p>
         </div>
@@ -101,14 +101,14 @@ export default function PortfolioPage() {
 
                       {/* Industry Badge */}
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-orange-500 text-slate-900 text-xs font-bold uppercase tracking-widest rounded-full">
+                        <span className="px-3 py-1 bg-orange-500 text-white text-xs font-bold uppercase tracking-widest rounded-full">
                           {study.industry}
                         </span>
                       </div>
                     </div>
 
                     <div className="p-8 flex-1 flex flex-col">
-                      <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-orange-400 transition-all duration-300">
+                      <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-orange-400 transition-all duration-300">
                         {study.title}
                       </h3>
 
@@ -116,7 +116,7 @@ export default function PortfolioPage() {
                         {study.client}
                       </p>
 
-                      <p className="text-slate-600 mb-6 line-clamp-2 italic">
+                      <p className="text-white/70 mb-6 line-clamp-2 italic">
                         &quot;{study.description}&quot;
                       </p>
 
@@ -148,11 +148,11 @@ export default function PortfolioPage() {
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">Achieve Similar Outcomes</h2>
-          <p className="text-lg mb-8 text-slate-900">Let's discuss how our expertise can transform your organization.</p>
+          <h2 className="text-3xl font-bold mb-4 text-white">Achieve Similar Outcomes</h2>
+          <p className="text-lg mb-8 text-white">Let's discuss how our expertise can transform your organization.</p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 text-slate-900 rounded-lg font-semibold transition"
+            className="inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold transition"
           >
             Start Your Project
           </Link>

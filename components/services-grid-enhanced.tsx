@@ -61,7 +61,7 @@ const ServiceCard: React.FC<{ service: Service; onOpen: () => void }> = ({ servi
       <div className={`rounded-lg p-3 ${classes.glow}`}>
         {Icon && <Icon className={`${classes.text} w-8 h-8`} />}
       </div>
-      <h3 className="text-center text-base font-semibold text-slate-900 group-hover:text-orange-400 transition-colors">
+      <h3 className="text-center text-base font-semibold text-white group-hover:text-orange-400 transition-colors">
         {service.title}
       </h3>
     </motion.div>

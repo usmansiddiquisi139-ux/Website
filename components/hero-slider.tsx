@@ -33,12 +33,12 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
         </div>
 
         <div className="animate-slide-in-right text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900">Systems Integration</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">Systems Integration</h1>
         </div>
       </div>
 
       <div>
-        <p className="text-sm md:text-base lg:text-lg text-slate-700 text-center">
+        <p className="text-sm md:text-base lg:text-lg text-white/80 text-center">
           Strategy-led consultancy commanding algorithms, not worshipping them.
         </p>
       </div>
@@ -51,9 +51,9 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-slate-700 text-center">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white/80 text-center">
         <div className="flex items-center gap-2">
-          <svg className="w-5 h-5 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-5 h-5 text-white/80" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm.5-9H9V7a1 1 0 012 0v3.5a1 1 0 01-1.5.866l-3-1.732a1 1 0 011-1.732l2.5 1.443V7z"
@@ -71,13 +71,13 @@ export function HeroSlider({ taglines }: HeroSliderProps) {
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4 w-full sm:w-auto">
         <a
           href="/contact"
-          className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
         >
           Book Consultation
         </a>
         <a
           href="/services"
-          className="w-full sm:w-auto px-8 py-3 bg-white/20 text-slate-900 font-semibold rounded-lg hover:bg-white/30 transition-colors duration-300"
+          className="w-full sm:w-auto px-8 py-3 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors duration-300"
         >
           Explore
         </a>

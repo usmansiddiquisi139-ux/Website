@@ -15,7 +15,7 @@ export function Footer() {
   return (
     <>
       {/* Main Footer */}
-      <footer className="border-t border-orange-500/20 bg-[#F8FAFC] text-slate-900 relative z-10">
+      <footer className="border-t border-white/10 bg-black/40 text-white relative z-10 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-6 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-8 items-start">
 
@@ -29,11 +29,11 @@ export function Footer() {
                   height={48}
                   className="object-contain"
                 />
-                <span className="font-semibold text-lg leading-tight">
+                <span className="font-semibold text-lg leading-tight text-white">
                   Systems Integration
                 </span>
               </Link>
-              <p className="text-base text-slate-700 leading-snug max-w-md">
+              <p className="text-base text-white/70 leading-snug max-w-md">
                 Strategy-led technology consultancy commanding algorithms —
                 not worshipping them.
               </p>
@@ -42,8 +42,8 @@ export function Footer() {
             {/* About + Contact */}
             <div className="flex flex-col justify-center space-y-5">
               <div>
-                <h4 className="font-semibold mb-2 text-slate-900">About Us</h4>
-                <p className="text-sm text-slate-700 mb-3">
+                <h4 className="font-semibold mb-2 text-white">About Us</h4>
+                <p className="text-sm text-white/70 mb-3">
                   Learn more about our mission and expertise in shaping the
                   future of enterprise technology.
                 </p>
@@ -58,7 +58,7 @@ export function Footer() {
               <div className="mt-4">
                 <Link
                   href="/contact"
-                  className="inline-block bg-orange-500 text-slate-900 font-semibold px-6 py-2 rounded-md text-sm hover:bg-orange-700 transition-colors shadow-md"
+                  className="inline-block bg-orange-500 text-white font-semibold px-6 py-2 rounded-md text-sm hover:bg-orange-700 transition-colors shadow-md"
                 >
                   VIP Access Only!
                 </Link>
@@ -68,12 +68,12 @@ export function Footer() {
             {/* Legal + Connect */}
             <div className="space-y-6">
               <div>
-                <h4 className="font-semibold mb-3 text-slate-900">Legal</h4>
+                <h4 className="font-semibold mb-3 text-white">Legal</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <Link
                       href="/privacy-policy"
-                      className="text-slate-700 hover:text-orange-400 transition"
+                      className="text-white/70 hover:text-orange-400 transition"
                     >
                       Privacy Policy
                     </Link>
@@ -81,7 +81,7 @@ export function Footer() {
                   <li>
                     <Link
                       href="/cookie-policy"
-                      className="text-slate-700 hover:text-orange-400 transition"
+                      className="text-white/70 hover:text-orange-400 transition"
                     >
                       Cookie Policy
                     </Link>
@@ -89,7 +89,7 @@ export function Footer() {
                   <li>
                     <Link
                       href="/terms-and-conditions"
-                      className="text-slate-700 hover:text-orange-400 transition"
+                      className="text-white/70 hover:text-orange-400 transition"
                     >
                       Terms & Conditions
                     </Link>
@@ -99,7 +99,7 @@ export function Footer() {
                   <li>
                     <Link
                       href="/site-map"
-                      className="text-slate-700 hover:text-orange-400 transition"
+                      className="text-white/70 hover:text-orange-400 transition"
                     >
                       Sitemap
                     </Link>
@@ -108,7 +108,7 @@ export function Footer() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3 text-slate-900">Connect With Us</h4>
+                <h4 className="font-semibold mb-3 text-white">Connect With Us</h4>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -123,11 +123,11 @@ export function Footer() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 rounded-md px-3 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-slate-900"
+                    className="flex-1 rounded-md px-3 py-2 text-sm border border-white/10 bg-white/5 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder:text-white/30"
                   />
                   <button
                     type="submit"
-                    className="rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-orange-600 transition"
+                    className="rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 transition"
                   >
                     Send
                   </button>
@@ -137,14 +137,14 @@ export function Footer() {
                   <Link
                     href="https://www.linkedin.com/company/systems-integration"
                     target="_blank"
-                    className="text-slate-600 hover:text-orange-400 transition"
+                    className="text-white/70 hover:text-orange-400 transition"
                   >
                     <Linkedin size={20} />
                   </Link>
                   <Link
                     href="https://x.com/systems_integration"
                     target="_blank"
-                    className="text-slate-600 hover:text-orange-400 transition"
+                    className="text-white/50 hover:text-orange-400 transition"
                   >
                     <Twitter size={20} />
                   </Link>
@@ -154,22 +154,22 @@ export function Footer() {
 
             {/* Discover */}
             <div className="pl-0 md:pl-6">
-              <h4 className="font-semibold mb-3 text-slate-900">Discover</h4>
+              <h4 className="font-semibold mb-3 text-white">Discover</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/services" className="text-slate-700 hover:text-orange-400 transition">Services</Link></li>
-                <li><Link href="/industries" className="text-slate-700 hover:text-orange-400 transition">Industries</Link></li>
+                <li><Link href="/services" className="text-white/70 hover:text-orange-400 transition">Services</Link></li>
+                <li><Link href="/industries" className="text-white/70 hover:text-orange-400 transition">Industries</Link></li>
 
-                <li><Link href="/faq" className="text-slate-700 hover:text-orange-400 transition">FAQ</Link></li>
-                <li><Link href="/portfolio" className="text-slate-700 hover:text-orange-400 transition">Portfolio</Link></li>
-                <li><Link href="/blog" className="text-slate-700 hover:text-orange-400 transition">Case Studies</Link></li>
-                <li><Link href="/glossary" className="text-slate-700 hover:text-orange-400 transition">Glossary</Link></li>
+                <li><Link href="/faq" className="text-white/70 hover:text-orange-400 transition">FAQ</Link></li>
+                <li><Link href="/portfolio" className="text-white/70 hover:text-orange-400 transition">Portfolio</Link></li>
+                <li><Link href="/blog" className="text-white/70 hover:text-orange-400 transition">Case Studies</Link></li>
+                <li><Link href="/glossary" className="text-white/70 hover:text-orange-400 transition">Glossary</Link></li>
               </ul>
             </div>
           </div>
 
           {/* Copyright */}
           <div className="border-t border-orange-500/20 mt-8 pt-6 text-center">
-            <p className="text-slate-600 text-sm">
+            <p className="text-white/50 text-sm">
               © {currentYear} Systems Integration. All rights reserved.
             </p>
           </div>

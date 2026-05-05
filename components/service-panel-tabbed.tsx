@@ -127,7 +127,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                     e.stopPropagation()
                     onClose()
                   }}
-                  className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full hover:bg-slate-100 transition-all duration-200 text-slate-800 hover:text-slate-900 flex-shrink-0 hover:scale-110"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full hover:bg-slate-100 transition-all duration-200 text-white hover:text-white flex-shrink-0 hover:scale-110"
                   aria-label="Close"
                 >
                   <X size={24} />
@@ -135,16 +135,16 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
 
               {/* Scrollable Content */}
                 <div className="overflow-y-auto flex-1 relative z-10">
-                <div className="p-4 sm:p-6 lg:p-8 text-slate-900 space-y-4 sm:space-y-6">
+                <div className="p-4 sm:p-6 lg:p-8 text-white space-y-4 sm:space-y-6">
                   {/* Header */}
                   <div className="pr-8">
                     <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${colorClasses.text} mb-2 sm:mb-3`}>
                       {service.title}
                     </h2>
-                    <p className="text-slate-900 text-sm sm:text-base lg:text-lg mb-2">
+                    <p className="text-white text-sm sm:text-base lg:text-lg mb-2">
                       {service.headline || service.overview}
                     </p>
-                    <p className="text-slate-800 text-sm sm:text-base">{service.description || service.overview}</p>
+                    <p className="text-white text-sm sm:text-base">{service.description || service.overview}</p>
                   </div>
 
                   <div className="border-b border-slate-300">
@@ -156,7 +156,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                           className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all rounded-lg flex-shrink-0 whitespace-nowrap ${
                             activeTab === idx
                               ? `${colorClasses.bg} ${colorClasses.text} ${colorClasses.border} border`
-                              : "text-slate-600 hover:text-slate-900"
+                              : "text-white/70 hover:text-white"
                           }`}
                         >
                           {tab.label}
@@ -179,7 +179,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                       >
                         {/* Bullets */}
                         <div>
-                          <ul className="text-slate-900 text-xs sm:text-sm space-y-2">
+                          <ul className="text-white text-xs sm:text-sm space-y-2">
                             {tabs[activeTab].data.bullets.map((bullet, idx) => (
                               <li key={idx} className="flex items-start gap-2">
                                 <span className={`${colorClasses.text} mt-1 flex-shrink-0`}>•</span>
@@ -192,12 +192,12 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                         {/* Tools */}
                         {tabs[activeTab].data.tools && tabs[activeTab].data.tools.length > 0 && (
                           <div>
-                            <h4 className="font-semibold text-slate-900 mb-3 text-sm sm:text-base">Tools & Technologies</h4>
+                            <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Tools & Technologies</h4>
                             <div className="flex flex-wrap gap-2 overflow-x-hidden">
                               {tabs[activeTab].data.tools.map((tool, idx) => (
                                 <span
                                   key={idx}
-                                  className="text-xs bg-white/20 text-slate-800 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap backdrop-blur-sm"
+                                  className="text-xs bg-white/20 text-white px-2 sm:px-3 py-1 rounded-full whitespace-nowrap backdrop-blur-sm"
                                 >
                                   {tool}
                                 </span>
@@ -210,7 +210,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
 
                     {tabs[activeTab].type === "outcomes" && (
                       <div className="space-y-3">
-                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900">Why Choose Us</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white">Why Choose Us</h3>
                         <div className="grid gap-3">
                           {(service.whyChooseUs || service.outcomes || []).map((item, idx) => (
                             <div
@@ -218,7 +218,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                               className={`bg-[#F8FAFC] backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
                             >
                               <span className={`${colorClasses.text} text-lg flex-shrink-0 mt-1`}>✓</span>
-                              <span className="text-slate-900 text-sm sm:text-base break-words">{item}</span>
+                              <span className="text-white text-sm sm:text-base break-words">{item}</span>
                             </div>
                           ))}
                         </div>
@@ -227,7 +227,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
 
                     {tabs[activeTab].type === "use-cases" && (
                       <div className="space-y-3">
-                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900">Typical Use Cases</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white">Typical Use Cases</h3>
                         <div className="grid gap-3">
                           {(service.typicalUseCases || []).map((useCase, idx) => (
                             <div
@@ -235,7 +235,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                               className={`bg-[#F8FAFC] backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
                             >
                               <span className={`${colorClasses.text} text-lg flex-shrink-0 mt-1`}>→</span>
-                              <span className="text-slate-900 text-sm sm:text-base break-words">{useCase}</span>
+                              <span className="text-white text-sm sm:text-base break-words">{useCase}</span>
                             </div>
                           ))}
                         </div>

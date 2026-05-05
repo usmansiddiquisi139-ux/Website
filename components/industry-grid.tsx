@@ -161,7 +161,7 @@ export default function IndustryGrid() {
         >
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             View All Industries
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -217,7 +217,7 @@ export default function IndustryGrid() {
 
                   <Link
                     href={`/industries/${selected.slug}`}
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-slate-900 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
                     onClick={() => setSelected(null)}
                   >
                     Learn More

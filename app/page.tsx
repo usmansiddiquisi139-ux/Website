@@ -73,7 +73,7 @@ export default function Home() {
             {industries.map((industry) => (
               <Link key={industry.slug} href={`/industries/${industry.slug}`}>
                 <div className="p-6 bg-slate-100/50 backdrop-blur-md rounded-lg hover:border-orange-400 border border-gray-300/30 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-white/40">
-                  <h3 className="text-base font-semibold text-center text-slate-900">{industry.name}</h3>
+                  <h3 className="text-base font-semibold text-center text-white">{industry.name}</h3>
                 </div>
               </Link>
             ))}
@@ -90,7 +90,7 @@ export default function Home() {
               Let's work together to build your next generation of digital solutions
             </p>
             <Link href="/contact">
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 font-bold py-3 px-8 rounded-lg transition-all">
+              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-all">
                 Get Started
               </button>
             </Link>
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link href="/blog">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition-all">
+              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-3 px-8 rounded-lg transition-all">
                 Explore Blog & Insights
               </button>
             </Link>
@@ -149,14 +149,14 @@ export default function Home() {
                 className="p-6 bg-slate-100/50 backdrop-blur-md rounded-lg border border-gray-300/30 hover:border-orange-400 transition-all duration-300"
               >
                 <h3 className="text-base font-semibold text-orange-400 mb-3">{faq.q}</h3>
-                <p className="text-sm text-slate-700">{faq.a}</p>
+                <p className="text-sm text-white/80">{faq.a}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center">
             <Link href="/faq">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-slate-900 font-bold py-3 px-8 rounded-lg transition-all">
+              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-3 px-8 rounded-lg transition-all">
                 View All FAQs
               </button>
             </Link>
