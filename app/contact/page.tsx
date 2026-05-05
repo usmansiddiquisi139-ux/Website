@@ -65,7 +65,7 @@ export default function ContactPage() {
       {/* Contact Form */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-xl bg-slate-100 backdrop-blur-sm border border-gray-300/30">
+          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_0_50px_rgba(249,115,22,0.05)]">
             <div>
               <label className="block text-sm font-medium mb-2 text-white">Name *</label>
               <Input
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="bg-white/20 border-gray-300/30 text-white"
+                className="bg-white/5 border-white/20 text-white focus:border-orange-500/50"
                 required
               />
             </div>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your@company.com"
-                className="bg-white/20 border-gray-300/30 text-white"
+                className="bg-white/5 border-white/20 text-white focus:border-orange-500/50"
                 required
               />
             </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="Company name"
-                className="bg-white/20 border-gray-300/30 text-white"
+                className="bg-white/5 border-white/20 text-white focus:border-orange-500/50"
               />
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300/30 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+                className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                 rows={6}
                 placeholder="Tell us about your project..."
                 required
