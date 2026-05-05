@@ -54,9 +54,9 @@ export default function Home() {
       {/* Services Section */}
       <section className="relative section-padding">
         <div className="section-container relative z-10">
-          <div className="section-header">
-            <h2 className="section-title">Our Services</h2>
-            <p className="section-subtitle">Comprehensive technology solutions tailored to your enterprise needs</p>
+          <div className="section-header text-white">
+            <h2 className="section-title text-white">Our Services</h2>
+            <p className="section-subtitle text-white/90">Comprehensive technology solutions tailored to your enterprise needs</p>
           </div>
           <ServicesGridEnhanced />
         </div>
@@ -65,9 +65,9 @@ export default function Home() {
       {/* Industries Section */}
       <section className="relative section-padding-compact">
         <div className="section-container relative z-10">
-          <div className="section-header-compact">
-            <h2 className="section-title">Industries We Serve</h2>
-            <p className="section-subtitle mb-8">Strategic consulting across verticals and business models</p>
+          <div className="section-header-compact text-white">
+            <h2 className="section-title text-white">Industries We Serve</h2>
+            <p className="section-subtitle text-white/90 mb-8">Strategic consulting across verticals and business models</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-spacing">
             {industries.map((industry) => (
@@ -84,9 +84,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="relative section-padding-compact min-h-screen flex items-center justify-center">
         <div className="section-container w-full relative z-10">
-          <div className="section-header-compact">
-            <h2 className="section-title">Ready to Transform?</h2>
-            <p className="section-subtitle mb-8">
+          <div className="section-header-compact text-white">
+            <h2 className="section-title text-white">Ready to Transform?</h2>
+            <p className="section-subtitle text-white/90 mb-8">
               Let's work together to build your next generation of digital solutions
             </p>
             <Link href="/contact">
@@ -101,9 +101,9 @@ export default function Home() {
       {/* Insights Section */}
       <section className="relative section-padding-compact">
         <div className="section-container relative z-10">
-          <div className="section-header-compact">
-            <h2 className="section-title">Latest Insights</h2>
-            <p className="section-subtitle mb-8">
+          <div className="section-header-compact text-white">
+            <h2 className="section-title text-white">Latest Insights</h2>
+            <p className="section-subtitle text-white/90 mb-8">
               Expert perspectives on AI, cloud, security, and enterprise transformation
             </p>
           </div>
@@ -120,9 +120,9 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="relative section-padding">
         <div className="section-container relative z-10">
-          <div className="section-header">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle mb-12">Quick answers to common questions about our services and expertise</p>
+          <div className="section-header text-white">
+            <h2 className="section-title text-white">Frequently Asked Questions</h2>
+            <p className="section-subtitle text-white/90 mb-12">Quick answers to common questions about our services and expertise</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
