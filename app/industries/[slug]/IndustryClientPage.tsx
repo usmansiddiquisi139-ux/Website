@@ -106,7 +106,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
                 return (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
                     <div
-                      className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}
+                      className={`p-6 rounded-lg border border-white/20 bg-transparent hover:${colorClasses.bg} backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] cursor-pointer group relative overflow-hidden`}
                     >
                       <div className="flex items-start space-x-4">
                         {IconComponent && (

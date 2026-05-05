@@ -99,7 +99,7 @@ export default function ServicesPage() {
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   prefetch={false}
-                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition flex items-start justify-between gap-4 group rounded-2xl ${colorClasses.border} bg-transparent backdrop-Transparent`}
+                  className={`block w-full text-left p-6 sm:p-8 hover:${colorClasses.bg} transition-all flex items-start justify-between gap-4 group rounded-2xl border border-white/20 bg-transparent backdrop-blur-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]`}
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">

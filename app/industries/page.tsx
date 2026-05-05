@@ -47,7 +47,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry) => (
               <Link key={industry.slug} href={`/industries/${industry.slug}`}>
-                <div className="h-full p-8 rounded-lg border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm hover:border-orange-400 hover:bg-orange-500/20 transition cursor-pointer group">
+                <div className="h-full p-8 rounded-lg border border-white/20 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] transition-all duration-300 cursor-pointer group">
                   <h3 className="text-xl font-bold text-white transition-all duration-300">
                     {industry.name}
                   </h3>

@@ -88,7 +88,7 @@ export default function PortfolioPage() {
               const fullStudy = caseStudyData[study.slug] as any
               return (
                 <Link key={study.slug} href={`/portfolio/${study.slug}`}>
-                  <div className="h-full rounded-2xl overflow-hidden border border-orange-500/30 bg-white/40 backdrop-blur-md hover:border-orange-400 hover:bg-orange-500/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">
+                  <div className="h-full rounded-2xl overflow-hidden border border-white/20 bg-transparent backdrop-blur-sm hover:border-orange-400 hover:bg-white/5 transition-all duration-500 cursor-pointer group hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] flex flex-col">
 
                     {/* Image Container */}
                     <div className="relative h-64 w-full overflow-hidden">
