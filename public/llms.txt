@@ -1,0 +1,26 @@
+# Systems Integration
+
+Strategy-led technology consultancy commanding algorithms — not worshipping them.
+
+## Core Services
+- Integration & Migration Services: Zero-downtime data and system transitions.
+- AI/ML Learning & Automation: Deep learning and process intelligence.
+- LangChain & AI-SEO: Automated high-authority content ecosystems.
+- Data Solutions & Governance: Enterprise data architecting.
+- Web & Mobile Development: High-performance digital products.
+- DevOps & Cloud: Scalable infrastructure and CI/CD.
+- Ethical Hacking (EHaaS): Continuous security and penetration testing.
+
+## Key Industries
+- Healthcare
+- Financial Services
+- Manufacturing
+- Oil & Gas
+- Aerospace & Defense
+- Education
+- Transportation
+- Real Estate
+
+## Contact
+- URL: https://www.systemsintegration.co/contact
+- Email: contact@systemsintegration.co

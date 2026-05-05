@@ -7,6 +7,7 @@ import { Breadcrumbs } from "../../components/Breadcrumbs"
 import { Service } from "@/lib/services-data"
 import { getLucideIcon } from "@/lib/get-lucide-icon"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ServiceContent({ service }: { service: Service }) {
   const [activeCapIndex, setActiveCapIndex] = useState(0)
@@ -131,7 +132,13 @@ export default function ServiceContent({ service }: { service: Service }) {
                     className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
-                  <img src={service.image} alt={service.title} className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" />
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    width={800} 
+                    height={600} 
+                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" 
+                  />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </motion.div>

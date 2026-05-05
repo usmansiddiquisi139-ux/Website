@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { caseStudyData } from "@/lib/case-studies"
 
 export const metadata = {
@@ -92,10 +93,12 @@ export default function PortfolioPage() {
 
                     {/* Image Container */}
                     <div className="relative h-64 w-full overflow-hidden">
-                      <img
+                      <Image
                         src={fullStudy?.image || "/images/services-bg.jpg"}
                         alt={study.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
