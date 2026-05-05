@@ -56,7 +56,7 @@ const ServiceCard: React.FC<{ service: Service; onOpen: () => void }> = ({ servi
       whileHover={{ scale: 1.05, y: -8 }}
       transition={{ duration: 0.25 }}
       onClick={onOpen}
-      className="group relative cursor-pointer flex flex-col items-center justify-center gap-3 rounded-2xl bg-slate-100 backdrop-blur-md p-6 transition-all hover:border-orange-500/40 hover:shadow-lg border border-slate-300"
+      className="group relative cursor-pointer flex flex-col items-center justify-center gap-3 rounded-2xl bg-transparent backdrop-blur-sm p-6 transition-all hover:border-orange-500/60 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] border border-white/20"
     >
       <div className={`rounded-lg p-3 ${classes.glow}`}>
         {Icon && <Icon className={`${classes.text} w-8 h-8`} />}
