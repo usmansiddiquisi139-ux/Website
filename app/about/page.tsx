@@ -73,7 +73,7 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-8 sm:px-16 lg:px-10 bg-[#F8FAFC] text-center">
+      <section className="pt-32 pb-12 px-8 sm:px-16 lg:px-10 bg-transparent text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange-500">
           About Systems Integration
         </h1>
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       {/* About Content */}
       <section className="max-w-6xl mx-auto px-6 py-12 space-y-8">
-        <div className="bg-white shadow-sm p-8 rounded-2xl border border-orange-500/30 backdrop-blur-sm">
+        <div className="bg-white/10 backdrop-blur-md shadow-sm p-8 rounded-2xl border border-orange-500/30 backdrop-blur-sm">
           <h2 className="text-2xl font-semibold text-orange-400 mb-4">
             Who We Are
           </h2>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </div>
 
         {/* Brand Philosophy */}
-        <div className="bg-white shadow-sm p-8 rounded-2xl border border-orange-500/30 backdrop-blur-sm">
+        <div className="bg-white/10 backdrop-blur-md shadow-sm p-8 rounded-2xl border border-orange-500/30 backdrop-blur-sm">
           <h2 className="text-2xl font-semibold text-orange-400 mb-4">
             Our Brand Philosophy
           </h2>

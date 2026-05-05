@@ -80,7 +80,7 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-white">
+    <main className="min-h-screen bg-transparent text-white">
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
@@ -114,7 +114,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">
             Didn't find your answer?

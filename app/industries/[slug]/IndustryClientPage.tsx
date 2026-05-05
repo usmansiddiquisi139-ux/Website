@@ -60,11 +60,11 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       </div>
 
       {/* Overlay */}
-      <div className="fixed inset-0 -z-10 bg-[#F8FAFC] pointer-events-none" />
+      <div className="fixed inset-0 -z-10 bg-transparent pointer-events-none" />
 
 
       {/* Hero */}
-      <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-[#F8FAFC]">
+      <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-2 text-white">{industry.name}</h1>
           {industry.description && (
@@ -92,7 +92,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
 
       {/* Solutions */}
       {relatedServices.length > 0 && (
-        <section className="py-0 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <section className="py-0 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-white">Our Solutions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -106,7 +106,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
                 return (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
                     <div
-                      className={`p-6 rounded-lg border ${colorClasses.border} bg-[#F8FAFC] hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}
+                      className={`p-6 rounded-lg border ${colorClasses.border} bg-transparent hover:${colorClasses.bg} transition cursor-pointer group relative overflow-hidden`}
                     >
                       <div className="flex items-start space-x-4">
                         {IconComponent && (
@@ -166,7 +166,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
       )}
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">
             Transform Your {industry.name} Operations

@@ -121,7 +121,7 @@ export default function IndustryGrid() {
                 className={`group relative w-full h-full flex flex-col items-center justify-center rounded-2xl backdrop-blur-xl border border-slate-200 transition-all duration-300 overflow-hidden ${
                   index === 0
                     ? "p-8 sm:p-12 bg-gradient-to-br from-primary/20 to-primary/5 hover:from-primary/30 hover:to-primary/10 hover:border-primary/50"
-                    : "p-6 sm:p-8 bg-white shadow-sm hover:bg-slate-100 hover:border-primary/30"
+                    : "p-6 sm:p-8 bg-white/10 backdrop-blur-md shadow-sm hover:bg-slate-100 hover:border-primary/30"
                 }`}
                 aria-haspopup="dialog"
               >
@@ -205,7 +205,7 @@ export default function IndustryGrid() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
-                    className="w-20 h-20 mb-6 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-5xl"
+                    className="w-20 h-20 mb-6 rounded-2xl bg-white/10 backdrop-blur-md shadow-sm border border-slate-200 flex items-center justify-center text-5xl"
                   >
                     {selected.icon}
                   </motion.div>

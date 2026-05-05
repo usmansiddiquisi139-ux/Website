@@ -6,7 +6,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-white">
+    <main className="min-h-screen bg-transparent text-white">
 
       <div className="max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Insights & Articles</h1>
@@ -16,7 +16,7 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group border border-slate-200 rounded-xl p-6 hover:bg-white shadow-sm transition"
+              className="group border border-slate-200 rounded-xl p-6 hover:bg-white/10 backdrop-blur-md shadow-sm transition"
             >
               <div className="text-sm text-orange-500 font-semibold mb-3">{post.category}</div>
               <h2 className="text-xl font-bold mb-2 group-hover:text-orange-400 transition">

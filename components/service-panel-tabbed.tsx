@@ -95,7 +95,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
           {/* Backdrop */}
           <motion.div
             key="backdrop"
-            className="fixed inset-0 z-[9998] bg-[#F8FAFC] backdrop-blur-md"
+            className="fixed inset-0 z-[9998] bg-transparent backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -175,7 +175,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                   >
                     {tabs[activeTab].type === "capability" && (
                       <div
-                        className={`border opacity-100 border-slate-300 p-4 sm:p-6 space-y-4 rounded-md bg-[#F8FAFC] backdrop-blur-sm`}
+                        className={`border opacity-100 border-slate-300 p-4 sm:p-6 space-y-4 rounded-md bg-transparent backdrop-blur-sm`}
                       >
                         {/* Bullets */}
                         <div>
@@ -215,7 +215,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                           {(service.whyChooseUs || service.outcomes || []).map((item, idx) => (
                             <div
                               key={idx}
-                              className={`bg-[#F8FAFC] backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
+                              className={`bg-transparent backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
                             >
                               <span className={`${colorClasses.text} text-lg flex-shrink-0 mt-1`}>✓</span>
                               <span className="text-white text-sm sm:text-base break-words">{item}</span>
@@ -232,7 +232,7 @@ export function ServicePanelTabbed({ service, open, onClose }: ServicePanelTabbe
                           {(service.typicalUseCases || []).map((useCase, idx) => (
                             <div
                               key={idx}
-                              className={`bg-[#F8FAFC] backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
+                              className={`bg-transparent backdrop-blur-sm border border-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-3`}
                             >
                               <span className={`${colorClasses.text} text-lg flex-shrink-0 mt-1`}>→</span>
                               <span className="text-white text-sm sm:text-base break-words">{useCase}</span>

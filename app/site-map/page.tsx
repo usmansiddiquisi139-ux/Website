@@ -81,7 +81,7 @@ export default function SiteMapPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC]">
+        <div className="min-h-screen bg-transparent">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
                 {/* Header */}
                 <div className="mb-16">

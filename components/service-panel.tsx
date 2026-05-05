@@ -96,7 +96,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                       {cap.tools && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {cap.tools.map((tool, tidx) => (
-                            <span key={tidx} className="text-xs bg-white shadow-sm text-gray-300 px-2 py-1 rounded">
+                            <span key={tidx} className="text-xs bg-white/10 backdrop-blur-md shadow-sm text-gray-300 px-2 py-1 rounded">
                               {tool}
                             </span>
                           ))}
@@ -131,7 +131,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                   {service.tools.map((tool, idx) => (
                     <span
                       key={idx}
-                      className="bg-white shadow-sm border border-slate-200 text-gray-300 px-3 py-1 rounded-full text-sm"
+                      className="bg-white/10 backdrop-blur-md shadow-sm border border-slate-200 text-gray-300 px-3 py-1 rounded-full text-sm"
                     >
                       {tool}
                     </span>
@@ -149,7 +149,7 @@ export function ServicePanel({ service, open, onClose }: ServicePanelProps) {
                     href={cta.href || "/contact"}
                     className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                       idx === 0
-                        ? `${colorClasses.text} bg-white shadow-sm hover:bg-slate-100 border ${colorClasses.border}`
+                        ? `${colorClasses.text} bg-white/10 backdrop-blur-md shadow-sm hover:bg-slate-100 border ${colorClasses.border}`
                         : "bg-slate-100 text-white hover:bg-white/20"
                     }`}
                   >

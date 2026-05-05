@@ -110,7 +110,7 @@ export default async function BlogPostPage({
   const serviceSlug = findServiceSlug(post.category);
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-white">
+    <main className="min-h-screen bg-transparent text-white">
 
       <article className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16 pt-28 pb-16 leading-relaxed">
         {/* 🟠 Category Pill */}

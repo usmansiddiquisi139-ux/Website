@@ -28,7 +28,7 @@ export default function IndustriesPage() {
       </div>
 
       {/* Dark overlay to improve contrast */}
-      <div className="absolute inset-0 bg-[#F8FAFC] -z-10" />
+      <div className="absolute inset-0 bg-transparent -z-10" />
 
 
       {/* Hero */}
