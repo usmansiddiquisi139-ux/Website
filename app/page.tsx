@@ -72,7 +72,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-spacing">
             {industries.map((industry) => (
               <Link key={industry.slug} href={`/industries/${industry.slug}`}>
-                <div className="p-6 bg-slate-100/50 backdrop-blur-md rounded-lg hover:border-orange-400 border border-gray-300/30 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-white/40">
+                <div className="p-6 bg-transparent backdrop-blur-sm rounded-lg hover:border-orange-400 border border-white/20 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] transition-all duration-300 cursor-pointer">
                   <h3 className="text-base font-semibold text-center text-white">{industry.name}</h3>
                 </div>
               </Link>
@@ -146,7 +146,7 @@ export default function Home() {
             ].map((faq, idx) => (
               <div
                 key={faq.q}
-                className="p-6 bg-slate-100/50 backdrop-blur-md rounded-lg border border-gray-300/30 hover:border-orange-400 transition-all duration-300"
+                className="p-6 bg-transparent backdrop-blur-sm rounded-lg border border-white/20 hover:border-orange-400 hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] transition-all duration-300"
               >
                 <h3 className="text-base font-semibold text-orange-400 mb-3">{faq.q}</h3>
                 <p className="text-sm text-white/80">{faq.a}</p>
