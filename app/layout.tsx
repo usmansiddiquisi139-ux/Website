@@ -98,6 +98,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         className="font-sans antialiased min-h-screen bg-transparent text-slate-900"
         suppressHydrationWarning
       >
+        <style dangerouslySetInnerHTML={{ __html: `
+          body { background: transparent !important; }
+          main { background: transparent !important; }
+        ` }} />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
