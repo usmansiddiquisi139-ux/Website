@@ -99,7 +99,7 @@ export default function ServiceContent({ service }: { service: Service }) {
           </div>
 
           {/* Compact Content Row */}
-          <div className="flex flex-col lg:flex-row gap-12 items-center bg-white/40 backdrop-blur-md shadow-sm p-8 rounded-[2rem] border border-slate-100">
+          <div className="flex flex-col lg:flex-row gap-12 items-center bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
             <div className="flex-1 space-y-6 text-left">
               <div className="space-y-4 text-white/90 leading-relaxed text-lg italic">
                 {service.overview && <p>{service.overview}</p>}
@@ -141,7 +141,7 @@ export default function ServiceContent({ service }: { service: Service }) {
       </section>
 
       {/* 🚀 Metrics & Capabilities Row (High Density) */}
-      <section className="py-12 px-6 border-y border-slate-100 bg-white/20 backdrop-blur-md shadow-sm">
+      <section className="py-12 px-6 border-y border-white/10 bg-white/5 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex flex-col xl:flex-row gap-12">
 
           {/* Metrics Column */}
@@ -149,7 +149,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             <h3 className="text-xs uppercase tracking-[0.2em] text-orange-500 font-bold mb-6 italic">Impact Benchmarks</h3>
             <div className="grid grid-cols-2 gap-4">
               {service.metrics?.map((m, i) => (
-                <div key={i} className="p-4 bg-white/60 backdrop-blur-sm shadow-sm rounded-xl border border-slate-100">
+                <div key={i} className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
                   <div className={`text-2xl font-bold ${colorClasses.text}`}>{m.value}</div>
                   <div className="text-[10px] uppercase font-bold text-white/50 tracking-tighter">{m.label}</div>
                 </div>
@@ -195,7 +195,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {service.workflow.map((step, idx) => (
-                <div key={idx} className="p-6 bg-white/40 backdrop-blur-md shadow-sm rounded-2xl border border-slate-100 hover:border-orange-500/30 transition-all group h-full flex flex-col">
+                <div key={idx} className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-orange-500/40 transition-all group h-full flex flex-col hover:shadow-[0_0_20px_rgba(249,115,22,0.1)]">
                   <div className="flex justify-between items-start mb-4">
                     <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-slate-100/80 ${colorClasses.text}`}>Phase 0{idx + 1}</span>
                     <span className="text-slate-100 text-3xl font-black italic">{idx + 1}</span>
@@ -216,7 +216,7 @@ export default function ServiceContent({ service }: { service: Service }) {
       )}
 
       {/* 💼 Integrated Value Layer (Why, Use, Outcomes) */}
-      <section className="py-16 px-6 bg-white/40 backdrop-blur-md shadow-md rounded-[3rem] mx-4 mb-12">
+      <section className="py-16 px-6 bg-white/5 backdrop-blur-md rounded-[3rem] mx-4 mb-12 border border-white/10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Section 1: Outcomes */}
           <div>
