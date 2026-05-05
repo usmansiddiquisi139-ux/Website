@@ -1,3 +1,4 @@
+// Triggering fresh build for global theme updates
 import type React from "react";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
