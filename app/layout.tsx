@@ -3,7 +3,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import dynamic from "next/dynamic";
-const TubesBackground = dynamic(() => import("@/components/tubes-background").then(mod => mod.TubesBackground), { ssr: false });
+const TubesBackground = dynamic(() => import("@/components/tubes-background").then(mod => ({ default: mod.TubesBackground })), { ssr: false });
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
