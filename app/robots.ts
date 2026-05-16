@@ -22,6 +22,5 @@ export default function robots(): MetadataRoute.Robots {
       `${baseUrl}/ai-sitemap.json`,
       `${baseUrl}/llms.txt`,
     ],
-    host: baseUrl,
   };
 }
