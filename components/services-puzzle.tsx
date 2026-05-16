@@ -65,7 +65,7 @@ export function ServicesPuzzle({ services }: ServicesPuzzleProps) {
                   }}
                 >
                   <div className={`w-16 h-16 rounded-lg ${service.color} mb-4`}></div>
-                  <h3 className="text-lg font-semibold text-gray-900">{service.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 </div>
               </div>
             </Link>

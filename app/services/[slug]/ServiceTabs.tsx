@@ -25,8 +25,8 @@ export default function ServiceTabs({ service }: { service: any }) {
             onClick={() => setActiveTab(tab.id)}
             className={`px-5 py-2 rounded-full text-sm font-medium transition ${
               activeTab === tab.id
-                ? "bg-white text-white shadow-sm"
-                : "bg-gray-800 hover:bg-gray-700 text-slate-400"
+                ? "bg-orange-500 text-white shadow-lg"
+                : "bg-white/5 hover:bg-white/10 text-white/70 border border-white/10"
             }`}
           >
             {tab.label}
@@ -57,7 +57,7 @@ export default function ServiceTabs({ service }: { service: any }) {
                     {cap.tools.map((tool: string, k: number) => (
                       <span
                         key={k}
-                        className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-200"
+                        className="bg-white/10 border border-white/20 px-2 py-1 rounded text-sm text-white"
                       >
                         {tool}
                       </span>
@@ -72,7 +72,7 @@ export default function ServiceTabs({ service }: { service: any }) {
             {service.tools.map((t: any, i: number) => (
               <div
                 key={i}
-                className="bg-gray-800 p-3 rounded-lg text-center text-sm text-gray-200"
+                className="bg-transparent border border-white/20 p-3 rounded-lg text-center text-sm text-white backdrop-blur-sm hover:border-orange-500/50 transition-all"
               >
                 {t.name || t}
               </div>
