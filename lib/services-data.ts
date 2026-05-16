@@ -381,6 +381,8 @@ export const services: Service[] = [
     headline: "Turning raw data into trusted intelligence",
     overview:
       "Design, secure and govern enterprise data ecosystems so data is accurate, trusted and accessible for analytics, AI and decision-making.",
+    description:
+      "Design, secure, and govern your enterprise data ecosystems. Our expert data solutions ensure your analytics and AI run on accurate, trusted, and accessible data.",
     capabilities: [
       {
         title: "Data Architecture & Warehouse Design",
@@ -473,6 +475,8 @@ export const services: Service[] = [
     headline: "Building fast, intelligent, and impactful digital products.",
     overview:
       "Modern web and mobile experiences, fast, secure, scalable and optimized for users. We blend front-end innovation, back-end architecture and modern deployment practices.",
+    description:
+      "Build fast, secure, and scalable web and mobile applications. We blend front-end innovation with robust back-end architecture for superior digital experiences.",
     capabilities: [
       {
         title: "Responsive Web Applications (SPA / PWA)",
@@ -555,6 +559,8 @@ export const services: Service[] = [
     headline: "Deploy faster. Scale smarter. Operate securely.",
     overview:
       "Modern infrastructure, automated deployments and scalable cloud solutions that support continuous delivery and innovation.",
+    description:
+      "Deploy faster and scale smarter with our DevOps and Cloud services. We provide automated CI/CD pipelines, secure cloud migration, and robust infrastructure as code.",
     capabilities: [
       {
         title: "CI/CD Pipeline Setup & Automation",
@@ -638,6 +644,8 @@ export const services: Service[] = [
     headline: "Adaptive Security Testing for an Evolving Threat Landscape",
     overview:
       "Our Ethical Hacking as a Service (EHaaS) provides continuous, strategic testing to identify and mitigate vulnerabilities across applications, infrastructure, and people. We simulate real-world attacks to help you stay ahead of evolving threats.",
+    description:
+      "Protect your business with our Ethical Hacking as a Service (EHaaS). We simulate real-world cyberattacks to identify vulnerabilities and secure your applications and infrastructure.",
     capabilities: [
       {
         title: "Web & Application Security Testing",
