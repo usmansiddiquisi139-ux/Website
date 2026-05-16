@@ -103,19 +103,7 @@ export default function AboutPage() {
             technology into tangible growth.
           </p>
           <p className="text-gray-100 leading-relaxed mt-4">
-            Our expertise spans{" "}
-            <Link href="/services/ai-consultancy" className="text-orange-400 underline">
-              AI Consultancy
-            </Link>
-            ,{" "}
-            <Link href="/services/systems-integration" className="text-orange-400 underline">
-              Enterprise Systems Integration
-            </Link>
-            ,{" "}
-            <Link href="/services/digital-transformation" className="text-orange-400 underline">
-              Digital Transformation Services
-            </Link>
-            , Cloud Architecture, Cybersecurity, and Intelligent Automation.
+            Our expertise spans AI Consultancy, Enterprise Systems Integration, Digital Transformation Services, Cloud Architecture, Cybersecurity, and Intelligent Automation.
           </p>
         </div>
 
