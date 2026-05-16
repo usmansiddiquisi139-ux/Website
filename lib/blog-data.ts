@@ -86,8 +86,7 @@ A mature DevOps practice transforms release velocity and system reliability — 
   },
 
   "data-governance-framework": {
-    title:
-      "Enterprise Data Governance: Building a Scalable Framework",
+    title: "Scalable Enterprise Data Governance Framework",
     excerpt:
       "How to implement data governance that balances compliance with business agility.",
     publishedDate: "2024-09-05",
@@ -115,7 +114,7 @@ A scalable governance model turns compliance from a burden into a business enabl
   },
 
   "cybersecurity-essentials": {
-    title: "Cybersecurity Essentials for Enterprise Leadership",
+    title: "Cybersecurity Essentials for Leaders",
     excerpt:
       "Critical security practices every executive should understand.",
     publishedDate: "2024-08-25",
@@ -143,7 +142,7 @@ Strong cybersecurity begins with leadership awareness and commitment to proactiv
   },
 
   "api-first-architecture": {
-    title: "Building APIs That Scale: Design Patterns for Enterprise",
+    title: "Enterprise API Design Patterns That Scale",
     excerpt:
       "Modern API design principles for system integration at scale.",
     publishedDate: "2024-08-10",

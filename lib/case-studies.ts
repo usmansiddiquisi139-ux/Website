@@ -18,7 +18,7 @@ export type CaseStudyMap = Record<string, CaseStudy>
 
 export const caseStudyData: CaseStudyMap = {
   "fintech-ai-fraud": {
-    title: "AI-Powered Fraud Detection for FinTech",
+    title: "AI Fraud Detection for FinTech",
     client: "Global Payment Processor",
     industry: "fintech",
     services: ["ai-ml", "data"],
@@ -107,7 +107,7 @@ export const caseStudyData: CaseStudyMap = {
       "The predictive maintenance platform delivered 35% reduction in downtime, equivalent to $8M annual savings, with ROI achieved in just 45 days.",
   },
   "aerospace-security": {
-    title: "Enterprise Security Operations Center",
+    title: "Enterprise Security Operations",
     client: "Aerospace Contractor",
     industry: "aerospace",
     services: ["security", "devops"],
