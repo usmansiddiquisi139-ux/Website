@@ -10,7 +10,7 @@ const { metadata, jsonLd } = buildMetadata({
     "@type": "CookiePolicy",
     name: "Systems Integration Cookie Policy",
     url: "https://www.systemsintegration.co/cookie-policy",
-    dateModified: new Date().toISOString(),
+    dateModified: "2025-01-01",
   },
 });
 
@@ -145,7 +145,7 @@ export default function CookiePolicyPage() {
       </p>
 
       <p className="text-sm text-white/70 mt-10">
-        Last updated: {new Date().toLocaleDateString()}
+        Last updated: May 2025
       </p>
     </main>
   );

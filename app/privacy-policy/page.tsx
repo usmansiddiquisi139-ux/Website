@@ -1,6 +1,5 @@
 import { buildMetadata } from "@/lib/seo";
 import StructuredData from "@/app/components/structured-data";
-import { Footer } from "react-day-picker";
 import Link from "next/link";
 
 const { metadata, jsonLd } = buildMetadata({
@@ -12,7 +11,7 @@ const { metadata, jsonLd } = buildMetadata({
     "@type": "PrivacyPolicy",
     name: "Systems Integration Privacy Policy",
     url: "https://www.systemsintegration.co/privacy-policy",
-    dateModified: new Date().toISOString(),
+    dateModified: "2025-01-01",
   },
 });
 
@@ -156,7 +155,7 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <p className="text-sm text-white/70 mt-10">
-        Last updated: {new Date().toLocaleDateString()}
+        Last updated: May 2025
       </p>
     </main>
   );
