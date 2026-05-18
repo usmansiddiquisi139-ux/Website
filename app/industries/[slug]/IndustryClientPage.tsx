@@ -64,7 +64,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
 
 
       {/* Hero */}
-      <section className="pt-40 pb-6 px-4 sm:px-2 lg:px-4 bg-transparent">
+      <section className="pt-40 pb-6 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-2 text-white">{industry.name}</h1>
           {industry.description && (
@@ -75,7 +75,7 @@ export default function IndustryClientPage({ params, industry }: { params: { slu
 
       {/* Challenges */}
       {challenges.length > 0 && (
-        <section className="py-16 px-0 sm:px-3 lg:px-4">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-white">Industry Challenges</h2>
             <ul className="space-y-2">

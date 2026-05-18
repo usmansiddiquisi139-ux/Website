@@ -73,7 +73,7 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-8 sm:px-16 lg:px-10 bg-transparent text-center">
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-10 bg-transparent text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange-500">
           About Systems Integration
         </h1>

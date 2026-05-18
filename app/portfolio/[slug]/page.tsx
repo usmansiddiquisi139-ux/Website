@@ -76,7 +76,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
       {/* Featured Image */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
-          <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-3xl border border-slate-200 shadow-2xl">
+          <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
             <Image
               src={study.image || "/images/services-bg.jpg"}
               alt={study.title}
