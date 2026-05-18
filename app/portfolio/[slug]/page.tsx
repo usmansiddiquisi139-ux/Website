@@ -124,7 +124,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Challenge / Solution / Outcomes */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/40 shadow-sm backdrop-blur-md rounded-[3rem] mx-4 sm:mx-8 lg:mx-12 border border-slate-200">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent shadow-sm backdrop-blur-md rounded-[3rem] mx-4 sm:mx-8 lg:mx-12 border border-white/10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12">
             <div>
@@ -217,7 +217,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               return (
                 <Link key={service.slug} href={`/services/${service.slug}`}>
                   <div
-                    className={`p-6 rounded-2xl border ${colorClasses.border} bg-white/40 hover:bg-white/60 shadow-sm transition cursor-pointer group backdrop-blur-md hover:shadow-lg`}
+                    className={`p-6 rounded-2xl border ${colorClasses.border} bg-transparent hover:bg-white/5 shadow-sm transition cursor-pointer group backdrop-blur-md hover:shadow-lg`}
                   >
                     <div className="flex items-start space-x-4">
                       {IconComponent && (
