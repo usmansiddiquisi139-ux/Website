@@ -56,7 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/blog/zero-downtime-migrations",
     "/blog/ai-fraud-detection",
-    "/blog/devops-automation",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
