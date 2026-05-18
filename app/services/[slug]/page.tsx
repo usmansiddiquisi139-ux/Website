@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { services } from "@/lib/services-data";
-import { getTool } from "@/lib/tools-data";
 import { buildMetadata } from "@/lib/seo";
 import ServiceContent from "./service-content";
 
@@ -20,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // 🧠 Build metadata + JSON-LD schema
   const { metadata } = buildMetadata({
     title: service.title,
-    description: service.description,
+    description: service.description || "",
     path: `/services/${service.slug}`,
     jsonLdData: {
       "@context": "https://schema.org",
@@ -46,12 +45,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const service = services.find((s) => s.slug === slug);
   if (!service) return notFound();
 
-  const resolvedTools = (service.tools || []).map((name) => getTool(name));
-
   const plainService = {
     ...service,
     icon: typeof service.icon === "string" ? service.icon : service.icon?.name,
-    tools: resolvedTools,
   };
 
   const colorMatch = service.color?.match(/from-(\w+)-500/);
