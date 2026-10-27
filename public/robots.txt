@@ -1,13 +1,10 @@
-# Robots configuration for Systems Integration
+# AI Crawler Access File for Systems Integration
 User-Agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
-Disallow: /api/secret
-Disallow: /api/internal/
 
-# XML Sitemap (the only valid sitemap declaration)
 Sitemap: https://www.systemsintegration.co/sitemap.xml
+LLM-Sitemap: https://www.systemsintegration.co/ai-sitemap.json
+LLMs-txt: https://www.systemsintegration.co/llms.txt
 
-# Rate limit to protect server
+# Rate limits to protect server
 Crawl-Delay: 1
