@@ -42,11 +42,14 @@ const nextConfig = {
             key: 'Content-Security-Policy-Report-Only',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+              // jsdelivr CDN needed for TubesBackground 3D animation (tubes1.min.js)
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com",
+              // jsdelivr needed for dynamic import() of 3D background script
+              "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com https://cdn.jsdelivr.net",
+              "worker-src blob:",
               "frame-ancestors 'self'",
               "base-uri 'self'",
               "form-action 'self'",

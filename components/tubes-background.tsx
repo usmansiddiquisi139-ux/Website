@@ -15,7 +15,7 @@ export function TubesBackground() {
     let app: any;
     let isMounted = true;
 
-    // Set explicit canvas dimensions to viewport size before init
+    // Size canvas to full viewport — covers both desktop and mobile equally
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -25,7 +25,7 @@ export function TubesBackground() {
 
     const initTubes = async () => {
       try {
-        // Dynamic import of the ES module from CDN
+        // Dynamic import of the ES module from CDN (cdn.jsdelivr.net is whitelisted in CSP)
         const mod = await import(/* webpackIgnore: true */ CDN_URL);
         const TubesCursor = mod.default || mod;
 
@@ -62,8 +62,12 @@ export function TubesBackground() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
-      <canvas ref={canvasRef} className="block" />
+    // Canvas is fixed and covers the full viewport on all screen sizes
+    <div className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none overflow-hidden">
+      <canvas
+        ref={canvasRef}
+        style={{ display: "block", width: "100%", height: "100%" }}
+      />
     </div>
   );
 }
